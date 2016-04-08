@@ -59,7 +59,7 @@ for (file in bigwigs) {
   # gene name
   gene = str[[1]][3]
   # strand (pos / neg)
-  strand = str[[1]][length(str)]
+  strand = str[[1]][4]
   
   # create row for each gene
   if(!(gene %in% rownames(bw_filemat))) {
@@ -203,7 +203,7 @@ ui <-
                  "genePlotInput",
                  "Select gene",
                  choices = c("", genenames)
-                 #,selected = genenames[1]
+                 #,selected = "CSTF3"
                ),
                plotOutput("gviz"))
       
@@ -217,6 +217,7 @@ ui <-
 ## ------------------------------------------------------------------ ##
 
 server <- function(input, output) {
+  
   output$inspectMatrix <- renderDataTable({
     table <- head(KDmat, 20)
     DT::datatable(table, options = list(scrollX = TRUE))
@@ -303,7 +304,7 @@ server <- function(input, output) {
   })
   
   txTrack <- reactive({
-    txTr <- GeneRegionTrack(txdb, genome = "hg38", chromosome = "chr11", symbol = input$genePlotInput, showId = TRUE, geneSymbol = TRUE, name = "UCSC", background.title = "salmon")
+    txTr <- GeneRegionTrack(txdb, genome = "hg38", chromosome = chromosome(), symbol = input$genePlotInput, showId = TRUE, geneSymbol = TRUE, name = "UCSC", background.title = "salmon")
     displayPars(txTr) <- list(background.panel = "#FFFEDB",col = NULL)
     symbols <- unlist(mapIds(org.Hs.eg.db, gene(txTr), "SYMBOL", "ENTREZID", multiVals = "first"))
     symbol(txTr) <- symbols[gene(txTr)]
@@ -311,7 +312,6 @@ server <- function(input, output) {
   })
   
   dataTracks <- reactive({
-    
     allconds <- KDmat[(rownames(KDmat) %in% input$genePlotInput), , drop = FALSE] # force staying as a matrix
     involved <- colnames(allconds)[!is.na(allconds)]
     
@@ -319,14 +319,19 @@ server <- function(input, output) {
     
     for (con in involved) {
       range <- bw_filemat[con,"neg"]
-      dtrack_neg <- DataTrack(range = range, genome = "hg38", chromosome = chromosome(), type = "h", name = paste0(con, " neg"), background.title = "salmon")
-      dTracks[[length(dTracks)+1]] <- dtrack_neg
+      cat(file=stderr(), "Using range: ", range, "\n")
+      if (!(is.na(range))) {
+        dtrack_neg <- DataTrack(range = range, genome = "hg38", chromosome = chromosome(), type = "h", name = paste0(con, " neg"), background.title = "salmon")
+        dTracks[[length(dTracks)+1]] <- dtrack_neg
+      }
      }
    return(dTracks)
   })
   
   output$gviz <- renderPlot({
-    plotTracks(append(list(ideoTrack(), gtrack, txTrack()), dataTracks()), from = getStart(), to = getEnd(), extend.right = 500, extend.left = 0.5, showBandId = TRUE, add53 = TRUE, add35 = TRUE)
+      plotTracks(append(list(ideoTrack(), gtrack, txTrack()), dataTracks()), from = getStart(), to = getEnd(), extend.right = 500, extend.left = 500, showBandId = TRUE, add53 = TRUE, add35 = TRUE)
+      #plotTracks(list(ideoTrack(), gtrack, txTrack()), from = getStart(), to = getEnd(), extend.right = 500, extend.left = 500, showBandId = TRUE, add53 = TRUE, add35 = TRUE)
+    
   })
   
   
@@ -334,3 +339,5 @@ server <- function(input, output) {
 }
 
 shinyApp(ui = ui, server = server)
+
+
