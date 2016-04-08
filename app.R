@@ -202,10 +202,20 @@ ui <-
                selectInput(
                  "genePlotInput",
                  "Select gene",
-                 choices = c("", genenames)
-                 #,selected = "CSTF3"
-               ),
-               plotOutput("gviz"))
+                 choices = c("", genenames),
+                 selected = NULL
+               ), 
+               selectInput(
+                 "strandInput", 
+                 "Select strand", 
+                 choices = c(""," pos", "neg"), 
+                 selected = NULL
+              ), 
+              submitButton(
+                "Update View", 
+                icon("refresh")
+              ),
+              plotOutput("gviz"))
       
     ),
     
@@ -318,22 +328,33 @@ server <- function(input, output) {
     dTracks <- list()
     
     for (con in involved) {
-      range <- bw_filemat[con,"neg"]
-      cat(file=stderr(), "Using range: ", range, "\n")
-      if (!(is.na(range))) {
-        dtrack_neg <- DataTrack(range = range, genome = "hg38", chromosome = chromosome(), type = "h", name = paste0(con, " neg"), background.title = "salmon")
-        dTracks[[length(dTracks)+1]] <- dtrack_neg
+      
+        if(input$strandInput == "neg") {
+        range <- bw_filemat[con,"neg"]
+        cat(file=stderr(), "Using range: ", range, "\n")
+        if (!(is.na(range))) {
+          dtrack_neg <- DataTrack(range = range, genome = "hg38", chromosome = chromosome(), type = "h", name = con, background.title = "salmon")
+          displayPars(dtrack_neg) <- list(background.panel = "#FFFEDB",col = NULL)
+          dTracks[[length(dTracks)+1]] <- dtrack_neg
+        }
+        }
+      
+      if(input$strandInput == "pos") {
+        range <- bw_filemat[con,"pos"]
+        cat(file=stderr(), "Using range: ", range, "\n")
+        if (!(is.na(range))) {
+          dtrack_pos <- DataTrack(range = range, genome = "hg38", chromosome = chromosome(), type = "h", name = con, background.title = "salmon")
+          displayPars(dtrack_pos) <- list(background.panel = "#FFFEDB",col = NULL)
+          dTracks[[length(dTracks)+1]] <- dtrack_pos
+        }
       }
      }
    return(dTracks)
   })
   
   output$gviz <- renderPlot({
-      plotTracks(append(list(ideoTrack(), gtrack, txTrack()), dataTracks()), from = getStart(), to = getEnd(), extend.right = 500, extend.left = 500, showBandId = TRUE, add53 = TRUE, add35 = TRUE)
-      #plotTracks(list(ideoTrack(), gtrack, txTrack()), from = getStart(), to = getEnd(), extend.right = 500, extend.left = 500, showBandId = TRUE, add53 = TRUE, add35 = TRUE)
-    
+    plotTracks(append(list(ideoTrack(), gtrack, txTrack()), dataTracks()), from = getStart(), to = getEnd(), extend.left = -0.2, extend.right = -0.2, showBandId = TRUE, add53 = TRUE, add35 = TRUE)
   })
-  
   
   
 }
