@@ -642,8 +642,9 @@ server <- function(input, output, session) {
     filename = "genePlot.png",
     content = function(file) {
       png(file, width = 800)
+      gene <- input$geneInput
       if (input$genePlotCond == "max SI") {
-        cond <- maxDI(input$geneInput)
+        cond <- maxDI(gene)
       } else {
         cond <- strsplit(input$genePlotCond, "_")[[1]][1]
       }
@@ -652,15 +653,7 @@ server <- function(input, output, session) {
       } else if (input$selectView == "Gene Body") {
         view = "gb"
       }
-      id <- paste0(gene, "_", cond, "_", view)
-      file <- paste0("./data/plotCache/", id, ".png")
-      if (isCached(id)) {
-        img <- readPNG(file)
-        myplot <- ggimage(img)
-        myplot
-      } else{
-        try(genePlot(input$geneInput, cond, view))
-      }
+      try(genePlot(gene, cond, view))
       dev.off()
     }
   )
@@ -935,7 +928,8 @@ server <- function(input, output, session) {
       cat(file = stderr(), "Done!\n")
     } else{
       cat(file = stderr(), "Plot not yet cached! Calculating...\n")
-      cachePlot(file, gene, cond, view)
+      try(genePlot(gene, cond, view))
+      #cachePlot(file, gene, cond, view)
       cat(file = stderr(), "Done!\n")
     }
   })
