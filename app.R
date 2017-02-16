@@ -1393,7 +1393,7 @@ server <- function(input, output, session) {
   }
   
   maxCovFiles <- function(bws, gr) {
-    # bws <- lapply(bws, rtracklayer:::import)
+    #bws <- lapply(bws, rtracklayer::import)
     max_cov <- c()
     for (i in 1:length(gr)) {
       my_feat = gr[i,]
@@ -1432,8 +1432,12 @@ server <- function(input, output, session) {
     chrom <- chromosome(gene)
     strand <- strand(gene)
     bws <- createBwList(gene, cond, strand)
+    cat(file=stderr(), "Importing control and condition BigWigs...: \n")
     ctrldata <- import(bws$ctrl)
+    cat(file=stderr(), "Control: ", bws$ctrl, "\n")
     conddata <- import(bws$cond)
+    cat(file=stderr(), "Condition: ", bws$cond, "\n")
+    cat(file=stderr(), "Done! \n")
     gene_id <- sym2eg(gene)
     if (view == "gb") {
       gr <- allgenes[allgenes$gene_id == gene_id]
@@ -1443,7 +1447,11 @@ server <- function(input, output, session) {
       utrRanges <- ranges(utrs)
       gr <- utrs[[txID]]
     }
+    cat(file=stderr(), "Calculating max coverage... \n")
     maxCoverage <- as.data.frame(maxCovFiles(list(ctrldata, conddata), gr))[1,6]
+    cat(file=stderr(), "Max coverage: ", maxCoverage, "\n")
+    cat(file=stderr(), "Done! \n")
+    cat(file=stderr(), "Plotting Gviz tracks... \n")
     plotTracks(
       list(
         ideoTrack(gene, chrom),
