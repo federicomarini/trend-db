@@ -1176,6 +1176,7 @@ server <- function(input, output, session) {
   
   # get start coordinates of this gene (using txdb if possible, else using rentrez)
   getStart <- function(gene, view, strand) {
+    cat(file=stderr(), "Fetching start coordinates...\n")
     gene_id <- sym2eg(gene)
     if (view == "utr") {
       txIDs <- IDs[IDs$geneID == gene_id, ]
@@ -1193,11 +1194,13 @@ server <- function(input, output, session) {
         }
       }
     }
+    cat(file=stderr(), "Start: ", start, "\n Done! \n")
     return(start)
   }
   
   # get end coordinates of this gene (using txdb if possible, else using rentrez)
   getEnd <- function(gene, view, strand) {
+    cat(file=stderr(), "Fetching end coordinates...\n")
     gene_id <- sym2eg(gene)
     if (view == "utr") {
       txIDs <- IDs[IDs$geneID == gene_id, ]
@@ -1215,6 +1218,7 @@ server <- function(input, output, session) {
         }
       }
     }
+    cat(file=stderr(), "End: ", end, "\n Done! \n")
     return(end)
   }
   
@@ -1248,16 +1252,17 @@ server <- function(input, output, session) {
   
   # function to create transcript track of this gene for Gviz
   txTrack <- function(gene, chrom) {
+    cat(file=stderr(), "Generating GeneRegionTrack...")
     txTr <-
       GeneRegionTrack(
         txdb,
         genome = "hg38",
         chromosome = chrom,
-        symbol = gene,
-        showId = TRUE,
-        geneSymbol = TRUE,
+  #      symbol = gene,
+   #     showId = TRUE,
+    #    geneSymbol = TRUE,
         name = gene,
-        transcriptAnnotation = "symbol",
+       # transcriptAnnotation = "symbol",
         background.title = "salmon"
       )
     displayPars(txTr) <-
@@ -1267,15 +1272,17 @@ server <- function(input, output, session) {
         size = 1.5,
         fontsize = 18
       )
-    symbols <-
-      unlist(mapIds(org.Hs.eg.db, gene(txTr), "SYMBOL", "ENTREZID", multiVals = "first"))
-    symbol(txTr) <- symbols[gene(txTr)]
+    # symbols <-
+    #   unlist(mapIds(org.Hs.eg.db, gene(txTr), "SYMBOL", "ENTREZID", multiVals = "first"))
+    # symbol(txTr) <- symbols[gene(txTr)]
+    cat(file=stderr(), "Done! \n")
     return(txTr)
   }
   
   # function to create data track of this gene (range = BigWig file, background = background color)
   createDataTrack <-
     function(gene, range, name, background, max, chrom) {
+      cat(file=stderr(), "Generating data track...")
       if (name != "ctrl") {
         name = paste0(name, "_kd")
       }
@@ -1296,6 +1303,7 @@ server <- function(input, output, session) {
           size = 3,
           fontsize = 18
         )
+      cat(file=stderr(), "Done! \n")
       return(dtrack)
     }
   
@@ -1323,6 +1331,7 @@ server <- function(input, output, session) {
   
   # create poly a sites track
   polyAtrack <- function(gene, chrom, strand) {
+    cat(file=stderr(), "Generating polyA track...")
     if (strand == "-") {
       range <- paste0("./data/", polyAneg)
     } else if (strand == "+") {
@@ -1344,6 +1353,7 @@ server <- function(input, output, session) {
         size = 1.5,
         fontsize = 18
       )
+    cat(file=stderr(), "Done! \n")
     return(atrack)
   }
   
@@ -1393,7 +1403,7 @@ server <- function(input, output, session) {
   }
   
   maxCovFiles <- function(bws, gr) {
-    #bws <- lapply(bws, rtracklayer::import)
+    #bws <- lapply(bws, rtracklayer:::import)
     max_cov <- c()
     for (i in 1:length(gr)) {
       my_feat = gr[i,]
