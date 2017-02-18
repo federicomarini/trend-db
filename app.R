@@ -1182,7 +1182,21 @@ server <- function(input, output, session) {
       txIDs <- IDs[IDs$geneID == gene_id, ]
       txID <- as.character(txIDs[1, 2])
       utrRanges <- ranges(utrs)
-      start = start(utrRanges[[txID]])
+      gr <- utrRanges[[txID]]
+      if (length(gr) > 1) {
+        maxlength <- 0
+        selectedUtr <- NULL
+        for (i in 1:length(gr)) {
+          length <- abs(end(gr[i]) - start(gr[i]))
+          if (length > maxlength) {
+            maxlength <- length
+            selectedUtr <- gr[i]
+          }
+        }
+        
+        gr <- selectedUtr
+      }
+      start <- start(gr)
     } else {
       start <- start(ranges(allgenes[allgenes$gene_id == gene_id]))
       if (length(start) == 0) {
@@ -1206,7 +1220,20 @@ server <- function(input, output, session) {
       txIDs <- IDs[IDs$geneID == gene_id, ]
       txID <- as.character(txIDs[1, 2])
       utrRanges <- ranges(utrs)
-      end = end(utrRanges[[txID]])
+      gr <- utrRanges[[txID]]
+      if (length(gr) > 1) {
+        maxlength <- 0
+        selectedUtr <- NULL
+        for (i in 1:length(gr)) {
+          length <- abs(end(gr[i]) - start(gr[i]))
+          if (length > maxlength) {
+            maxlength <- length
+            selectedUtr <- gr[i]
+          }
+        }
+        gr <- selectedUtr
+      }
+      end <- end(selectedUtr)
     } else {
       end <- end(ranges(allgenes[allgenes$gene_id == gene_id]))
       if (length(end) == 0) {
@@ -1456,6 +1483,18 @@ server <- function(input, output, session) {
       txID <- as.character(txIDs[1, 2])
       utrRanges <- ranges(utrs)
       gr <- utrs[[txID]]
+      if (length(gr) > 1) {
+        maxlength <- 0
+        selectedUtr <- NULL
+        for (i in 1:length(gr)) {
+          length <- abs(end(gr[i]) - start(gr[i]))
+          if (length > maxlength) {
+            maxlength <- length
+            selectedUtr <- gr[i]
+          }
+        }
+        gr <- selectedUtr
+      }
     }
     cat(file=stderr(), "Calculating max coverage... \n")
     maxCoverage <- as.data.frame(maxCovFiles(list(ctrldata, conddata), gr))[1,6]
@@ -1464,12 +1503,12 @@ server <- function(input, output, session) {
     cat(file=stderr(), "Plotting Gviz tracks... \n")
     plotTracks(
       list(
-        ideoTrack(gene, chrom),
-        gtrack,
-        txTrack(gene, chrom),
-        polyAtrack(gene, chrom, strand),
-        dataTrack(gene, cond, bws$cond, maxCoverage, chrom),
-        ctrlTrack(gene, bws$ctrl, maxCoverage, chrom)
+   #     ideoTrack(gene, chrom)
+       gtrack,
+       txTrack(gene, chrom),
+       polyAtrack(gene, chrom, strand),
+       dataTrack(gene, cond, bws$cond, maxCoverage, chrom),
+       ctrlTrack(gene, bws$ctrl, maxCoverage, chrom)
       ),
       from = getStart(gene, view, strand),
       to = getEnd(gene, view, strand),
