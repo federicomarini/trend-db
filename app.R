@@ -14,6 +14,7 @@ library(Gviz)
 library(org.Hs.eg.db)
 library(shinyBS)
 library(rtracklayer)
+library(markdown)
 
 cat(file = stderr(), "Loading R data...")
 load("trendseq.RData")
@@ -27,7 +28,7 @@ cat(file = stderr(), "Done! \n")
 ui <-
   shinydashboard::dashboardPage(
     dashboardHeader(
-      title = paste0("TRENDseqExplorer"),
+      title = paste0("TREND-DB"),
       titleWidth = 900
     ),
     dashboardSidebar(disable = TRUE,
@@ -57,8 +58,12 @@ ui <-
       tabBox(
         id = "tabs",
         width = 11,
+        selected = "Welcome",
         #h4("Session Info"),
         #verbatimTextOutput("sessioninfo")),
+        tabPanel("Welcome",
+                 icon = icon("home"),
+                 includeMarkdown("trenddb_welcomepage.md")),
         tabPanel(
           "Data Preview",
           icon = icon("eye"),
@@ -674,7 +679,7 @@ server <- function(input, output, session) {
   # description of About tab
   output$about <- renderUI({
     HTML(
-      "<div><br>This is the prototype of the TRENDseq data exploration app. </div><br>
+      "<div><br>This page contains descriptions for the different features of the TREND-DB. </div><br>
       <h4>Data Preview</h4>
       <div>The <strong>Data Preview</strong> tab shows an overview of all shortening index values of each gene across all conditions. With the
       '<strong>Filter by shortening index</strong>' slider, the table can be subsetted to only show genes with a shortening index value (absolute) above the threshold
@@ -990,8 +995,6 @@ server <- function(input, output, session) {
   observe({
     if (input$continueMV > 0) {
       updateTabItems(session, "tabs", selected = "Main View")
-    } else {
-      updateTabItems(session, "tabs", selected = "Data Preview")
     }
   })
   
