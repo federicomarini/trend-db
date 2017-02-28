@@ -1196,7 +1196,6 @@ server <- function(input, output, session) {
             selectedUtr <- gr[i]
           }
         }
-        
         gr <- selectedUtr
       }
       start <- start(gr)
@@ -1236,7 +1235,7 @@ server <- function(input, output, session) {
         }
         gr <- selectedUtr
       }
-      end <- end(selectedUtr)
+      end <- end(gr)
     } else {
       end <- end(ranges(allgenes[allgenes$gene_id == gene_id]))
       if (length(end) == 0) {
@@ -1300,7 +1299,7 @@ server <- function(input, output, session) {
         background.panel = "#ffeecc",
         col = NULL,
         size = 1.5,
-        fontsize = 18
+        fontsize = 12
       )
     # symbols <-
     #   unlist(mapIds(org.Hs.eg.db, gene(txTr), "SYMBOL", "ENTREZID", multiVals = "first"))
@@ -1331,7 +1330,7 @@ server <- function(input, output, session) {
           background.panel = background,
           col = NULL,
           size = 3,
-          fontsize = 18
+          fontsize = 12
         )
       cat(file=stderr(), "Done! \n")
       return(dtrack)
@@ -1381,7 +1380,7 @@ server <- function(input, output, session) {
         background.panel = "#e6f2ff",
         col = NULL,
         size = 1.5,
-        fontsize = 18
+        fontsize = 12
       )
     cat(file=stderr(), "Done! \n")
     return(atrack)
