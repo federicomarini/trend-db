@@ -1196,6 +1196,7 @@ server <- function(input, output, session) {
             selectedUtr <- gr[i]
           }
         }
+        
         gr <- selectedUtr
       }
       start <- start(gr)
@@ -1557,9 +1558,9 @@ server <- function(input, output, session) {
     miRNA <- ""
     ctrl <- ""
     if ('1' %in% input$selectTracks) {
-      miRNA <- "&hub_114483_sno_miRNA=full"
+      miRNA <- "&hub_114483_miRNA=full"
     } else {
-      miRNA <- "&hub_114483_sno_miRNA=hide"
+      miRNA <- "&hub_114483_miRNA=hide"
     }
     
     if (nchar(gene) > 1) {
@@ -1635,3 +1636,4 @@ server <- function(input, output, session) {
   }
 
 shinyApp(ui = ui, server = server)
+
