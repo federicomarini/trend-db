@@ -1,0 +1,7 @@
+hub TrendseqUCSCHub
+shortLabel Trendseq UCSC Hub
+longLabel UCSC Hub for trendseq RNA-Seq data
+genomesFile genomes.txt
+email d.scherzinger@students.uni-mainz.de
+
+

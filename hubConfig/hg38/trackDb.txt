@@ -1,0 +1,3750 @@
+track adj_contigs_neg
+bigDataUrl adj_contigs_neg_hg38.bb
+shortLabel adj_contigs_neg
+longLabel adj_contigs_neg
+type bigBed
+visibility hide
+color 255,128,0
+
+track adj_contigs_pos
+bigDataUrl adj_contigs_pos_hg38.bb
+shortLabel adj_contigs_pos
+longLabel adj_contigs_pos
+type bigBed
+visibility hide
+color 255,128,0
+
+track miRNA
+bigDataUrl sno_miRNA_hg38.bb
+shortLabel miRNA
+longLabel miRNA
+type bigBed
+visibility hide
+color 0,128,255
+
+track UTR2_001_CPSF1_neg
+bigDataUrl UTR2_001_CPSF1_neg.bw
+shortLabel 001_CPSF1_neg
+longLabel 001_CPSF1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_001_CPSF1_pos
+bigDataUrl UTR2_001_CPSF1_pos.bw
+shortLabel 001_CPSF1_pos
+longLabel 001_CPSF1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_002_CPSF2_neg
+bigDataUrl UTR2_002_CPSF2_neg.bw
+shortLabel 002_CPSF2_neg
+longLabel 002_CPSF2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_002_CPSF2_pos
+bigDataUrl UTR2_002_CPSF2_pos.bw
+shortLabel 002_CPSF2_pos
+longLabel 002_CPSF2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_003_CPSF3_neg
+bigDataUrl UTR2_003_CPSF3_neg.bw
+shortLabel 003_CPSF3_neg
+longLabel 003_CPSF3_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_003_CPSF3_pos
+bigDataUrl UTR2_003_CPSF3_pos.bw
+shortLabel 003_CPSF3_pos
+longLabel 003_CPSF3_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_004_CPSF3L_neg
+bigDataUrl UTR2_004_CPSF3L_neg.bw
+shortLabel 004_CPSF3L_neg
+longLabel 004_CPSF3L_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_004_CPSF3L_pos
+bigDataUrl UTR2_004_CPSF3L_pos.bw
+shortLabel 004_CPSF3L_pos
+longLabel 004_CPSF3L_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_005_CPSF4_neg
+bigDataUrl UTR2_005_CPSF4_neg.bw
+shortLabel 005_CPSF4_neg
+longLabel 005_CPSF4_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_005_CPSF4_pos
+bigDataUrl UTR2_005_CPSF4_pos.bw
+shortLabel 005_CPSF4_pos
+longLabel 005_CPSF4_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_006_FIP1L1_neg
+bigDataUrl UTR2_006_FIP1L1_neg.bw
+shortLabel 006_FIP1L1_neg
+longLabel 006_FIP1L1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_006_FIP1L1_pos
+bigDataUrl UTR2_006_FIP1L1_pos.bw
+shortLabel 006_FIP1L1_pos
+longLabel 006_FIP1L1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_007_CSTF1_neg
+bigDataUrl UTR2_007_CSTF1_neg.bw
+shortLabel 007_CSTF1_neg
+longLabel 007_CSTF1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_007_CSTF1_pos
+bigDataUrl UTR2_007_CSTF1_pos.bw
+shortLabel 007_CSTF1_pos
+longLabel 007_CSTF1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_008_CSTF2_neg
+bigDataUrl UTR2_008_CSTF2_neg.bw
+shortLabel 008_CSTF2_neg
+longLabel 008_CSTF2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_008_CSTF2_pos
+bigDataUrl UTR2_008_CSTF2_pos.bw
+shortLabel 008_CSTF2_pos
+longLabel 008_CSTF2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_009_CSTF3_neg
+bigDataUrl UTR2_009_CSTF3_neg.bw
+shortLabel 009_CSTF3_neg
+longLabel 009_CSTF3_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_009_CSTF3_pos
+bigDataUrl UTR2_009_CSTF3_pos.bw
+shortLabel 009_CSTF3_pos
+longLabel 009_CSTF3_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_010_NUDT21_neg
+bigDataUrl UTR2_010_NUDT21_neg.bw
+shortLabel 010_NUDT21_neg
+longLabel 010_NUDT21_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_010_NUDT21_pos
+bigDataUrl UTR2_010_NUDT21_pos.bw
+shortLabel 010_NUDT21_pos
+longLabel 010_NUDT21_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_011_CPSF6_neg
+bigDataUrl UTR2_011_CPSF6_neg.bw
+shortLabel 011_CPSF6_neg
+longLabel 011_CPSF6_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_011_CPSF6_pos
+bigDataUrl UTR2_011_CPSF6_pos.bw
+shortLabel 011_CPSF6_pos
+longLabel 011_CPSF6_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_012_CPSF7_neg
+bigDataUrl UTR2_012_CPSF7_neg.bw
+shortLabel 012_CPSF7_neg
+longLabel 012_CPSF7_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_012_CPSF7_pos
+bigDataUrl UTR2_012_CPSF7_pos.bw
+shortLabel 012_CPSF7_pos
+longLabel 012_CPSF7_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_013_BARD1_neg
+bigDataUrl UTR2_013_BARD1_neg.bw
+shortLabel 013_BARD1_neg
+longLabel 013_BARD1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_013_BARD1_pos
+bigDataUrl UTR2_013_BARD1_pos.bw
+shortLabel 013_BARD1_pos
+longLabel 013_BARD1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_014_AHCYL1_neg
+bigDataUrl UTR2_014_AHCYL1_neg.bw
+shortLabel 014_AHCYL1_neg
+longLabel 014_AHCYL1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_014_AHCYL1_pos
+bigDataUrl UTR2_014_AHCYL1_pos.bw
+shortLabel 014_AHCYL1_pos
+longLabel 014_AHCYL1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_015_PCF11_neg
+bigDataUrl UTR2_015_PCF11_neg.bw
+shortLabel 015_PCF11_neg
+longLabel 015_PCF11_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_015_PCF11_pos
+bigDataUrl UTR2_015_PCF11_pos.bw
+shortLabel 015_PCF11_pos
+longLabel 015_PCF11_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_016_CLP1_neg
+bigDataUrl UTR2_016_CLP1_neg.bw
+shortLabel 016_CLP1_neg
+longLabel 016_CLP1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_016_CLP1_pos
+bigDataUrl UTR2_016_CLP1_pos.bw
+shortLabel 016_CLP1_pos
+longLabel 016_CLP1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_017_PAPOLA_neg
+bigDataUrl UTR2_017_PAPOLA_neg.bw
+shortLabel 017_PAPOLA_neg
+longLabel 017_PAPOLA_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_017_PAPOLA_pos
+bigDataUrl UTR2_017_PAPOLA_pos.bw
+shortLabel 017_PAPOLA_pos
+longLabel 017_PAPOLA_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_018_PAPOLG_neg
+bigDataUrl UTR2_018_PAPOLG_neg.bw
+shortLabel 018_PAPOLG_neg
+longLabel 018_PAPOLG_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_018_PAPOLG_pos
+bigDataUrl UTR2_018_PAPOLG_pos.bw
+shortLabel 018_PAPOLG_pos
+longLabel 018_PAPOLG_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_019_PAPD4_neg
+bigDataUrl UTR2_019_PAPD4_neg.bw
+shortLabel 019_PAPD4_neg
+longLabel 019_PAPD4_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_019_PAPD4_pos
+bigDataUrl UTR2_019_PAPD4_pos.bw
+shortLabel 019_PAPD4_pos
+longLabel 019_PAPD4_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_020_PAPD5_neg
+bigDataUrl UTR2_020_PAPD5_neg.bw
+shortLabel 020_PAPD5_neg
+longLabel 020_PAPD5_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_020_PAPD5_pos
+bigDataUrl UTR2_020_PAPD5_pos.bw
+shortLabel 020_PAPD5_pos
+longLabel 020_PAPD5_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_021_PAPD7_neg
+bigDataUrl UTR2_021_PAPD7_neg.bw
+shortLabel 021_PAPD7_neg
+longLabel 021_PAPD7_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_021_PAPD7_pos
+bigDataUrl UTR2_021_PAPD7_pos.bw
+shortLabel 021_PAPD7_pos
+longLabel 021_PAPD7_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_022_PABPC1_neg
+bigDataUrl UTR2_022_PABPC1_neg.bw
+shortLabel 022_PABPC1_neg
+longLabel 022_PABPC1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_022_PABPC1_pos
+bigDataUrl UTR2_022_PABPC1_pos.bw
+shortLabel 022_PABPC1_pos
+longLabel 022_PABPC1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_023_Luciferase_neg
+bigDataUrl UTR2_023_Luciferase_neg.bw
+shortLabel 023_Luciferase_neg
+longLabel 023_Luciferase_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_023_Luciferase_pos
+bigDataUrl UTR2_023_Luciferase_pos.bw
+shortLabel 023_Luciferase_pos
+longLabel 023_Luciferase_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_026_PABPC4_neg
+bigDataUrl UTR2_026_PABPC4_neg.bw
+shortLabel 026_PABPC4_neg
+longLabel 026_PABPC4_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_026_PABPC4_pos
+bigDataUrl UTR2_026_PABPC4_pos.bw
+shortLabel 026_PABPC4_pos
+longLabel 026_PABPC4_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_027_PABPN1_neg
+bigDataUrl UTR2_027_PABPN1_neg.bw
+shortLabel 027_PABPN1_neg
+longLabel 027_PABPN1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_027_PABPN1_pos
+bigDataUrl UTR2_027_PABPN1_pos.bw
+shortLabel 027_PABPN1_pos
+longLabel 027_PABPN1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_028_U2AF1_neg
+bigDataUrl UTR2_028_U2AF1_neg.bw
+shortLabel 028_U2AF1_neg
+longLabel 028_U2AF1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_028_U2AF1_pos
+bigDataUrl UTR2_028_U2AF1_pos.bw
+shortLabel 028_U2AF1_pos
+longLabel 028_U2AF1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_029_U2AF2_neg
+bigDataUrl UTR2_029_U2AF2_neg.bw
+shortLabel 029_U2AF2_neg
+longLabel 029_U2AF2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_029_U2AF2_pos
+bigDataUrl UTR2_029_U2AF2_pos.bw
+shortLabel 029_U2AF2_pos
+longLabel 029_U2AF2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_030_PTBP1_neg
+bigDataUrl UTR2_030_PTBP1_neg.bw
+shortLabel 030_PTBP1_neg
+longLabel 030_PTBP1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_030_PTBP1_pos
+bigDataUrl UTR2_030_PTBP1_pos.bw
+shortLabel 030_PTBP1_pos
+longLabel 030_PTBP1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_031_HNRNPA2B1_neg
+bigDataUrl UTR2_031_HNRNPA2B1_neg.bw
+shortLabel 031_HNRNPA2B1_neg
+longLabel 031_HNRNPA2B1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_031_HNRNPA2B1_pos
+bigDataUrl UTR2_031_HNRNPA2B1_pos.bw
+shortLabel 031_HNRNPA2B1_pos
+longLabel 031_HNRNPA2B1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_032_HNRNPF_neg
+bigDataUrl UTR2_032_HNRNPF_neg.bw
+shortLabel 032_HNRNPF_neg
+longLabel 032_HNRNPF_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_032_HNRNPF_pos
+bigDataUrl UTR2_032_HNRNPF_pos.bw
+shortLabel 032_HNRNPF_pos
+longLabel 032_HNRNPF_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_033_HNRNPH1_neg
+bigDataUrl UTR2_033_HNRNPH1_neg.bw
+shortLabel 033_HNRNPH1_neg
+longLabel 033_HNRNPH1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_033_HNRNPH1_pos
+bigDataUrl UTR2_033_HNRNPH1_pos.bw
+shortLabel 033_HNRNPH1_pos
+longLabel 033_HNRNPH1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_034_HNRNPH2_neg
+bigDataUrl UTR2_034_HNRNPH2_neg.bw
+shortLabel 034_HNRNPH2_neg
+longLabel 034_HNRNPH2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_034_HNRNPH2_pos
+bigDataUrl UTR2_034_HNRNPH2_pos.bw
+shortLabel 034_HNRNPH2_pos
+longLabel 034_HNRNPH2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_035_HNRNPH3_neg
+bigDataUrl UTR2_035_HNRNPH3_neg.bw
+shortLabel 035_HNRNPH3_neg
+longLabel 035_HNRNPH3_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_035_HNRNPH3_pos
+bigDataUrl UTR2_035_HNRNPH3_pos.bw
+shortLabel 035_HNRNPH3_pos
+longLabel 035_HNRNPH3_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_036_NONO_neg
+bigDataUrl UTR2_036_NONO_neg.bw
+shortLabel 036_NONO_neg
+longLabel 036_NONO_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_036_NONO_pos
+bigDataUrl UTR2_036_NONO_pos.bw
+shortLabel 036_NONO_pos
+longLabel 036_NONO_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_037_SFPQ_neg
+bigDataUrl UTR2_037_SFPQ_neg.bw
+shortLabel 037_SFPQ_neg
+longLabel 037_SFPQ_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_037_SFPQ_pos
+bigDataUrl UTR2_037_SFPQ_pos.bw
+shortLabel 037_SFPQ_pos
+longLabel 037_SFPQ_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_038_SNRPA_neg
+bigDataUrl UTR2_038_SNRPA_neg.bw
+shortLabel 038_SNRPA_neg
+longLabel 038_SNRPA_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_038_SNRPA_pos
+bigDataUrl UTR2_038_SNRPA_pos.bw
+shortLabel 038_SNRPA_pos
+longLabel 038_SNRPA_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_039_SF3B1_neg
+bigDataUrl UTR2_039_SF3B1_neg.bw
+shortLabel 039_SF3B1_neg
+longLabel 039_SF3B1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_039_SF3B1_pos
+bigDataUrl UTR2_039_SF3B1_pos.bw
+shortLabel 039_SF3B1_pos
+longLabel 039_SF3B1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_040_SRSF1_neg
+bigDataUrl UTR2_040_SRSF1_neg.bw
+shortLabel 040_SRSF1_neg
+longLabel 040_SRSF1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_040_SRSF1_pos
+bigDataUrl UTR2_040_SRSF1_pos.bw
+shortLabel 040_SRSF1_pos
+longLabel 040_SRSF1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_041_SYMPK_neg
+bigDataUrl UTR2_041_SYMPK_neg.bw
+shortLabel 041_SYMPK_neg
+longLabel 041_SYMPK_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_041_SYMPK_pos
+bigDataUrl UTR2_041_SYMPK_pos.bw
+shortLabel 041_SYMPK_pos
+longLabel 041_SYMPK_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_042_DDX39B_neg
+bigDataUrl UTR2_042_DDX39B_neg.bw
+shortLabel 042_DDX39B_neg
+longLabel 042_DDX39B_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_042_DDX39B_pos
+bigDataUrl UTR2_042_DDX39B_pos.bw
+shortLabel 042_DDX39B_pos
+longLabel 042_DDX39B_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_043_SF1_neg
+bigDataUrl UTR2_043_SF1_neg.bw
+shortLabel 043_SF1_neg
+longLabel 043_SF1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_043_SF1_pos
+bigDataUrl UTR2_043_SF1_pos.bw
+shortLabel 043_SF1_pos
+longLabel 043_SF1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_044_ZCCHC8_neg
+bigDataUrl UTR2_044_ZCCHC8_neg.bw
+shortLabel 044_ZCCHC8_neg
+longLabel 044_ZCCHC8_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_044_ZCCHC8_pos
+bigDataUrl UTR2_044_ZCCHC8_pos.bw
+shortLabel 044_ZCCHC8_pos
+longLabel 044_ZCCHC8_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_045_SND1_neg
+bigDataUrl UTR2_045_SND1_neg.bw
+shortLabel 045_SND1_neg
+longLabel 045_SND1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_045_SND1_pos
+bigDataUrl UTR2_045_SND1_pos.bw
+shortLabel 045_SND1_pos
+longLabel 045_SND1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_046_G3BP1_neg
+bigDataUrl UTR2_046_G3BP1_neg.bw
+shortLabel 046_G3BP1_neg
+longLabel 046_G3BP1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_046_G3BP1_pos
+bigDataUrl UTR2_046_G3BP1_pos.bw
+shortLabel 046_G3BP1_pos
+longLabel 046_G3BP1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_047_JUP_neg
+bigDataUrl UTR2_047_JUP_neg.bw
+shortLabel 047_JUP_neg
+longLabel 047_JUP_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_047_JUP_pos
+bigDataUrl UTR2_047_JUP_pos.bw
+shortLabel 047_JUP_pos
+longLabel 047_JUP_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_048_Luciferase_neg
+bigDataUrl UTR2_048_Luciferase_neg.bw
+shortLabel 048_Luciferase_neg
+longLabel 048_Luciferase_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_048_Luciferase_pos
+bigDataUrl UTR2_048_Luciferase_pos.bw
+shortLabel 048_Luciferase_pos
+longLabel 048_Luciferase_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_051_CPEB1_neg
+bigDataUrl UTR2_051_CPEB1_neg.bw
+shortLabel 051_CPEB1_neg
+longLabel 051_CPEB1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_051_CPEB1_pos
+bigDataUrl UTR2_051_CPEB1_pos.bw
+shortLabel 051_CPEB1_pos
+longLabel 051_CPEB1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_052_CSTF2T_neg
+bigDataUrl UTR2_052_CSTF2T_neg.bw
+shortLabel 052_CSTF2T_neg
+longLabel 052_CSTF2T_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_052_CSTF2T_pos
+bigDataUrl UTR2_052_CSTF2T_pos.bw
+shortLabel 052_CSTF2T_pos
+longLabel 052_CSTF2T_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_053_WDR33_neg
+bigDataUrl UTR2_053_WDR33_neg.bw
+shortLabel 053_WDR33_neg
+longLabel 053_WDR33_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_053_WDR33_pos
+bigDataUrl UTR2_053_WDR33_pos.bw
+shortLabel 053_WDR33_pos
+longLabel 053_WDR33_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_054_RBBP6_neg
+bigDataUrl UTR2_054_RBBP6_neg.bw
+shortLabel 054_RBBP6_neg
+longLabel 054_RBBP6_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_054_RBBP6_pos
+bigDataUrl UTR2_054_RBBP6_pos.bw
+shortLabel 054_RBBP6_pos
+longLabel 054_RBBP6_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_055_TTC37_neg
+bigDataUrl UTR2_055_TTC37_neg.bw
+shortLabel 055_TTC37_neg
+longLabel 055_TTC37_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_055_TTC37_pos
+bigDataUrl UTR2_055_TTC37_pos.bw
+shortLabel 055_TTC37_pos
+longLabel 055_TTC37_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_056_SETX_neg
+bigDataUrl UTR2_056_SETX_neg.bw
+shortLabel 056_SETX_neg
+longLabel 056_SETX_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_056_SETX_pos
+bigDataUrl UTR2_056_SETX_pos.bw
+shortLabel 056_SETX_pos
+longLabel 056_SETX_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_057_MORF4_neg
+bigDataUrl UTR2_057_MORF4_neg.bw
+shortLabel 057_MORF4_neg
+longLabel 057_MORF4_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_057_MORF4_pos
+bigDataUrl UTR2_057_MORF4_pos.bw
+shortLabel 057_MORF4_pos
+longLabel 057_MORF4_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_058_DDX42_neg
+bigDataUrl UTR2_058_DDX42_neg.bw
+shortLabel 058_DDX42_neg
+longLabel 058_DDX42_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_058_DDX42_pos
+bigDataUrl UTR2_058_DDX42_pos.bw
+shortLabel 058_DDX42_pos
+longLabel 058_DDX42_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_059_PAF1_neg
+bigDataUrl UTR2_059_PAF1_neg.bw
+shortLabel 059_PAF1_neg
+longLabel 059_PAF1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_059_PAF1_pos
+bigDataUrl UTR2_059_PAF1_pos.bw
+shortLabel 059_PAF1_pos
+longLabel 059_PAF1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_060_CDC73_neg
+bigDataUrl UTR2_060_CDC73_neg.bw
+shortLabel 060_CDC73_neg
+longLabel 060_CDC73_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_060_CDC73_pos
+bigDataUrl UTR2_060_CDC73_pos.bw
+shortLabel 060_CDC73_pos
+longLabel 060_CDC73_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_061_LEO1_neg
+bigDataUrl UTR2_061_LEO1_neg.bw
+shortLabel 061_LEO1_neg
+longLabel 061_LEO1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_061_LEO1_pos
+bigDataUrl UTR2_061_LEO1_pos.bw
+shortLabel 061_LEO1_pos
+longLabel 061_LEO1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_062_CTR9_neg
+bigDataUrl UTR2_062_CTR9_neg.bw
+shortLabel 062_CTR9_neg
+longLabel 062_CTR9_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_062_CTR9_pos
+bigDataUrl UTR2_062_CTR9_pos.bw
+shortLabel 062_CTR9_pos
+longLabel 062_CTR9_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_063_WDR61_neg
+bigDataUrl UTR2_063_WDR61_neg.bw
+shortLabel 063_WDR61_neg
+longLabel 063_WDR61_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_063_WDR61_pos
+bigDataUrl UTR2_063_WDR61_pos.bw
+shortLabel 063_WDR61_pos
+longLabel 063_WDR61_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_064_TBP_neg
+bigDataUrl UTR2_064_TBP_neg.bw
+shortLabel 064_TBP_neg
+longLabel 064_TBP_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_064_TBP_pos
+bigDataUrl UTR2_064_TBP_pos.bw
+shortLabel 064_TBP_pos
+longLabel 064_TBP_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_065_TTF2_neg
+bigDataUrl UTR2_065_TTF2_neg.bw
+shortLabel 065_TTF2_neg
+longLabel 065_TTF2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_065_TTF2_pos
+bigDataUrl UTR2_065_TTF2_pos.bw
+shortLabel 065_TTF2_pos
+longLabel 065_TTF2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_066_YBX1_neg
+bigDataUrl UTR2_066_YBX1_neg.bw
+shortLabel 066_YBX1_neg
+longLabel 066_YBX1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_066_YBX1_pos
+bigDataUrl UTR2_066_YBX1_pos.bw
+shortLabel 066_YBX1_pos
+longLabel 066_YBX1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_067_CTCF_neg
+bigDataUrl UTR2_067_CTCF_neg.bw
+shortLabel 067_CTCF_neg
+longLabel 067_CTCF_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_067_CTCF_pos
+bigDataUrl UTR2_067_CTCF_pos.bw
+shortLabel 067_CTCF_pos
+longLabel 067_CTCF_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_068_MYC_neg
+bigDataUrl UTR2_068_MYC_neg.bw
+shortLabel 068_MYC_neg
+longLabel 068_MYC_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_068_MYC_pos
+bigDataUrl UTR2_068_MYC_pos.bw
+shortLabel 068_MYC_pos
+longLabel 068_MYC_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_069_POLR2A_neg
+bigDataUrl UTR2_069_POLR2A_neg.bw
+shortLabel 069_POLR2A_neg
+longLabel 069_POLR2A_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_069_POLR2A_pos
+bigDataUrl UTR2_069_POLR2A_pos.bw
+shortLabel 069_POLR2A_pos
+longLabel 069_POLR2A_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_070_POLR2B_neg
+bigDataUrl UTR2_070_POLR2B_neg.bw
+shortLabel 070_POLR2B_neg
+longLabel 070_POLR2B_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_070_POLR2B_pos
+bigDataUrl UTR2_070_POLR2B_pos.bw
+shortLabel 070_POLR2B_pos
+longLabel 070_POLR2B_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_071_POLR2C_neg
+bigDataUrl UTR2_071_POLR2C_neg.bw
+shortLabel 071_POLR2C_neg
+longLabel 071_POLR2C_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_071_POLR2C_pos
+bigDataUrl UTR2_071_POLR2C_pos.bw
+shortLabel 071_POLR2C_pos
+longLabel 071_POLR2C_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_072_POLR2E_neg
+bigDataUrl UTR2_072_POLR2E_neg.bw
+shortLabel 072_POLR2E_neg
+longLabel 072_POLR2E_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_072_POLR2E_pos
+bigDataUrl UTR2_072_POLR2E_pos.bw
+shortLabel 072_POLR2E_pos
+longLabel 072_POLR2E_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_073_Luciferase_neg
+bigDataUrl UTR2_073_Luciferase_neg.bw
+shortLabel 073_Luciferase_neg
+longLabel 073_Luciferase_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_073_Luciferase_pos
+bigDataUrl UTR2_073_Luciferase_pos.bw
+shortLabel 073_Luciferase_pos
+longLabel 073_Luciferase_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_076_POLR2J_neg
+bigDataUrl UTR2_076_POLR2J_neg.bw
+shortLabel 076_POLR2J_neg
+longLabel 076_POLR2J_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_076_POLR2J_pos
+bigDataUrl UTR2_076_POLR2J_pos.bw
+shortLabel 076_POLR2J_pos
+longLabel 076_POLR2J_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_077_GTF2I_neg
+bigDataUrl UTR2_077_GTF2I_neg.bw
+shortLabel 077_GTF2I_neg
+longLabel 077_GTF2I_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_077_GTF2I_pos
+bigDataUrl UTR2_077_GTF2I_pos.bw
+shortLabel 077_GTF2I_pos
+longLabel 077_GTF2I_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_078_MEF2D_neg
+bigDataUrl UTR2_078_MEF2D_neg.bw
+shortLabel 078_MEF2D_neg
+longLabel 078_MEF2D_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_078_MEF2D_pos
+bigDataUrl UTR2_078_MEF2D_pos.bw
+shortLabel 078_MEF2D_pos
+longLabel 078_MEF2D_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_079_XRN2_neg
+bigDataUrl UTR2_079_XRN2_neg.bw
+shortLabel 079_XRN2_neg
+longLabel 079_XRN2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_079_XRN2_pos
+bigDataUrl UTR2_079_XRN2_pos.bw
+shortLabel 079_XRN2_pos
+longLabel 079_XRN2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_080_NRF1_neg
+bigDataUrl UTR2_080_NRF1_neg.bw
+shortLabel 080_NRF1_neg
+longLabel 080_NRF1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_080_NRF1_pos
+bigDataUrl UTR2_080_NRF1_pos.bw
+shortLabel 080_NRF1_pos
+longLabel 080_NRF1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_081_E2F4_neg
+bigDataUrl UTR2_081_E2F4_neg.bw
+shortLabel 081_E2F4_neg
+longLabel 081_E2F4_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_081_E2F4_pos
+bigDataUrl UTR2_081_E2F4_pos.bw
+shortLabel 081_E2F4_pos
+longLabel 081_E2F4_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_082_RBL2_neg
+bigDataUrl UTR2_082_RBL2_neg.bw
+shortLabel 082_RBL2_neg
+longLabel 082_RBL2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_082_RBL2_pos
+bigDataUrl UTR2_082_RBL2_pos.bw
+shortLabel 082_RBL2_pos
+longLabel 082_RBL2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_083_CDK8_neg
+bigDataUrl UTR2_083_CDK8_neg.bw
+shortLabel 083_CDK8_neg
+longLabel 083_CDK8_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_083_CDK8_pos
+bigDataUrl UTR2_083_CDK8_pos.bw
+shortLabel 083_CDK8_pos
+longLabel 083_CDK8_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_084_CDK7_neg
+bigDataUrl UTR2_084_CDK7_neg.bw
+shortLabel 084_CDK7_neg
+longLabel 084_CDK7_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_084_CDK7_pos
+bigDataUrl UTR2_084_CDK7_pos.bw
+shortLabel 084_CDK7_pos
+longLabel 084_CDK7_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_085_CDK9_neg
+bigDataUrl UTR2_085_CDK9_neg.bw
+shortLabel 085_CDK9_neg
+longLabel 085_CDK9_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_085_CDK9_pos
+bigDataUrl UTR2_085_CDK9_pos.bw
+shortLabel 085_CDK9_pos
+longLabel 085_CDK9_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_086_SUB1_neg
+bigDataUrl UTR2_086_SUB1_neg.bw
+shortLabel 086_SUB1_neg
+longLabel 086_SUB1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_086_SUB1_pos
+bigDataUrl UTR2_086_SUB1_pos.bw
+shortLabel 086_SUB1_pos
+longLabel 086_SUB1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_087_SSU72_neg
+bigDataUrl UTR2_087_SSU72_neg.bw
+shortLabel 087_SSU72_neg
+longLabel 087_SSU72_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_087_SSU72_pos
+bigDataUrl UTR2_087_SSU72_pos.bw
+shortLabel 087_SSU72_pos
+longLabel 087_SSU72_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_088_PIN1_neg
+bigDataUrl UTR2_088_PIN1_neg.bw
+shortLabel 088_PIN1_neg
+longLabel 088_PIN1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_088_PIN1_pos
+bigDataUrl UTR2_088_PIN1_pos.bw
+shortLabel 088_PIN1_pos
+longLabel 088_PIN1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_089_CTDP1_neg
+bigDataUrl UTR2_089_CTDP1_neg.bw
+shortLabel 089_CTDP1_neg
+longLabel 089_CTDP1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_089_CTDP1_pos
+bigDataUrl UTR2_089_CTDP1_pos.bw
+shortLabel 089_CTDP1_pos
+longLabel 089_CTDP1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_090_SCAF1_neg
+bigDataUrl UTR2_090_SCAF1_neg.bw
+shortLabel 090_SCAF1_neg
+longLabel 090_SCAF1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_090_SCAF1_pos
+bigDataUrl UTR2_090_SCAF1_pos.bw
+shortLabel 090_SCAF1_pos
+longLabel 090_SCAF1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_091_NRD1_neg
+bigDataUrl UTR2_091_NRD1_neg.bw
+shortLabel 091_NRD1_neg
+longLabel 091_NRD1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_091_NRD1_pos
+bigDataUrl UTR2_091_NRD1_pos.bw
+shortLabel 091_NRD1_pos
+longLabel 091_NRD1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_093_SNRPA1_neg
+bigDataUrl UTR2_093_SNRPA1_neg.bw
+shortLabel 093_SNRPA1_neg
+longLabel 093_SNRPA1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_093_SNRPA1_pos
+bigDataUrl UTR2_093_SNRPA1_pos.bw
+shortLabel 093_SNRPA1_pos
+longLabel 093_SNRPA1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_094_DDX23_neg
+bigDataUrl UTR2_094_DDX23_neg.bw
+shortLabel 094_DDX23_neg
+longLabel 094_DDX23_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_094_DDX23_pos
+bigDataUrl UTR2_094_DDX23_pos.bw
+shortLabel 094_DDX23_pos
+longLabel 094_DDX23_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_095_SNRNP48_neg
+bigDataUrl UTR2_095_SNRNP48_neg.bw
+shortLabel 095_SNRNP48_neg
+longLabel 095_SNRNP48_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_095_SNRNP48_pos
+bigDataUrl UTR2_095_SNRNP48_pos.bw
+shortLabel 095_SNRNP48_pos
+longLabel 095_SNRNP48_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_096_SF3A1_neg
+bigDataUrl UTR2_096_SF3A1_neg.bw
+shortLabel 096_SF3A1_neg
+longLabel 096_SF3A1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_096_SF3A1_pos
+bigDataUrl UTR2_096_SF3A1_pos.bw
+shortLabel 096_SF3A1_pos
+longLabel 096_SF3A1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_097_SRRM1_neg
+bigDataUrl UTR2_097_SRRM1_neg.bw
+shortLabel 097_SRRM1_neg
+longLabel 097_SRRM1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_097_SRRM1_pos
+bigDataUrl UTR2_097_SRRM1_pos.bw
+shortLabel 097_SRRM1_pos
+longLabel 097_SRRM1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_098_Luciferase_neg
+bigDataUrl UTR2_098_Luciferase_neg.bw
+shortLabel 098_Luciferase_neg
+longLabel 098_Luciferase_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_098_Luciferase_pos
+bigDataUrl UTR2_098_Luciferase_pos.bw
+shortLabel 098_Luciferase_pos
+longLabel 098_Luciferase_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_101_SRRM2_neg
+bigDataUrl UTR2_101_SRRM2_neg.bw
+shortLabel 101_SRRM2_neg
+longLabel 101_SRRM2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_101_SRRM2_pos
+bigDataUrl UTR2_101_SRRM2_pos.bw
+shortLabel 101_SRRM2_pos
+longLabel 101_SRRM2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_102_CDC40_neg
+bigDataUrl UTR2_102_CDC40_neg.bw
+shortLabel 102_CDC40_neg
+longLabel 102_CDC40_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_102_CDC40_pos
+bigDataUrl UTR2_102_CDC40_pos.bw
+shortLabel 102_CDC40_pos
+longLabel 102_CDC40_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_103_SRSF3_neg
+bigDataUrl UTR2_103_SRSF3_neg.bw
+shortLabel 103_SRSF3_neg
+longLabel 103_SRSF3_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_103_SRSF3_pos
+bigDataUrl UTR2_103_SRSF3_pos.bw
+shortLabel 103_SRSF3_pos
+longLabel 103_SRSF3_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_104_SRSF4_neg
+bigDataUrl UTR2_104_SRSF4_neg.bw
+shortLabel 104_SRSF4_neg
+longLabel 104_SRSF4_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_104_SRSF4_pos
+bigDataUrl UTR2_104_SRSF4_pos.bw
+shortLabel 104_SRSF4_pos
+longLabel 104_SRSF4_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_105_RBM5_neg
+bigDataUrl UTR2_105_RBM5_neg.bw
+shortLabel 105_RBM5_neg
+longLabel 105_RBM5_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_105_RBM5_pos
+bigDataUrl UTR2_105_RBM5_pos.bw
+shortLabel 105_RBM5_pos
+longLabel 105_RBM5_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_106_Nova2_neg
+bigDataUrl UTR2_106_Nova2_neg.bw
+shortLabel 106_Nova2_neg
+longLabel 106_Nova2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_106_Nova2_pos
+bigDataUrl UTR2_106_Nova2_pos.bw
+shortLabel 106_Nova2_pos
+longLabel 106_Nova2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_107_UPF1_neg
+bigDataUrl UTR2_107_UPF1_neg.bw
+shortLabel 107_UPF1_neg
+longLabel 107_UPF1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_107_UPF1_pos
+bigDataUrl UTR2_107_UPF1_pos.bw
+shortLabel 107_UPF1_pos
+longLabel 107_UPF1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_108_UPF2_neg
+bigDataUrl UTR2_108_UPF2_neg.bw
+shortLabel 108_UPF2_neg
+longLabel 108_UPF2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_108_UPF2_pos
+bigDataUrl UTR2_108_UPF2_pos.bw
+shortLabel 108_UPF2_pos
+longLabel 108_UPF2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_109_UPF3A_neg
+bigDataUrl UTR2_109_UPF3A_neg.bw
+shortLabel 109_UPF3A_neg
+longLabel 109_UPF3A_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_109_UPF3A_pos
+bigDataUrl UTR2_109_UPF3A_pos.bw
+shortLabel 109_UPF3A_pos
+longLabel 109_UPF3A_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_110_UPF3B_neg
+bigDataUrl UTR2_110_UPF3B_neg.bw
+shortLabel 110_UPF3B_neg
+longLabel 110_UPF3B_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_110_UPF3B_pos
+bigDataUrl UTR2_110_UPF3B_pos.bw
+shortLabel 110_UPF3B_pos
+longLabel 110_UPF3B_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_111_RNPS1_neg
+bigDataUrl UTR2_111_RNPS1_neg.bw
+shortLabel 111_RNPS1_neg
+longLabel 111_RNPS1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_111_RNPS1_pos
+bigDataUrl UTR2_111_RNPS1_pos.bw
+shortLabel 111_RNPS1_pos
+longLabel 111_RNPS1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_112_CASC3_neg
+bigDataUrl UTR2_112_CASC3_neg.bw
+shortLabel 112_CASC3_neg
+longLabel 112_CASC3_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_112_CASC3_pos
+bigDataUrl UTR2_112_CASC3_pos.bw
+shortLabel 112_CASC3_pos
+longLabel 112_CASC3_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_113_ALYREF_neg
+bigDataUrl UTR2_113_ALYREF_neg.bw
+shortLabel 113_ALYREF_neg
+longLabel 113_ALYREF_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_113_ALYREF_pos
+bigDataUrl UTR2_113_ALYREF_pos.bw
+shortLabel 113_ALYREF_pos
+longLabel 113_ALYREF_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_114_SMG6_neg
+bigDataUrl UTR2_114_SMG6_neg.bw
+shortLabel 114_SMG6_neg
+longLabel 114_SMG6_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_114_SMG6_pos
+bigDataUrl UTR2_114_SMG6_pos.bw
+shortLabel 114_SMG6_pos
+longLabel 114_SMG6_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_115_XRN1_neg
+bigDataUrl UTR2_115_XRN1_neg.bw
+shortLabel 115_XRN1_neg
+longLabel 115_XRN1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_115_XRN1_pos
+bigDataUrl UTR2_115_XRN1_pos.bw
+shortLabel 115_XRN1_pos
+longLabel 115_XRN1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_116_CNOT2_neg
+bigDataUrl UTR2_116_CNOT2_neg.bw
+shortLabel 116_CNOT2_neg
+longLabel 116_CNOT2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_116_CNOT2_pos
+bigDataUrl UTR2_116_CNOT2_pos.bw
+shortLabel 116_CNOT2_pos
+longLabel 116_CNOT2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_117_CNOT7_neg
+bigDataUrl UTR2_117_CNOT7_neg.bw
+shortLabel 117_CNOT7_neg
+longLabel 117_CNOT7_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_117_CNOT7_pos
+bigDataUrl UTR2_117_CNOT7_pos.bw
+shortLabel 117_CNOT7_pos
+longLabel 117_CNOT7_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_118_TNRC6A_neg
+bigDataUrl UTR2_118_TNRC6A_neg.bw
+shortLabel 118_TNRC6A_neg
+longLabel 118_TNRC6A_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_118_TNRC6A_pos
+bigDataUrl UTR2_118_TNRC6A_pos.bw
+shortLabel 118_TNRC6A_pos
+longLabel 118_TNRC6A_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_119_DIS3_neg
+bigDataUrl UTR2_119_DIS3_neg.bw
+shortLabel 119_DIS3_neg
+longLabel 119_DIS3_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_119_DIS3_pos
+bigDataUrl UTR2_119_DIS3_pos.bw
+shortLabel 119_DIS3_pos
+longLabel 119_DIS3_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_120_DIS3L_neg
+bigDataUrl UTR2_120_DIS3L_neg.bw
+shortLabel 120_DIS3L_neg
+longLabel 120_DIS3L_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_120_DIS3L_pos
+bigDataUrl UTR2_120_DIS3L_pos.bw
+shortLabel 120_DIS3L_pos
+longLabel 120_DIS3L_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_121_EXOSC10_neg
+bigDataUrl UTR2_121_EXOSC10_neg.bw
+shortLabel 121_EXOSC10_neg
+longLabel 121_EXOSC10_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_121_EXOSC10_pos
+bigDataUrl UTR2_121_EXOSC10_pos.bw
+shortLabel 121_EXOSC10_pos
+longLabel 121_EXOSC10_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_122_SKIV2L2_neg
+bigDataUrl UTR2_122_SKIV2L2_neg.bw
+shortLabel 122_SKIV2L2_neg
+longLabel 122_SKIV2L2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_122_SKIV2L2_pos
+bigDataUrl UTR2_122_SKIV2L2_pos.bw
+shortLabel 122_SKIV2L2_pos
+longLabel 122_SKIV2L2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_123_Luciferase_neg
+bigDataUrl UTR2_123_Luciferase_neg.bw
+shortLabel 123_Luciferase_neg
+longLabel 123_Luciferase_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_123_Luciferase_pos
+bigDataUrl UTR2_123_Luciferase_pos.bw
+shortLabel 123_Luciferase_pos
+longLabel 123_Luciferase_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_126_SKIV2L_neg
+bigDataUrl UTR2_126_SKIV2L_neg.bw
+shortLabel 126_SKIV2L_neg
+longLabel 126_SKIV2L_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_126_SKIV2L_pos
+bigDataUrl UTR2_126_SKIV2L_pos.bw
+shortLabel 126_SKIV2L_pos
+longLabel 126_SKIV2L_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_127_ExosC6_neg
+bigDataUrl UTR2_127_ExosC6_neg.bw
+shortLabel 127_ExosC6_neg
+longLabel 127_ExosC6_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_127_ExosC6_pos
+bigDataUrl UTR2_127_ExosC6_pos.bw
+shortLabel 127_ExosC6_pos
+longLabel 127_ExosC6_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_128_DCP1A_neg
+bigDataUrl UTR2_128_DCP1A_neg.bw
+shortLabel 128_DCP1A_neg
+longLabel 128_DCP1A_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_128_DCP1A_pos
+bigDataUrl UTR2_128_DCP1A_pos.bw
+shortLabel 128_DCP1A_pos
+longLabel 128_DCP1A_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_129_DCP2_neg
+bigDataUrl UTR2_129_DCP2_neg.bw
+shortLabel 129_DCP2_neg
+longLabel 129_DCP2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_129_DCP2_pos
+bigDataUrl UTR2_129_DCP2_pos.bw
+shortLabel 129_DCP2_pos
+longLabel 129_DCP2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_130_ZFP36_neg
+bigDataUrl UTR2_130_ZFP36_neg.bw
+shortLabel 130_ZFP36_neg
+longLabel 130_ZFP36_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_130_ZFP36_pos
+bigDataUrl UTR2_130_ZFP36_pos.bw
+shortLabel 130_ZFP36_pos
+longLabel 130_ZFP36_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_131_IGF2BP1_neg
+bigDataUrl UTR2_131_IGF2BP1_neg.bw
+shortLabel 131_IGF2BP1_neg
+longLabel 131_IGF2BP1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_131_IGF2BP1_pos
+bigDataUrl UTR2_131_IGF2BP1_pos.bw
+shortLabel 131_IGF2BP1_pos
+longLabel 131_IGF2BP1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_132_NCBP1_neg
+bigDataUrl UTR2_132_NCBP1_neg.bw
+shortLabel 132_NCBP1_neg
+longLabel 132_NCBP1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_132_NCBP1_pos
+bigDataUrl UTR2_132_NCBP1_pos.bw
+shortLabel 132_NCBP1_pos
+longLabel 132_NCBP1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_133_RBM7_neg
+bigDataUrl UTR2_133_RBM7_neg.bw
+shortLabel 133_RBM7_neg
+longLabel 133_RBM7_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_133_RBM7_pos
+bigDataUrl UTR2_133_RBM7_pos.bw
+shortLabel 133_RBM7_pos
+longLabel 133_RBM7_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_134_KHSRP_neg
+bigDataUrl UTR2_134_KHSRP_neg.bw
+shortLabel 134_KHSRP_neg
+longLabel 134_KHSRP_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_134_KHSRP_pos
+bigDataUrl UTR2_134_KHSRP_pos.bw
+shortLabel 134_KHSRP_pos
+longLabel 134_KHSRP_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_135_FUBP3_neg
+bigDataUrl UTR2_135_FUBP3_neg.bw
+shortLabel 135_FUBP3_neg
+longLabel 135_FUBP3_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_135_FUBP3_pos
+bigDataUrl UTR2_135_FUBP3_pos.bw
+shortLabel 135_FUBP3_pos
+longLabel 135_FUBP3_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_136_EIF2A_neg
+bigDataUrl UTR2_136_EIF2A_neg.bw
+shortLabel 136_EIF2A_neg
+longLabel 136_EIF2A_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_136_EIF2A_pos
+bigDataUrl UTR2_136_EIF2A_pos.bw
+shortLabel 136_EIF2A_pos
+longLabel 136_EIF2A_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_137_EIF3C_neg
+bigDataUrl UTR2_137_EIF3C_neg.bw
+shortLabel 137_EIF3C_neg
+longLabel 137_EIF3C_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_137_EIF3C_pos
+bigDataUrl UTR2_137_EIF3C_pos.bw
+shortLabel 137_EIF3C_pos
+longLabel 137_EIF3C_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_138_EIF4A1_neg
+bigDataUrl UTR2_138_EIF4A1_neg.bw
+shortLabel 138_EIF4A1_neg
+longLabel 138_EIF4A1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_138_EIF4A1_pos
+bigDataUrl UTR2_138_EIF4A1_pos.bw
+shortLabel 138_EIF4A1_pos
+longLabel 138_EIF4A1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_139_EIF4E_neg
+bigDataUrl UTR2_139_EIF4E_neg.bw
+shortLabel 139_EIF4E_neg
+longLabel 139_EIF4E_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_139_EIF4E_pos
+bigDataUrl UTR2_139_EIF4E_pos.bw
+shortLabel 139_EIF4E_pos
+longLabel 139_EIF4E_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_140_EIF4G1_neg
+bigDataUrl UTR2_140_EIF4G1_neg.bw
+shortLabel 140_EIF4G1_neg
+longLabel 140_EIF4G1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_140_EIF4G1_pos
+bigDataUrl UTR2_140_EIF4G1_pos.bw
+shortLabel 140_EIF4G1_pos
+longLabel 140_EIF4G1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_141_GNB2L1_neg
+bigDataUrl UTR2_141_GNB2L1_neg.bw
+shortLabel 141_GNB2L1_neg
+longLabel 141_GNB2L1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_141_GNB2L1_pos
+bigDataUrl UTR2_141_GNB2L1_pos.bw
+shortLabel 141_GNB2L1_pos
+longLabel 141_GNB2L1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_142_CIRBP_neg
+bigDataUrl UTR2_142_CIRBP_neg.bw
+shortLabel 142_CIRBP_neg
+longLabel 142_CIRBP_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_142_CIRBP_pos
+bigDataUrl UTR2_142_CIRBP_pos.bw
+shortLabel 142_CIRBP_pos
+longLabel 142_CIRBP_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_143_DNMT1_neg
+bigDataUrl UTR2_143_DNMT1_neg.bw
+shortLabel 143_DNMT1_neg
+longLabel 143_DNMT1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_143_DNMT1_pos
+bigDataUrl UTR2_143_DNMT1_pos.bw
+shortLabel 143_DNMT1_pos
+longLabel 143_DNMT1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_144_TRDMT1_neg
+bigDataUrl UTR2_144_TRDMT1_neg.bw
+shortLabel 144_TRDMT1_neg
+longLabel 144_TRDMT1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_144_TRDMT1_pos
+bigDataUrl UTR2_144_TRDMT1_pos.bw
+shortLabel 144_TRDMT1_pos
+longLabel 144_TRDMT1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_145_DNMT3A_neg
+bigDataUrl UTR2_145_DNMT3A_neg.bw
+shortLabel 145_DNMT3A_neg
+longLabel 145_DNMT3A_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_145_DNMT3A_pos
+bigDataUrl UTR2_145_DNMT3A_pos.bw
+shortLabel 145_DNMT3A_pos
+longLabel 145_DNMT3A_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_146_DNMT3B_neg
+bigDataUrl UTR2_146_DNMT3B_neg.bw
+shortLabel 146_DNMT3B_neg
+longLabel 146_DNMT3B_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_146_DNMT3B_pos
+bigDataUrl UTR2_146_DNMT3B_pos.bw
+shortLabel 146_DNMT3B_pos
+longLabel 146_DNMT3B_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_147_TUT1_neg
+bigDataUrl UTR2_147_TUT1_neg.bw
+shortLabel 147_TUT1_neg
+longLabel 147_TUT1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_147_TUT1_pos
+bigDataUrl UTR2_147_TUT1_pos.bw
+shortLabel 147_TUT1_pos
+longLabel 147_TUT1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_148_Luciferase_neg
+bigDataUrl UTR2_148_Luciferase_neg.bw
+shortLabel 148_Luciferase_neg
+longLabel 148_Luciferase_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_148_Luciferase_pos
+bigDataUrl UTR2_148_Luciferase_pos.bw
+shortLabel 148_Luciferase_pos
+longLabel 148_Luciferase_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_151_PARN_neg
+bigDataUrl UTR2_151_PARN_neg.bw
+shortLabel 151_PARN_neg
+longLabel 151_PARN_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_151_PARN_pos
+bigDataUrl UTR2_151_PARN_pos.bw
+shortLabel 151_PARN_pos
+longLabel 151_PARN_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_152_SLBP_neg
+bigDataUrl UTR2_152_SLBP_neg.bw
+shortLabel 152_SLBP_neg
+longLabel 152_SLBP_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_152_SLBP_pos
+bigDataUrl UTR2_152_SLBP_pos.bw
+shortLabel 152_SLBP_pos
+longLabel 152_SLBP_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_153_SETD1A_neg
+bigDataUrl UTR2_153_SETD1A_neg.bw
+shortLabel 153_SETD1A_neg
+longLabel 153_SETD1A_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_153_SETD1A_pos
+bigDataUrl UTR2_153_SETD1A_pos.bw
+shortLabel 153_SETD1A_pos
+longLabel 153_SETD1A_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_154_SETD1B_neg
+bigDataUrl UTR2_154_SETD1B_neg.bw
+shortLabel 154_SETD1B_neg
+longLabel 154_SETD1B_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_154_SETD1B_pos
+bigDataUrl UTR2_154_SETD1B_pos.bw
+shortLabel 154_SETD1B_pos
+longLabel 154_SETD1B_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_155_SETD2_neg
+bigDataUrl UTR2_155_SETD2_neg.bw
+shortLabel 155_SETD2_neg
+longLabel 155_SETD2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_155_SETD2_pos
+bigDataUrl UTR2_155_SETD2_pos.bw
+shortLabel 155_SETD2_pos
+longLabel 155_SETD2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_156_KAT2B_neg
+bigDataUrl UTR2_156_KAT2B_neg.bw
+shortLabel 156_KAT2B_neg
+longLabel 156_KAT2B_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_156_KAT2B_pos
+bigDataUrl UTR2_156_KAT2B_pos.bw
+shortLabel 156_KAT2B_pos
+longLabel 156_KAT2B_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_157_SMARCA4_neg
+bigDataUrl UTR2_157_SMARCA4_neg.bw
+shortLabel 157_SMARCA4_neg
+longLabel 157_SMARCA4_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_157_SMARCA4_pos
+bigDataUrl UTR2_157_SMARCA4_pos.bw
+shortLabel 157_SMARCA4_pos
+longLabel 157_SMARCA4_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_158_SUPT16H_neg
+bigDataUrl UTR2_158_SUPT16H_neg.bw
+shortLabel 158_SUPT16H_neg
+longLabel 158_SUPT16H_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_158_SUPT16H_pos
+bigDataUrl UTR2_158_SUPT16H_pos.bw
+shortLabel 158_SUPT16H_pos
+longLabel 158_SUPT16H_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_159_CHD1_neg
+bigDataUrl UTR2_159_CHD1_neg.bw
+shortLabel 159_CHD1_neg
+longLabel 159_CHD1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_159_CHD1_pos
+bigDataUrl UTR2_159_CHD1_pos.bw
+shortLabel 159_CHD1_pos
+longLabel 159_CHD1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_160_CHD2_neg
+bigDataUrl UTR2_160_CHD2_neg.bw
+shortLabel 160_CHD2_neg
+longLabel 160_CHD2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_160_CHD2_pos
+bigDataUrl UTR2_160_CHD2_pos.bw
+shortLabel 160_CHD2_pos
+longLabel 160_CHD2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_161_RPA1_neg
+bigDataUrl UTR2_161_RPA1_neg.bw
+shortLabel 161_RPA1_neg
+longLabel 161_RPA1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_161_RPA1_pos
+bigDataUrl UTR2_161_RPA1_pos.bw
+shortLabel 161_RPA1_pos
+longLabel 161_RPA1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_162_RPA3_neg
+bigDataUrl UTR2_162_RPA3_neg.bw
+shortLabel 162_RPA3_neg
+longLabel 162_RPA3_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_162_RPA3_pos
+bigDataUrl UTR2_162_RPA3_pos.bw
+shortLabel 162_RPA3_pos
+longLabel 162_RPA3_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_163_PCNA_neg
+bigDataUrl UTR2_163_PCNA_neg.bw
+shortLabel 163_PCNA_neg
+longLabel 163_PCNA_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_163_PCNA_pos
+bigDataUrl UTR2_163_PCNA_pos.bw
+shortLabel 163_PCNA_pos
+longLabel 163_PCNA_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_164_CDK2_neg
+bigDataUrl UTR2_164_CDK2_neg.bw
+shortLabel 164_CDK2_neg
+longLabel 164_CDK2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_164_CDK2_pos
+bigDataUrl UTR2_164_CDK2_pos.bw
+shortLabel 164_CDK2_pos
+longLabel 164_CDK2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_165_CCNB1_neg
+bigDataUrl UTR2_165_CCNB1_neg.bw
+shortLabel 165_CCNB1_neg
+longLabel 165_CCNB1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_165_CCNB1_pos
+bigDataUrl UTR2_165_CCNB1_pos.bw
+shortLabel 165_CCNB1_pos
+longLabel 165_CCNB1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_166_BTG2_neg
+bigDataUrl UTR2_166_BTG2_neg.bw
+shortLabel 166_BTG2_neg
+longLabel 166_BTG2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_166_BTG2_pos
+bigDataUrl UTR2_166_BTG2_pos.bw
+shortLabel 166_BTG2_pos
+longLabel 166_BTG2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_167_TP53_neg
+bigDataUrl UTR2_167_TP53_neg.bw
+shortLabel 167_TP53_neg
+longLabel 167_TP53_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_167_TP53_pos
+bigDataUrl UTR2_167_TP53_pos.bw
+shortLabel 167_TP53_pos
+longLabel 167_TP53_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_168_CDKN2A_neg
+bigDataUrl UTR2_168_CDKN2A_neg.bw
+shortLabel 168_CDKN2A_neg
+longLabel 168_CDKN2A_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_168_CDKN2A_pos
+bigDataUrl UTR2_168_CDKN2A_pos.bw
+shortLabel 168_CDKN2A_pos
+longLabel 168_CDKN2A_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_169_CDKN2D_neg
+bigDataUrl UTR2_169_CDKN2D_neg.bw
+shortLabel 169_CDKN2D_neg
+longLabel 169_CDKN2D_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_169_CDKN2D_pos
+bigDataUrl UTR2_169_CDKN2D_pos.bw
+shortLabel 169_CDKN2D_pos
+longLabel 169_CDKN2D_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_170_DDX20_neg
+bigDataUrl UTR2_170_DDX20_neg.bw
+shortLabel 170_DDX20_neg
+longLabel 170_DDX20_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_170_DDX20_pos
+bigDataUrl UTR2_170_DDX20_pos.bw
+shortLabel 170_DDX20_pos
+longLabel 170_DDX20_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_171_XPO4_neg
+bigDataUrl UTR2_171_XPO4_neg.bw
+shortLabel 171_XPO4_neg
+longLabel 171_XPO4_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_171_XPO4_pos
+bigDataUrl UTR2_171_XPO4_pos.bw
+shortLabel 171_XPO4_pos
+longLabel 171_XPO4_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_172_TIA1_neg
+bigDataUrl UTR2_172_TIA1_neg.bw
+shortLabel 172_TIA1_neg
+longLabel 172_TIA1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_172_TIA1_pos
+bigDataUrl UTR2_172_TIA1_pos.bw
+shortLabel 172_TIA1_pos
+longLabel 172_TIA1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_173_Luciferase_neg
+bigDataUrl UTR2_173_Luciferase_neg.bw
+shortLabel 173_Luciferase_neg
+longLabel 173_Luciferase_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_173_Luciferase_pos
+bigDataUrl UTR2_173_Luciferase_pos.bw
+shortLabel 173_Luciferase_pos
+longLabel 173_Luciferase_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_177_ELAVL1_neg
+bigDataUrl UTR2_177_ELAVL1_neg.bw
+shortLabel 177_ELAVL1_neg
+longLabel 177_ELAVL1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_177_ELAVL1_pos
+bigDataUrl UTR2_177_ELAVL1_pos.bw
+shortLabel 177_ELAVL1_pos
+longLabel 177_ELAVL1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_178_BCL2_neg
+bigDataUrl UTR2_178_BCL2_neg.bw
+shortLabel 178_BCL2_neg
+longLabel 178_BCL2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_178_BCL2_pos
+bigDataUrl UTR2_178_BCL2_pos.bw
+shortLabel 178_BCL2_pos
+longLabel 178_BCL2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_179_CASP3_neg
+bigDataUrl UTR2_179_CASP3_neg.bw
+shortLabel 179_CASP3_neg
+longLabel 179_CASP3_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_179_CASP3_pos
+bigDataUrl UTR2_179_CASP3_pos.bw
+shortLabel 179_CASP3_pos
+longLabel 179_CASP3_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_180_PRKDC_neg
+bigDataUrl UTR2_180_PRKDC_neg.bw
+shortLabel 180_PRKDC_neg
+longLabel 180_PRKDC_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_180_PRKDC_pos
+bigDataUrl UTR2_180_PRKDC_pos.bw
+shortLabel 180_PRKDC_pos
+longLabel 180_PRKDC_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_181_XRCC5_neg
+bigDataUrl UTR2_181_XRCC5_neg.bw
+shortLabel 181_XRCC5_neg
+longLabel 181_XRCC5_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_181_XRCC5_pos
+bigDataUrl UTR2_181_XRCC5_pos.bw
+shortLabel 181_XRCC5_pos
+longLabel 181_XRCC5_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_182_XRCC6_neg
+bigDataUrl UTR2_182_XRCC6_neg.bw
+shortLabel 182_XRCC6_neg
+longLabel 182_XRCC6_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_182_XRCC6_pos
+bigDataUrl UTR2_182_XRCC6_pos.bw
+shortLabel 182_XRCC6_pos
+longLabel 182_XRCC6_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_183_TERT_neg
+bigDataUrl UTR2_183_TERT_neg.bw
+shortLabel 183_TERT_neg
+longLabel 183_TERT_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_183_TERT_pos
+bigDataUrl UTR2_183_TERT_pos.bw
+shortLabel 183_TERT_pos
+longLabel 183_TERT_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_184_DICER1_neg
+bigDataUrl UTR2_184_DICER1_neg.bw
+shortLabel 184_DICER1_neg
+longLabel 184_DICER1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_184_DICER1_pos
+bigDataUrl UTR2_184_DICER1_pos.bw
+shortLabel 184_DICER1_pos
+longLabel 184_DICER1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_185_TARBP2_neg
+bigDataUrl UTR2_185_TARBP2_neg.bw
+shortLabel 185_TARBP2_neg
+longLabel 185_TARBP2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_185_TARBP2_pos
+bigDataUrl UTR2_185_TARBP2_pos.bw
+shortLabel 185_TARBP2_pos
+longLabel 185_TARBP2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_186_AGO2_neg
+bigDataUrl UTR2_186_AGO2_neg.bw
+shortLabel 186_AGO2_neg
+longLabel 186_AGO2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_186_AGO2_pos
+bigDataUrl UTR2_186_AGO2_pos.bw
+shortLabel 186_AGO2_pos
+longLabel 186_AGO2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_187_MAPK14_neg
+bigDataUrl UTR2_187_MAPK14_neg.bw
+shortLabel 187_MAPK14_neg
+longLabel 187_MAPK14_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_187_MAPK14_pos
+bigDataUrl UTR2_187_MAPK14_pos.bw
+shortLabel 187_MAPK14_pos
+longLabel 187_MAPK14_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_188_MAPK8_neg
+bigDataUrl UTR2_188_MAPK8_neg.bw
+shortLabel 188_MAPK8_neg
+longLabel 188_MAPK8_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_188_MAPK8_pos
+bigDataUrl UTR2_188_MAPK8_pos.bw
+shortLabel 188_MAPK8_pos
+longLabel 188_MAPK8_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_189_MAPK9_neg
+bigDataUrl UTR2_189_MAPK9_neg.bw
+shortLabel 189_MAPK9_neg
+longLabel 189_MAPK9_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_189_MAPK9_pos
+bigDataUrl UTR2_189_MAPK9_pos.bw
+shortLabel 189_MAPK9_pos
+longLabel 189_MAPK9_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_190_MAPK1_neg
+bigDataUrl UTR2_190_MAPK1_neg.bw
+shortLabel 190_MAPK1_neg
+longLabel 190_MAPK1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_190_MAPK1_pos
+bigDataUrl UTR2_190_MAPK1_pos.bw
+shortLabel 190_MAPK1_pos
+longLabel 190_MAPK1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_191_MAPK3_neg
+bigDataUrl UTR2_191_MAPK3_neg.bw
+shortLabel 191_MAPK3_neg
+longLabel 191_MAPK3_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_191_MAPK3_pos
+bigDataUrl UTR2_191_MAPK3_pos.bw
+shortLabel 191_MAPK3_pos
+longLabel 191_MAPK3_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_192_PPP1CA_neg
+bigDataUrl UTR2_192_PPP1CA_neg.bw
+shortLabel 192_PPP1CA_neg
+longLabel 192_PPP1CA_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_192_PPP1CA_pos
+bigDataUrl UTR2_192_PPP1CA_pos.bw
+shortLabel 192_PPP1CA_pos
+longLabel 192_PPP1CA_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_193_PPP1CB_neg
+bigDataUrl UTR2_193_PPP1CB_neg.bw
+shortLabel 193_PPP1CB_neg
+longLabel 193_PPP1CB_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_193_PPP1CB_pos
+bigDataUrl UTR2_193_PPP1CB_pos.bw
+shortLabel 193_PPP1CB_pos
+longLabel 193_PPP1CB_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_194_PPP1R10_neg
+bigDataUrl UTR2_194_PPP1R10_neg.bw
+shortLabel 194_PPP1R10_neg
+longLabel 194_PPP1R10_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_194_PPP1R10_pos
+bigDataUrl UTR2_194_PPP1R10_pos.bw
+shortLabel 194_PPP1R10_pos
+longLabel 194_PPP1R10_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_195_IFIT1_neg
+bigDataUrl UTR2_195_IFIT1_neg.bw
+shortLabel 195_IFIT1_neg
+longLabel 195_IFIT1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_195_IFIT1_pos
+bigDataUrl UTR2_195_IFIT1_pos.bw
+shortLabel 195_IFIT1_pos
+longLabel 195_IFIT1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_196_IFIT3_neg
+bigDataUrl UTR2_196_IFIT3_neg.bw
+shortLabel 196_IFIT3_neg
+longLabel 196_IFIT3_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_196_IFIT3_pos
+bigDataUrl UTR2_196_IFIT3_pos.bw
+shortLabel 196_IFIT3_pos
+longLabel 196_IFIT3_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_197_NusA_neg
+bigDataUrl UTR2_197_NusA_neg.bw
+shortLabel 197_NusA_neg
+longLabel 197_NusA_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_197_NusA_pos
+bigDataUrl UTR2_197_NusA_pos.bw
+shortLabel 197_NusA_pos
+longLabel 197_NusA_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_198_Luciferase_neg
+bigDataUrl UTR2_198_Luciferase_neg.bw
+shortLabel 198_Luciferase_neg
+longLabel 198_Luciferase_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_198_Luciferase_pos
+bigDataUrl UTR2_198_Luciferase_pos.bw
+shortLabel 198_Luciferase_pos
+longLabel 198_Luciferase_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR2_sum_ctrl_neg
+bigDataUrl UTR2_sum_ctrl_neg.bw
+shortLabel sum_ctrl_neg
+longLabel sum_ctrl_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 0,255,0 
+
+track UTR2_sum_ctrl_pos
+bigDataUrl UTR2_sum_ctrl_pos.bw
+shortLabel sum_ctrl_pos
+longLabel sum_ctrl_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 0,255,0 
+
+track UTR3_0001_Luc_1_neg
+bigDataUrl UTR3_0001_Luc_1_neg.bw
+shortLabel 0001_Luc_1_neg
+longLabel 0001_Luc_1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_0001_Luc_1_pos
+bigDataUrl UTR3_0001_Luc_1_pos.bw
+shortLabel 0001_Luc_1_pos
+longLabel 0001_Luc_1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_0002_Luc_2_neg
+bigDataUrl UTR3_0002_Luc_2_neg.bw
+shortLabel 0002_Luc_2_neg
+longLabel 0002_Luc_2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_0002_Luc_2_pos
+bigDataUrl UTR3_0002_Luc_2_pos.bw
+shortLabel 0002_Luc_2_pos
+longLabel 0002_Luc_2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_0003_Luc_3_neg
+bigDataUrl UTR3_0003_Luc_3_neg.bw
+shortLabel 0003_Luc_3_neg
+longLabel 0003_Luc_3_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_0003_Luc_3_pos
+bigDataUrl UTR3_0003_Luc_3_pos.bw
+shortLabel 0003_Luc_3_pos
+longLabel 0003_Luc_3_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_0004_Luc_4_neg
+bigDataUrl UTR3_0004_Luc_4_neg.bw
+shortLabel 0004_Luc_4_neg
+longLabel 0004_Luc_4_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_0004_Luc_4_pos
+bigDataUrl UTR3_0004_Luc_4_pos.bw
+shortLabel 0004_Luc_4_pos
+longLabel 0004_Luc_4_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_0005_Luc_5_neg
+bigDataUrl UTR3_0005_Luc_5_neg.bw
+shortLabel 0005_Luc_5_neg
+longLabel 0005_Luc_5_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_0005_Luc_5_pos
+bigDataUrl UTR3_0005_Luc_5_pos.bw
+shortLabel 0005_Luc_5_pos
+longLabel 0005_Luc_5_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_0006_Luc_6_neg
+bigDataUrl UTR3_0006_Luc_6_neg.bw
+shortLabel 0006_Luc_6_neg
+longLabel 0006_Luc_6_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_0006_Luc_6_pos
+bigDataUrl UTR3_0006_Luc_6_pos.bw
+shortLabel 0006_Luc_6_pos
+longLabel 0006_Luc_6_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_0007_Luc_7_neg
+bigDataUrl UTR3_0007_Luc_7_neg.bw
+shortLabel 0007_Luc_7_neg
+longLabel 0007_Luc_7_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_0007_Luc_7_pos
+bigDataUrl UTR3_0007_Luc_7_pos.bw
+shortLabel 0007_Luc_7_pos
+longLabel 0007_Luc_7_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_007_CSTF1_neg
+bigDataUrl UTR3_007_CSTF1_neg.bw
+shortLabel 007_CSTF1_neg
+longLabel 007_CSTF1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_007_CSTF1_pos
+bigDataUrl UTR3_007_CSTF1_pos.bw
+shortLabel 007_CSTF1_pos
+longLabel 007_CSTF1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_008_CSTF2_neg
+bigDataUrl UTR3_008_CSTF2_neg.bw
+shortLabel 008_CSTF2_neg
+longLabel 008_CSTF2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_008_CSTF2_pos
+bigDataUrl UTR3_008_CSTF2_pos.bw
+shortLabel 008_CSTF2_pos
+longLabel 008_CSTF2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_010_NUDT21_neg
+bigDataUrl UTR3_010_NUDT21_neg.bw
+shortLabel 010_NUDT21_neg
+longLabel 010_NUDT21_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_010_NUDT21_pos
+bigDataUrl UTR3_010_NUDT21_pos.bw
+shortLabel 010_NUDT21_pos
+longLabel 010_NUDT21_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_020_PAPD5_neg
+bigDataUrl UTR3_020_PAPD5_neg.bw
+shortLabel 020_PAPD5_neg
+longLabel 020_PAPD5_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_020_PAPD5_pos
+bigDataUrl UTR3_020_PAPD5_pos.bw
+shortLabel 020_PAPD5_pos
+longLabel 020_PAPD5_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_022_PABPC1_neg
+bigDataUrl UTR3_022_PABPC1_neg.bw
+shortLabel 022_PABPC1_neg
+longLabel 022_PABPC1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_022_PABPC1_pos
+bigDataUrl UTR3_022_PABPC1_pos.bw
+shortLabel 022_PABPC1_pos
+longLabel 022_PABPC1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_036_NONO_neg
+bigDataUrl UTR3_036_NONO_neg.bw
+shortLabel 036_NONO_neg
+longLabel 036_NONO_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_036_NONO_pos
+bigDataUrl UTR3_036_NONO_pos.bw
+shortLabel 036_NONO_pos
+longLabel 036_NONO_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_052_CSTF2T_neg
+bigDataUrl UTR3_052_CSTF2T_neg.bw
+shortLabel 052_CSTF2T_neg
+longLabel 052_CSTF2T_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_052_CSTF2T_pos
+bigDataUrl UTR3_052_CSTF2T_pos.bw
+shortLabel 052_CSTF2T_pos
+longLabel 052_CSTF2T_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_061_LEO1_neg
+bigDataUrl UTR3_061_LEO1_neg.bw
+shortLabel 061_LEO1_neg
+longLabel 061_LEO1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_061_LEO1_pos
+bigDataUrl UTR3_061_LEO1_pos.bw
+shortLabel 061_LEO1_pos
+longLabel 061_LEO1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_085_CDK9_neg
+bigDataUrl UTR3_085_CDK9_neg.bw
+shortLabel 085_CDK9_neg
+longLabel 085_CDK9_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_085_CDK9_pos
+bigDataUrl UTR3_085_CDK9_pos.bw
+shortLabel 085_CDK9_pos
+longLabel 085_CDK9_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_092_SNRNP70_neg
+bigDataUrl UTR3_092_SNRNP70_neg.bw
+shortLabel 092_SNRNP70_neg
+longLabel 092_SNRNP70_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_092_SNRNP70_pos
+bigDataUrl UTR3_092_SNRNP70_pos.bw
+shortLabel 092_SNRNP70_pos
+longLabel 092_SNRNP70_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_093_SNRPA1_neg
+bigDataUrl UTR3_093_SNRPA1_neg.bw
+shortLabel 093_SNRPA1_neg
+longLabel 093_SNRPA1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_093_SNRPA1_pos
+bigDataUrl UTR3_093_SNRPA1_pos.bw
+shortLabel 093_SNRPA1_pos
+longLabel 093_SNRPA1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_110_UPF3B_neg
+bigDataUrl UTR3_110_UPF3B_neg.bw
+shortLabel 110_UPF3B_neg
+longLabel 110_UPF3B_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_110_UPF3B_pos
+bigDataUrl UTR3_110_UPF3B_pos.bw
+shortLabel 110_UPF3B_pos
+longLabel 110_UPF3B_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_111_RNPS1_neg
+bigDataUrl UTR3_111_RNPS1_neg.bw
+shortLabel 111_RNPS1_neg
+longLabel 111_RNPS1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_111_RNPS1_pos
+bigDataUrl UTR3_111_RNPS1_pos.bw
+shortLabel 111_RNPS1_pos
+longLabel 111_RNPS1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_152_SLB_neg
+bigDataUrl UTR3_152_SLB_neg.bw
+shortLabel 152_SLB_neg
+longLabel 152_SLB_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_152_SLB_pos
+bigDataUrl UTR3_152_SLB_pos.bw
+shortLabel 152_SLB_pos
+longLabel 152_SLB_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_161_RPA1_neg
+bigDataUrl UTR3_161_RPA1_neg.bw
+shortLabel 161_RPA1_neg
+longLabel 161_RPA1_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_161_RPA1_pos
+bigDataUrl UTR3_161_RPA1_pos.bw
+shortLabel 161_RPA1_pos
+longLabel 161_RPA1_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_185_TARBP2_neg
+bigDataUrl UTR3_185_TARBP2_neg.bw
+shortLabel 185_TARBP2_neg
+longLabel 185_TARBP2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_185_TARBP2_pos
+bigDataUrl UTR3_185_TARBP2_pos.bw
+shortLabel 185_TARBP2_pos
+longLabel 185_TARBP2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_186_AGO2_neg
+bigDataUrl UTR3_186_AGO2_neg.bw
+shortLabel 186_AGO2_neg
+longLabel 186_AGO2_neg
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
+track UTR3_186_AGO2_pos
+bigDataUrl UTR3_186_AGO2_pos.bw
+shortLabel 186_AGO2_pos
+longLabel 186_AGO2_pos
+type bigWig 
+visibility hide 
+autoScale on 
+color 255,0,0 
+
