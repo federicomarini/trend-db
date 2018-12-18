@@ -3,12 +3,12 @@
 
 </br></br></br></br></br></br>
 
-### *Explore interactively the Transcriptome 3'end diversification (TREND)*
+### *Explore interactively Transcriptome 3'end diversification (TREND)*
 
 The diversity and dynamics of the transcriptome are important means for development and adaptation. 
 Apart from alternative transcription initiation and alternative splicing, the diversification of the transcriptome 3'end is essential for expansion of transcriptome complexity, with likely critical functions in many processes by – as yet largely – unknown mechanisms (<a href="http://doi.org/10.1007/s00424-016-1828-3" target="_blank">Ogorodnikov et al. Pflugers Arch. 2016</a>).
 
-In a recent work we recently published on [biorXiv](https://www.biorxiv.org) (<a href="https://www.biorxiv.org/content/early/2018/10/18/426536" target="_blank">Ogorodnikov et al. 2018</a>), we were able to show how PCF11 is a critical regulator of transcriptome-3'end-diversification, and connects alternative polyadenylation to formation and spontaneous regression of neuroblastoma.
+In a recent work (Ogorodnikov et al. 2018) we recently published on <a href="https://www.nature.com/articles/s41467-018-07580-5"  target="_blank">Nature Communications</a> (preprint on <a href="https://www.biorxiv.org/content/early/2018/10/18/426536" target="_blank">biorXiv</a>),  we were able to show how PCF11 is a critical regulator of transcriptome-3'end-diversification, and connects alternative polyadenylation to formation and spontaneous regression of neuroblastoma.
 
 This work contains a number of TREND-seq datasets investigating transcriptome-wide APA, covering >170 RNAis conditions. 
 To facilitate access to that for the scientific community, we created the TREND-DB application, with the support of the colleagues from the IMBEI (development by Denise Scherzinger, [Federico Marini](https://federicomarini.github.io), Harald Binder).
@@ -36,11 +36,15 @@ The database facilitates:
 
 ### News
 
+- **December 2018** - The PCF11 paper is out on <a href="https://www.nature.com/articles/s41467-018-07580-5"  target="_blank">Nature Communications</a> and has been chosen as <a href="https://www.nature.com/collections/bhkhbxstgj" target="_blank">Editor Highlight</a>!
 - **October 2018** - The paper about PCF11 as critical regulator of transcriptome-3'end-diversification is out on [biorXiv](https://www.biorxiv.org)! You can read it <a href="https://www.biorxiv.org/content/early/2018/10/18/426536" target="_blank">here</a>
 - **April 2017** - **TREND-DB** is released as a companion tool to the original publication!
 
 ### Citations
 
+- **Transcriptome 3′end organization by PCF11 links alternative polyadenylation to formation and neuronal differentiation of neuroblastoma**
+  *Anton Ogorodnikov, Michal Levin, Surendra Tattikota, Sergey Tokalov, Mainul Hoque, Denise Scherzinger, Federico Marini, Ansgar Poetsch, Harald Binder, Stephan Macher-Göppinger, Hans Christian Probst, Bin Tian, Michael Schaefer, Karl J. Lackner, Frank Westermann & Sven Danckwardt*.
+  Nature Communicationsvolume 9, Article number: 5331 (2018); doi: https://doi.org/10.1038/s41467-018-07580-5
 - **PCF11 connects alternative polyadenylation to formation and spontaneous regression of neuroblastoma**
   *Anton Ogorodnikov, Michal Levin, Surendra Tattikota, Sergey Tokalov, Mainul Hoque, Denise Scherzinger, Federico Marini, Ansgar Poetsch, Harald Binder, Stephan Macher-Goeppinger, Bin Tian, Michael Schaefer, Karl Lackner, Frank Westermann, Sven Danckwardt*. 
   bioRxiv 426536; doi: https://doi.org/10.1101/426536
