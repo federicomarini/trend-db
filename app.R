@@ -42,7 +42,6 @@ vis.nodes$shadow <- TRUE # Nodes will drop shadow
 vis.nodes$title  <- vis.nodes$label # Text on click
 vis.nodes$size <- 4 * vis.nodes$size
 
-visnet <- visNetwork(vis.nodes, vis.links, height = "1000px", width = "1000px")
 
 ui <-
   shinydashboard::dashboardPage(
@@ -123,7 +122,11 @@ ui <-
           "Main View",
           icon = icon("table"),
           fluidRow(
-            visNetworkOutput("trend-network")
+            column(
+              width = 10,
+              offset = 1,
+              visNetworkOutput("trendnetwork",width = "800px",height = "800px")
+            )
           ),
           fluidRow(
             column(
@@ -458,7 +461,8 @@ server <- function(input, output, session) {
     h4("Selected Gene: ", gene)
   })
   
-  output$trend-network <- renderVisNetwork({
+  output$trendnetwork <- renderVisNetwork({
+    visnet <- visNetwork(vis.nodes, vis.links, height = "1000px", width = "1000px")
     visnet %>% 
       visOptions(highlightNearest = TRUE, selectedBy = "Group",nodesIdSelection = TRUE) %>% 
       visLegend(main="Legend", position="right", ncol=1) 
