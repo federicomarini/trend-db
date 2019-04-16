@@ -15,6 +15,9 @@ library(org.Hs.eg.db)
 library(shinyBS)
 library(rtracklayer)
 library(markdown)
+library(igraph)
+library(visNetwork)
+library(magrittr)
 
 cat(file = stderr(), "Loading R data...")
 load("trendseq.RData")
@@ -24,6 +27,22 @@ cat(file = stderr(), "Done! \n")
 cat(file = stderr(), "Loading TxDb...")
 txdb <- loadDb("./data/hg38db_refGene.sqlite")
 cat(file = stderr(), "Done! \n")
+
+# loading the TRENDnetwork data
+trendnet <-readRDS("TRENDnet.rds")
+
+# processing that in brief
+data <- toVisNetworkData(trendnet)
+# visNetwork(nodes = data$nodes, edges = data$edges, height = "500px")
+vis.nodes <- data$nodes
+vis.links <- data$edges
+
+vis.nodes$shape  <- "dot"  
+vis.nodes$shadow <- TRUE # Nodes will drop shadow
+vis.nodes$title  <- vis.nodes$label # Text on click
+vis.nodes$size <- 4 * vis.nodes$size
+
+visnet <- visNetwork(vis.nodes, vis.links, height = "1000px", width = "1000px")
 
 ui <-
   shinydashboard::dashboardPage(
@@ -103,6 +122,9 @@ ui <-
         tabPanel(
           "Main View",
           icon = icon("table"),
+          fluidRow(
+            visNetworkOutput("trend-network")
+          ),
           fluidRow(
             column(
               width = 6,
@@ -434,6 +456,12 @@ server <- function(input, output, session) {
     selectedRow <- table[selectedRowIndex, ]
     gene <- rownames(table)[selectedRowIndex]
     h4("Selected Gene: ", gene)
+  })
+  
+  output$trend-network <- renderVisNetwork({
+    visnet %>% 
+      visOptions(highlightNearest = TRUE, selectedBy = "Group",nodesIdSelection = TRUE) %>% 
+      visLegend(main="Legend", position="right", ncol=1) 
   })
   
   output$geneSelection <- renderUI({
