@@ -60,7 +60,7 @@ ui <- shinydashboard::dashboardPage(
   # header definition -------------------------------------------------------
   dashboardHeader(
     title = paste0("TREND-DB"),
-    titleWidth = 900,
+    titleWidth = 750,
     # TODO: logo in the title?
     dropdownMenu(
       type="tasks",
