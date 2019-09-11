@@ -1,6 +1,5 @@
 # **TREND-DB** database <img src="trenddb_welcomepage_img.png" alt="" width="500" align="right"/>
 
-
 </br></br></br></br></br></br>
 
 ### *Explore interactively Transcriptome 3'end diversification (TREND)*
@@ -62,11 +61,13 @@ The database facilitates:
 
 *Section currently under construction*.
 
+Soon to be deployed via `rintrojs` tours!
+
 For the time being, please refer to the content of the **About** tab.
 
 ### Further reading
 
-- <a href="https://www.biorxiv.org/content/early/2018/10/18/426536" target="_blank">Ogorodnikov et al. 2018</a>
+- <a href="https://www.nature.com/articles/s41467-018-07580-5" target="_blank">Ogorodnikov et al. 2018</a>
 - <a href="http://doi.org/10.1007/s00424-016-1828-3" target="_blank">Ogorodnikov et al. Pflugers Arch. 2016</a>
 - <a href="http://doi.org/10.1038/nrm.2016.116" target="_blank">Tian & Manley Nat Rev Mol Cell Biol 2016</a> 
 - <a href="http://doi.org/10.1038/nrg3482" target="_blank">Elkon et al. Nat Rev Genet 2013</a>
