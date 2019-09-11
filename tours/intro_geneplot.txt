@@ -1,0 +1,8 @@
+element;intro
+#genePlotInfo;DT
+#switchGene;switch
+#viewBrowser;goto gb
+#genePlotCond + .selectize-control;
+#selectView;
+#plotSubmit;
+#simAffectedSlider;
