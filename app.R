@@ -23,7 +23,7 @@ library(rintrojs)
 
 # Loading required input data ---------------------------------------------
 
-cat(file = stderr(), "Loading R data...")
+message("Loading R data...")
 load("trendseq.RData")
 
 # these objects needed to be updated in newer Bioc versions
@@ -31,12 +31,12 @@ load("trendseq.RData")
 utrs <- updateObject(utrs,verbose = FALSE)
 # just in case, saving workspace
 # save.image(file = "trendseq_bioc3_10.RData")
-cat(file = stderr(), "Done! \n")
+message("Done! \n")
 
 # load annotation db
-cat(file = stderr(), "Loading TxDb...")
+message("Loading TxDb...")
 txdb <- loadDb("./data/hg38db_refGene.sqlite")
-cat(file = stderr(), "Done! \n")
+message("Done! \n")
 
 
 # Loading the TRENDnetwork ------------------------------------------------
