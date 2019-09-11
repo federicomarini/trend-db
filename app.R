@@ -280,138 +280,155 @@ ui <- shinydashboard::dashboardPage(
       ), # end of panel Main view
 
       # ui panel gene plot ------------------------------------------------------
-      tabPanel("Gene Plot",
-               icon = icon("bar-chart"),
-               fluidRow(
-                 column(
-                   width = 11,
-                   h2("Gene Plot"),
-                   actionButton(
-                     "tour_geneplot", "Click me for a quick tour",
-                     icon("hand-o-right")),
-                   fluidRow(
-                     column(width = 7,
-                            uiOutput("genePlot_desc")),
-                     column(width = 3,
-                            fluidRow(
-                              column(
-                                width = 8,
-                                conditionalPanel(
-                                  condition = "!output.genePlotInfo",
-                                  actionButton("selectGene", "Select gene", icon =
-                                                 icon("search"))
-                                ),
-                                conditionalPanel(
-                                  condition = "output.genePlotInfo",
-                                  actionButton("switchGene", "Change gene", icon =
-                                                 icon("refresh"))
-                                )
-                              )
-                            ),
-                            br(),
-                            br(),
-                            fluidRow(column(
-                              width = 8,
-                              conditionalPanel(
-                                condition = "output.genePlotInfo",
-                                actionButton("viewBrowser",
-                                             "View in Genome Browser",
-                                             icon("search"))
-                              )
-                            )))
-                   ),
-                   # shiny::tags$style(type = 'text/css', "#selectGene {position: absolute; right: 15px;}"),
-                   #  shiny::tags$style(type = 'text/css', "#switchGene {position: absolute; right: 15px;}"),
-                   br(),
-                   fluidRow(column(
-                     width = 10,
-                     DT::dataTableOutput("genePlotInfo")
-                   )),
-                   br(),
-                   htmlOutput("NCBIplot"),
-                   br(),
-                   conditionalPanel(condition = "output.genePlotInfo",
-                                    h4("Plot Options:"),
-                                    br(),
-                                    fluidRow(
-                                      column(
-                                        width = 9,
-                                        fluidRow(column(
-                                          width = 4,
-                                          selectInput("genePlotCond",
-                                                      "Condition (default = max SI)",
-                                                      choices = "max SI")
-                                        ),
-                                        column(
-                                          width = 4,
-                                          radioButtons(
-                                            "selectView",
-                                            "Plot View (default = 3' UTR)",
-                                            choices = c("3' UTR", "Gene Body"),
-                                            selected = "3' UTR"
-                                          )
-                                        )),
-                                        br(),
-                                        actionButton(
-                                          "plotSubmit",
-                                          "Create/Update Plot",
-                                          width = 250,
-                                          icon("paint-brush"),
-                                          style = "color: #333; background-color: #88b5dd; border-color: #88b5dd; font-weight: bold; font-size: medium"
-                                        )
-                                      )
-                                    )),
-                   br(),
-                   div(
-                     align = "left",
-                     style = "width:800px;",
-                     plotOutput("gviz"),
-                     br(),
-                     conditionalPanel(
-                       condition = "output.gviz",
-                       div(
-                         align = "right",
-                         style = "margin-right:15px; margin-bottom:10px",
-                         downloadButton("download_genePlot", "Download Plot")
-                         # textInput("filename_genePlot", label = "Save as...", value = "genePlot.pdf")
-                       )
-                     )
-                   ),
-                   conditionalPanel(
-                     condition = "output.genePlotInfo",
-                     sliderInput(
-                       "simAffectedSlider",
-                       "Number of similarily affected genes",
-                       min = 0,
-                       max = 30,
-                       value = 0,
-                       step = 1
-                     ),
-                     #br(),
-                     # actionButton("simInfoUpdate", "Update similar"),
-                     br(),
-                     htmlOutput("simAffected_desc"),
-                     br(),
-                     DT::dataTableOutput("simAffected_table")
-                   )
-                 )
-               )),
+      tabPanel(
+        "Gene Plot",
+        icon = icon("bar-chart"),
+        fluidRow(
+          column(
+            width = 11,
+            h2("Gene Plot"),
+            actionButton(
+              "tour_geneplot", "Click me for a quick tour",
+              icon("hand-o-right")),
+            fluidRow(
+              column(
+                width = 7,
+                uiOutput("genePlot_desc")
+              ),
+              column(
+                width = 3,
+                fluidRow(
+                  column(
+                    width = 8,
+                    conditionalPanel(
+                      condition = "!output.genePlotInfo",
+                      actionButton("selectGene", "Select gene", icon =
+                                     icon("search"))
+                    ),
+                    conditionalPanel(
+                      condition = "output.genePlotInfo",
+                      actionButton("switchGene", "Change gene", icon =
+                                     icon("refresh"))
+                    )
+                  )
+                ),
+                br(),br(),
+                fluidRow(
+                  column(
+                    width = 8,
+                    conditionalPanel(
+                      condition = "output.genePlotInfo",
+                      actionButton("viewBrowser",
+                                   "View in Genome Browser",
+                                   icon("search"))
+                    )
+                  )
+                )
+              )
+            ),
+            # shiny::tags$style(type = 'text/css', "#selectGene {position: absolute; right: 15px;}"),
+            #  shiny::tags$style(type = 'text/css', "#switchGene {position: absolute; right: 15px;}"),
+            br(),
+            fluidRow(
+              column(
+                width = 10,
+                DT::dataTableOutput("genePlotInfo")
+              )
+            ),
+            br(),
+            htmlOutput("NCBIplot"),
+            br(),
+            conditionalPanel(
+              condition = "output.genePlotInfo",
+              h4("Plot Options:"),
+              br(),
+              fluidRow(
+                column(
+                  width = 9,
+                  fluidRow(
+                    column(
+                      width = 4,
+                      selectInput("genePlotCond",
+                                  "Condition (default = max SI)",
+                                  choices = "max SI")
+                    ),
+                    column(
+                      width = 4,
+                      radioButtons(
+                        "selectView",
+                        "Plot View (default = 3' UTR)",
+                        choices = c("3' UTR", "Gene Body"),
+                        selected = "3' UTR"
+                      )
+                    )
+                  ),
+                  br(),
+                  actionButton(
+                    "plotSubmit",
+                    "Create/Update Plot",
+                    width = 250,
+                    icon("paint-brush"),
+                    style = "color: #333; background-color: #88b5dd; border-color: #88b5dd; font-weight: bold; font-size: medium"
+                  )
+                )
+              )
+            ),
+            br(),
+            div(
+              align = "left",
+              style = "width:800px;",
+              plotOutput("gviz"),
+              br(),
+              conditionalPanel(
+                condition = "output.gviz",
+                div(
+                  align = "right",
+                  style = "margin-right:15px; margin-bottom:10px",
+                  downloadButton("download_genePlot", "Download Plot")
+                  # textInput("filename_genePlot", label = "Save as...", value = "genePlot.pdf")
+                )
+              )
+            ),
+            conditionalPanel(
+              condition = "output.genePlotInfo",
+              sliderInput(
+                "simAffectedSlider",
+                "Number of similarily affected genes",
+                min = 0,
+                max = 30,
+                value = 0,
+                step = 1
+              ),
+              #br(),
+              # actionButton("simInfoUpdate", "Update similar"),
+              br(),
+              htmlOutput("simAffected_desc"),
+              br(),
+              DT::dataTableOutput("simAffected_table")
+            )
+          )
+        )
+      ), # end of Gene Plot panel
+
+      # ui panel genome browser -------------------------------------------------
       tabPanel(
         "Genome Browser",
         icon = icon("search"),
         h2("Genome Browser"),
-        fluidRow(column(width = 8,
-                        uiOutput(
-                          "genomeBrowser_desc"
-                        ))),
-        br(),
-        br(),
+        fluidRow(
+          column(
+            width = 8,
+            uiOutput(
+              "genomeBrowser_desc"
+            )
+          )
+        ),
+        br(),br(),
         fluidRow(
           column(
             width = 2,
             uiOutput("geneSelection"),
-            actionButton("changeGene", "Gene", icon =
-                           icon("search")),
+            actionButton("changeGene", "Gene", icon = icon("search")),
             br(),
             br(),
             selectInput(
@@ -427,28 +444,36 @@ ui <- shinydashboard::dashboardPage(
             checkboxGroupInput("selectTracks",
                                "Additional Tracks",
                                choices = list("miRNAs" = 1)),
-            br(),
-            br(),
+            br(), br(),
             htmlOutput("browserNewWindow")
             # actionButton("tracksInput", "Update Tracks", icon = icon("refresh"))
           ),
-          column(width = 10,
-                 htmlOutput("browserFrame"))
+          column(
+            width = 10,
+            htmlOutput("browserFrame")
+          )
         )
-      ),
-      tabPanel("About", icon = icon("info-circle"),
-               h2("About"),
-               fluidRow(column(
-                 width = 11,
-                 uiOutput("about")
-               )))
-    )
-  )
+      ), # end of Genome Browser panel
+      tabPanel(
+        "About", 
+        icon = icon("info-circle"),
+        h2("About"),
+        fluidRow(
+          column(
+            width = 11,
+            uiOutput("about")
+          )
+        )
+      ) # end of About panel
+    ) # end of tabBox 
+  ) # end of dashboardBody
 )
 
 ## ------------------------------------------------------------------ ##
 ##                           Shiny server                             ##
 ## ------------------------------------------------------------------ ##
+
+# Server definition -------------------------------------------------------
 
 server <- function(input, output, session) {
   v <- reactiveValues(clearGoana = TRUE, clearPlot = TRUE)
@@ -1200,7 +1225,9 @@ server <- function(input, output, session) {
     introjs(session, options=list(steps=tour))
   })
   
-  
+
+  # function definitions ----------------------------------------------------
+
   # function to get all affected genes in this condition (cond)
   getGenes <- function(cond) {
     allgenes_selectedKD <-
@@ -1726,6 +1753,9 @@ server <- function(input, output, session) {
     # dev.off()
   }
 }
+
+
+# launching the app -------------------------------------------------------
 
 shinyApp(ui = ui, server = server)
 
