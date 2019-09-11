@@ -491,12 +491,7 @@ ui <- shinydashboard::dashboardPage(
   ) # end of dashboardBody
 )
 
-## ------------------------------------------------------------------ ##
-##                           Shiny server                             ##
-## ------------------------------------------------------------------ ##
-
 # Server definition -------------------------------------------------------
-
 server <- function(input, output, session) {
   v <- reactiveValues(clearGoana = TRUE, clearPlot = TRUE)
   
