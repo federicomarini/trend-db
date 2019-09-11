@@ -18,6 +18,7 @@ library(markdown)
 library(igraph)
 library(visNetwork)
 library(magrittr)
+library(rintrojs)
 
 cat(file = stderr(), "Loading R data...")
 load("trendseq.RData")
@@ -52,6 +53,7 @@ ui <-
     dashboardSidebar(disable = TRUE,
                      width = 350),
     dashboardBody(
+      introjsUI(),
       shiny::tags$head(shiny::tags$style(
         HTML(
           '
@@ -72,7 +74,7 @@ ui <-
           }
           '
         )
-        )),
+      )),
       tabBox(
         id = "tabs",
         width = 11,
@@ -121,6 +123,11 @@ ui <-
         tabPanel(
           "Main View",
           icon = icon("table"),
+          fluidRow(
+            actionButton(
+              "tour_mainview", "Click me for a quick tour",
+              icon("hand-o-right"))
+          ),
           fluidRow(
             column(
               width = 10,
@@ -244,6 +251,9 @@ ui <-
                    column(
                      width = 11,
                      h2("Gene Plot"),
+                     actionButton(
+                       "tour_geneplot", "Click me for a quick tour",
+                       icon("hand-o-right")),
                      fluidRow(
                        column(width = 7,
                               uiOutput("genePlot_desc")),
@@ -398,8 +408,8 @@ ui <-
                    uiOutput("about")
                  )))
       )
-        )
-      )
+    )
+  )
 
 ## ------------------------------------------------------------------ ##
 ##                           Shiny server                             ##
@@ -1141,6 +1151,21 @@ server <- function(input, output, session) {
                       selected = "max SI")
   })
   
+  observeEvent(input$tour_mainview, {
+    tour <- read.delim("tours/intro_mainview.txt",
+                       sep=";", stringsAsFactors=FALSE, row.names=NULL, quote="")
+    
+    introjs(session, options=list(steps=tour))
+  })
+  
+  observeEvent(input$tour_geneplot, {
+    tour <- read.delim("tours/intro_geneplot.txt",
+                       sep=";", stringsAsFactors=FALSE, row.names=NULL, quote="")
+    
+    introjs(session, options=list(steps=tour))
+  })
+  
+  
   # function to get all affected genes in this condition (cond)
   getGenes <- function(cond) {
     allgenes_selectedKD <-
@@ -1320,11 +1345,11 @@ server <- function(input, output, session) {
         txdb,
         genome = "hg38",
         chromosome = chrom,
-  #      symbol = gene,
-   #     showId = TRUE,
-    #    geneSymbol = TRUE,
+        #      symbol = gene,
+        #     showId = TRUE,
+        #    geneSymbol = TRUE,
         name = gene,
-       # transcriptAnnotation = "symbol",
+        # transcriptAnnotation = "symbol",
         background.title = "salmon"
       )
     displayPars(txTr) <-
@@ -1538,12 +1563,12 @@ server <- function(input, output, session) {
     cat(file=stderr(), "Plotting Gviz tracks... \n")
     plotTracks(
       list(
-   #     ideoTrack(gene, chrom)
-       gtrack,
-       txTrack(gene, chrom),
-       polyAtrack(gene, chrom, strand),
-       dataTrack(gene, cond, bws$cond, maxCoverage, chrom),
-       ctrlTrack(gene, bws$ctrl, maxCoverage, chrom)
+        #     ideoTrack(gene, chrom)
+        gtrack,
+        txTrack(gene, chrom),
+        polyAtrack(gene, chrom, strand),
+        dataTrack(gene, cond, bws$cond, maxCoverage, chrom),
+        ctrlTrack(gene, bws$ctrl, maxCoverage, chrom)
       ),
       from = getStart(gene, view, strand),
       to = getEnd(gene, view, strand),
@@ -1665,7 +1690,8 @@ server <- function(input, output, session) {
     dev.print(png, file, width = 800)
     # dev.off()
   }
-  }
+}
 
 shinyApp(ui = ui, server = server)
+
 
