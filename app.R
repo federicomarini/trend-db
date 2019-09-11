@@ -111,7 +111,8 @@ ui <- shinydashboard::dashboardPage(
         icon = icon("home"),
         actionButton(
           "tour_firststeps", "Click me for a quick tour",
-          icon("hand-o-right"))
+          icon("hand-o-right")
+        ),
         includeMarkdown("trenddb_welcomepage.md")
       ), # end of Welcome panel
 
@@ -121,7 +122,8 @@ ui <- shinydashboard::dashboardPage(
         icon = icon("eye"),
         actionButton(
           "tour_datapreview", "Click me for a quick tour",
-          icon("hand-o-right"))
+          icon("hand-o-right")
+        ),
         h2("Inspect Matrix"),
         fluidRow(
           column(
@@ -167,7 +169,8 @@ ui <- shinydashboard::dashboardPage(
         fluidRow(
           actionButton(
             "tour_mainview", "Click me for a quick tour",
-            icon("hand-o-right"))
+            icon("hand-o-right")
+          )
         ),
         fluidRow(
           column(
@@ -301,7 +304,8 @@ ui <- shinydashboard::dashboardPage(
             h2("Gene Plot"),
             actionButton(
               "tour_geneplot", "Click me for a quick tour",
-              icon("hand-o-right")),
+              icon("hand-o-right")
+            ),
             fluidRow(
               column(
                 width = 7,
@@ -432,7 +436,8 @@ ui <- shinydashboard::dashboardPage(
             width = 8,
             actionButton(
               "tour_genomebrowser", "Click me for a quick tour",
-              icon("hand-o-right"))
+              icon("hand-o-right")
+            ),
             uiOutput(
               "genomeBrowser_desc"
             )
