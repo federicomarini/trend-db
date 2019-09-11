@@ -51,17 +51,25 @@ vis.nodes$size <- 4 * vis.nodes$size
 
 # UI definition -----------------------------------------------------------
 ui <- shinydashboard::dashboardPage(
+  # header definition -------------------------------------------------------
   dashboardHeader(
     title = paste0("TREND-DB"),
     titleWidth = 900
-  ),
-  dashboardSidebar(disable = TRUE,
-                   width = 350),
+    # TODO: logo in the title?
+  ), # end of dashboardHeader
+  # sidebar definition ------------------------------------------------------
+  dashboardSidebar(
+    disable = TRUE,
+    width = 350), # end of dashboardSidebar
+  # body definition ---------------------------------------------------------
   dashboardBody(
     introjsUI(),
-    shiny::tags$head(shiny::tags$style(
-      HTML(
-        '
+    
+    # adding some styling in the html elements
+    shiny::tags$head(
+      shiny::tags$style(
+        HTML(
+          '
           .skin-blue .wrapper, .content-wrapper {
           background-color: #e9e9e9;
           }
@@ -78,29 +86,43 @@ ui <- shinydashboard::dashboardPage(
           width: 600px;
           }
           '
+        )
       )
-    )),
+    ),
+    
+    ## main structure of the body for the dashboard
     tabBox(
       id = "tabs",
       width = 11,
       selected = "Welcome",
+      
       #h4("Session Info"),
       #verbatimTextOutput("sessioninfo")),
-      tabPanel("Welcome",
-               icon = icon("home"),
-               includeMarkdown("trenddb_welcomepage.md")),
+
+      # ui panel welcome --------------------------------------------------------
+      tabPanel(
+        "Welcome",
+        icon = icon("home"),
+        includeMarkdown("trenddb_welcomepage.md")
+      ), # end of Welcome panel
+
+      # ui panel data preview ---------------------------------------------------
       tabPanel(
         "Data Preview",
         icon = icon("eye"),
         h2("Inspect Matrix"),
-        fluidRow(column(width = 6,
-                        uiOutput(
-                          "inspectMatrix_desc"
-                        )),
-                 column(
-                   width = 3,
-                   actionButton("continueMV", "Continue to Main View", icon = icon("arrow-right"))
-                 )),
+        fluidRow(
+          column(
+            width = 6,
+            uiOutput(
+              "inspectMatrix_desc"
+            )
+          ),
+          column(
+            width = 3,
+            actionButton("continueMV", "Continue to Main View", icon = icon("arrow-right"))
+          )
+        ),
         shiny::tags$style(type = 'text/css', "#continueMV {position: absolute; right: 15px;}"),
         br(),
         fluidRow(
@@ -124,7 +146,9 @@ ui <- shinydashboard::dashboardPage(
             DT::dataTableOutput("overviewTable")
           )
         )
-      ),
+      ), # end of Data Preview panel
+
+      # ui panel main view ------------------------------------------------------
       tabPanel(
         "Main View",
         icon = icon("table"),
@@ -173,29 +197,34 @@ ui <- shinydashboard::dashboardPage(
               "#continueGP {position: absolute; right: 15px; margin-top: 25px;}"
             ),
             br(),
-            conditionalPanel(condition = "output.geneInfoMain",
-                             h4("Gene Summary:")),
+            conditionalPanel(
+              condition = "output.geneInfoMain",
+              h4("Gene Summary:")
+            ),
             DT::dataTableOutput("geneInfoMain"),
             br(),
             textOutput("geneSummary"),
             br(),
             htmlOutput("NCBImain"),
             br(),
-            conditionalPanel(condition = "output.geneTableOutput",
-                             br(),
-                             uiOutput("involvedConds_desc")),
+            conditionalPanel(
+              condition = "output.geneTableOutput",
+              br(),
+              uiOutput("involvedConds_desc")
+            ),
             DT::dataTableOutput("geneTableOutput"),
             br()
-            
           ),
           column(
             width = 6,
             p(h2('Condition View')),
-            fluidRow(column(
-              width = 7,
-              uiOutput("mainViewCond_desc"),
-              br()
-            )),
+            fluidRow(
+              column(
+                width = 7,
+                uiOutput("mainViewCond_desc"),
+                br()
+              )
+            ),
             fluidRow(
               column(
                 width = 6,
@@ -224,9 +253,10 @@ ui <- shinydashboard::dashboardPage(
                 )
               )
             ),
-            conditionalPanel(condition = "output.kdTableOutput",
-                             br(),
-                             uiOutput("affectedGenes_desc")
+            conditionalPanel(
+              condition = "output.kdTableOutput",
+              br(),
+              uiOutput("affectedGenes_desc")
             ),
             DT::dataTableOutput("kdTableOutput"),
             bsModal(
@@ -238,18 +268,18 @@ ui <- shinydashboard::dashboardPage(
             ),
             conditionalPanel(
               condition = "output.kdTableOutput",
-              br(),
-              br(),
+              br(),br(),
               uiOutput("goana_desc"),
               br(),
               actionButton("goanaSubmit", "Goana"),
-              br(),
-              br(),
+              br(),br(),
               DT::dataTableOutput("goanaTable")
             )
           )
         )
-      ),
+      ), # end of panel Main view
+
+      # ui panel gene plot ------------------------------------------------------
       tabPanel("Gene Plot",
                icon = icon("bar-chart"),
                fluidRow(
@@ -1698,5 +1728,6 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui = ui, server = server)
+
 
 
