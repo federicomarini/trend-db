@@ -469,6 +469,8 @@ ui <- shinydashboard::dashboardPage(
           )
         )
       ), # end of Genome Browser panel
+
+      # ui panel about ----------------------------------------------------------
       tabPanel(
         "About", 
         icon = icon("info-circle"),
