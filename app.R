@@ -25,6 +25,12 @@ library(rintrojs)
 
 cat(file = stderr(), "Loading R data...")
 load("trendseq.RData")
+
+# these objects needed to be updated in newer Bioc versions
+# txBygene <- updateObject(txBygene,verbose = FALSE)
+utrs <- updateObject(utrs,verbose = FALSE)
+# just in case, saving workspace
+# save.image(file = "trendseq_bioc3_10.RData")
 cat(file = stderr(), "Done! \n")
 
 # load annotation db
@@ -1755,7 +1761,7 @@ server <- function(input, output, session) {
 }
 
 
-# launching the app -------------------------------------------------------
+# Launching the app -------------------------------------------------------
 
 shinyApp(ui = ui, server = server)
 
