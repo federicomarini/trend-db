@@ -2,3 +2,16 @@ element;intro
 #trendnetwork;this is the network view
 #geneInput + .selectize-control;change w gene
 #kdInput + .selectize-control;change w kd condition
+#geneInput + .selectize-control;change w gene
+#geneInfoMain;ss
+#geneSummary;ss1
+#NCBImain;
+#geneTableOutput;
+#continueGP;
+#kdInput + .selectize-control;change w kd condition
+#kdTableOutput;
+#showScatterplot;
+#goToGoana;
+#goana_desc;
+#goanaSubmit;
+#goanaTable;
