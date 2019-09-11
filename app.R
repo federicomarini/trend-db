@@ -60,8 +60,49 @@ ui <- shinydashboard::dashboardPage(
   # header definition -------------------------------------------------------
   dashboardHeader(
     title = paste0("TREND-DB"),
-    titleWidth = 900
+    titleWidth = 900,
     # TODO: logo in the title?
+    dropdownMenu(
+      type="tasks",
+      icon=icon("question-circle fa-1g"),
+      badgeStatus=NULL,
+      headerText="Help",
+      notificationItem(
+        text=actionButton(
+          "dd_help", "First help",
+          icon("hand-o-right")
+        ),
+        icon=icon(""), # tricking it to not have additional icon
+        status="primary"
+      ),
+      notificationItem(
+        text=actionButton(
+          'dd_glossary', label="Open the glossary",
+          icon=icon("book")
+        ),
+        icon=icon(""), status="primary"
+      )
+    ),
+    dropdownMenu(
+      type="tasks",
+      icon=icon("info fa-1g"),
+      badgeStatus=NULL,
+      headerText="Additional information",
+      notificationItem(
+        text=actionButton(
+          'session_info', label="About this session",
+          icon=icon("window-maximize")
+        ),
+        icon=icon(""), status="primary"
+      ),
+      notificationItem(
+        text=actionButton(
+          'trenddb_info', label="About TREND-DB",
+          icon=icon("heart")
+        ),
+        icon=icon(""), status="primary"
+      )
+    )
   ), # end of dashboardHeader
   # sidebar definition ------------------------------------------------------
   dashboardSidebar(
@@ -1086,6 +1127,9 @@ server <- function(input, output, session) {
     return(createBrowserURL(input$geneInput))
   })
   
+
+  # all observers -----------------------------------------------------------
+  
   # clear Goana table if condition selection is changed
   observeEvent(input$kdInput, {
     v$clearGoana <- TRUE
@@ -1258,6 +1302,53 @@ server <- function(input, output, session) {
     introjs(session, options=list(steps=tour))
   })
   
+  observeEvent(input$dd_help, {
+    showModal(modalDialog(
+      title="First help", size="l",fade=TRUE,
+      footer=NULL, easyClose=TRUE,
+      tagList(
+        HTML("Some first help"),
+        renderPrint({
+          sessionInfo()
+        })
+      )
+    ))
+  })
+  
+  observeEvent(input$dd_glossary, {
+    showModal(modalDialog(
+      title="The TREND-DB glossary", size="l",fade=TRUE,
+      footer=NULL, easyClose=TRUE,
+      tagList(
+        includeMarkdown("trenddb_glossary.md")
+      )
+    ))
+  })
+  
+  
+  observeEvent(input$session_info, {
+    showModal(modalDialog(
+      title="Session information", size="l",fade=TRUE,
+      footer=NULL, easyClose=TRUE,
+      tagList(renderPrint({
+        sessionInfo()
+      }))
+    ))
+  })
+  
+  observeEvent(input$trenddb_info, {
+    showModal(modalDialog(
+      title="About TREND-DB", size="m", fade=TRUE,
+      footer=NULL, easyClose=TRUE,
+      tagList(
+        br(), br(),
+        HTML("If you use this application for your projects, please use the following citation information:"),
+        renderPrint({
+          citation("iSEE")
+        })
+      )
+    ))
+  })
 
   # function definitions ----------------------------------------------------
 
