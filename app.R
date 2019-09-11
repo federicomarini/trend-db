@@ -109,6 +109,9 @@ ui <- shinydashboard::dashboardPage(
       tabPanel(
         "Welcome",
         icon = icon("home"),
+        actionButton(
+          "tour_firststeps", "Click me for a quick tour",
+          icon("hand-o-right"))
         includeMarkdown("trenddb_welcomepage.md")
       ), # end of Welcome panel
 
@@ -116,6 +119,9 @@ ui <- shinydashboard::dashboardPage(
       tabPanel(
         "Data Preview",
         icon = icon("eye"),
+        actionButton(
+          "tour_datapreview", "Click me for a quick tour",
+          icon("hand-o-right"))
         h2("Inspect Matrix"),
         fluidRow(
           column(
@@ -424,6 +430,9 @@ ui <- shinydashboard::dashboardPage(
         fluidRow(
           column(
             width = 8,
+            actionButton(
+              "tour_genomebrowser", "Click me for a quick tour",
+              icon("hand-o-right"))
             uiOutput(
               "genomeBrowser_desc"
             )
@@ -1217,17 +1226,33 @@ server <- function(input, output, session) {
                       selected = "max SI")
   })
   
+  observeEvent(input$tour_firststeps, {
+    tour <- read.delim("tours/intro_firststeps.txt",
+                       sep=";", stringsAsFactors=FALSE, row.names=NULL, quote="")
+    introjs(session, options=list(steps=tour))
+  })
+  
+  observeEvent(input$tour_datapreview, {
+    tour <- read.delim("tours/intro_datapreview.txt",
+                       sep=";", stringsAsFactors=FALSE, row.names=NULL, quote="")
+    introjs(session, options=list(steps=tour))
+  })
+  
   observeEvent(input$tour_mainview, {
     tour <- read.delim("tours/intro_mainview.txt",
                        sep=";", stringsAsFactors=FALSE, row.names=NULL, quote="")
-    
     introjs(session, options=list(steps=tour))
   })
   
   observeEvent(input$tour_geneplot, {
     tour <- read.delim("tours/intro_geneplot.txt",
                        sep=";", stringsAsFactors=FALSE, row.names=NULL, quote="")
-    
+    introjs(session, options=list(steps=tour))
+  })
+  
+  observeEvent(input$tour_genomebrowser, {
+    tour <- read.delim("tours/intro_genomebrowser.txt",
+                       sep=";", stringsAsFactors=FALSE, row.names=NULL, quote="")
     introjs(session, options=list(steps=tour))
   })
   
