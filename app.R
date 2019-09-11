@@ -1,6 +1,6 @@
-## ------------------------------------------------------------------ ##
-##                          Shiny UI                                  ##
-## ------------------------------------------------------------------ ##
+# TREND-DB app ------------------------------------------------------------
+
+# Loading required packages -----------------------------------------------
 
 library(shiny)
 library(DT)
@@ -20,6 +20,9 @@ library(visNetwork)
 library(magrittr)
 library(rintrojs)
 
+
+# Loading required input data ---------------------------------------------
+
 cat(file = stderr(), "Loading R data...")
 load("trendseq.RData")
 cat(file = stderr(), "Done! \n")
@@ -29,7 +32,9 @@ cat(file = stderr(), "Loading TxDb...")
 txdb <- loadDb("./data/hg38db_refGene.sqlite")
 cat(file = stderr(), "Done! \n")
 
-# loading the TRENDnetwork data
+
+# Loading the TRENDnetwork ------------------------------------------------
+
 trendnet <-readRDS("TRENDnet.rds")
 
 # processing that in brief
@@ -44,6 +49,7 @@ vis.nodes$title  <- vis.nodes$label # Text on click
 vis.nodes$size <- 4 * vis.nodes$size
 
 
+# UI definition -----------------------------------------------------------
 ui <-
   shinydashboard::dashboardPage(
     dashboardHeader(
