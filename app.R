@@ -1130,6 +1130,20 @@ server <- function(input, output, session) {
 
   # all observers -----------------------------------------------------------
   
+  # update knockdown condition if selected via trendnetwork
+  observe({
+    x <- input$trendnetwork_selected
+    
+    # Can use character(0) to remove all choices
+    if (is.null(x))
+      x <- character(0)
+    
+    # Can also set the label and select items
+    updateSelectInput(session, "kdInput",
+                      selected = paste0(x,"_kd")
+    )
+  })
+    
   # clear Goana table if condition selection is changed
   observeEvent(input$kdInput, {
     v$clearGoana <- TRUE
