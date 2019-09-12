@@ -534,7 +534,10 @@ ui <- shinydashboard::dashboardPage(
 
 # Server definition -------------------------------------------------------
 server <- function(input, output, session) {
-  v <- reactiveValues(clearGoana = TRUE, clearPlot = TRUE)
+  v <- reactiveValues(
+    clearGoana = TRUE, 
+    clearPlot = TRUE
+  )
   
   # renders inspect matrix containing all genes + conditions with their respective dir indexes
   output$inspectMatrix <-
@@ -838,56 +841,22 @@ server <- function(input, output, session) {
   
   # description of About tab
   output$about <- renderUI({
-    HTML(
-      "<div><br>This page contains descriptions for the different features of the TREND-DB. </div><br>
-      <h4>Data Preview</h4>
-      <div>The <strong>Data Preview</strong> tab shows an overview of all shortening index values of each gene across all conditions. With the
-      '<strong>Filter by shortening index</strong>' slider, the table can be subsetted to only show genes with a shortening index value (absolute) above the threshold
-      in at least one condition. Upon selecting a row (= gene) in the table, a summary table of the selected gene is printed, showing the conditions in which the gene is affected
-      with the respective shortening indices and p-values.</div> <br> <br>
-      <h4>Main View</h4>
-      <div>The <strong>Main View</strong> tab is divided into <strong>Condition View</strong> and <strong>Gene View</strong>.
-      In the <strong>Condition View</strong>, users can select a condition to view a table containing all genes that are affected in this condition.
-      By clicking the <strong>Goana</strong> button, an over-representation analysis for Gene Ontology terms in a list of Entrez Gene IDs
-      is performed and the results are shown in a table.  The list of genes affected in the selected condition is used as a gene set with all genes as a background.
-      In the <strong>Gene View</strong>, users can select a gene to print a short summary and a table containing all conditions where the selected gene is affected.</div><br><br>
-      <h4>Gene Plot</h4>
-      <div>In the <strong>Gene Plot</strong> tab, users can plot the selected gene (using the <strong>Gviz</strong> package). Aside from the reference track of the selected gene and its chromosome, the control track as well as the selected condition are shown.
-      The default condition is the condition with the maximum SI for this gene, it can however be changed using a drop-down menu.
-      Adjusting the <strong> Number of similarily affected</strong> slider will print genes that are affected in a similar way as the selected gene (with the amount of them determined by the slider).
-      Similarily affected genes are obtained by computing the distance matrix (using the shortening indices of all genes across conditions) and looking for genes with the smallest distances.</div><br><br>
-      <h4>Genome Browser</h4>
-      <div> The <strong>Genome Browser</strong> tab includes an instance of the UCSC Genome Browser, where users can take a more in-depth look at the data. </div><br><br>
-      <h4>Contact</h4>
-      <div>Denise Scherzinger <a href='mailto:denscher@uni-mainz.de' target='_top'>(denscher@uni-mainz.de)</a></div>
-      "
-    )
+    includeMarkdown("app_descriptions/desc_about.md")
   })
   
   # description of Inspect Matrix
   output$inspectMatrix_desc <- renderUI({
-    HTML(
-      "This is an overview of all shortening index values of each gene across all conditions. <br> Adjust
-      the '<strong>Filter by shortening index</strong>' slider to only show genes with a shortening index value (absolute) above the threshold
-      in at least one condition. <br> Select a row in the table to print a summary table of the selected gene, showing the conditions in which it is affected
-      with the respective shortening indices and p-values."
-    )
+    includeMarkdown("app_descriptions/desc_inspectmatrix.md")
   })
   
   # description of Gene View in Main View tab
   output$mainViewGene_desc <- renderUI({
-    HTML(
-      "<div>Select a <strong>gene</strong> to print a gene summary and a table containing all conditions where this gene is affected.
-      </div>"
-    )
+    includeMarkdown("app_descriptions/desc_mainview_gene.md")
   })
   
   # description of Genome Browser tab
   output$genomeBrowser_desc <- renderUI({
-    HTML(
-      "<div>Please wait for data to be fetched from UCSC (~10s). The Genome Browser shows the currently selected gene and contains data tracks for all conditions which are grouped under 'Trendseq UCSC Hub'.
-      To show additional tracks for microRNA target sites, select the checkboxes on the left.</div>"
-    )
+    includeMarkdown("app_descriptions/desc_genomebrowser.md")
   })
   
   # description of affected genes
@@ -904,9 +873,7 @@ server <- function(input, output, session) {
   
   # description of Condition View in Main View tab
   output$mainViewCond_desc <- renderUI({
-    HTML(
-      "<div>Select a <strong>condition</strong> to print a table showing all genes affected in this condition.</div>"
-    )
+    includeMarkdown("app_descriptions/desc_mainview_cond.md")
   })
   
   # description of involved conditions
@@ -922,15 +889,7 @@ server <- function(input, output, session) {
   
   # description of Goana method
   output$goana_desc <- renderUI({
-    HTML(
-      "<div><h4><a name='goana'></a>GO Enrichment:</h4><br> The <strong>Goana</strong> (Limma Package) method performs an over-representation analysis for Gene Ontology terms in a list of Entrez Gene IDs.
-      The list of genes affected in the selected condition is used as a gene set with all genes as a background. <br>
-      Columns in the resulting table show the following: <br>
-      <strong>Term</strong> GO Term <br> <strong>Ont</strong> ontology that the GO term belongs to ('BP', 'CC' or 'MF')<br>
-      <strong>N</strong> number of genes in the GO term <br> <strong>DE</strong> number of genes in the provided gene set<br>
-      <strong>P.DE</strong> p-value for over-representation of the GO term in the set<br><br>Click the <strong>Goana</strong>
-      button to create the table.</div>"
-    )
+    includeMarkdown("app_descriptions/desc_goana.md")
   })
   
   # description of similarily affected genes selection
@@ -950,11 +909,7 @@ server <- function(input, output, session) {
   
   # description of Gene Plot tab
   output$genePlot_desc <- renderUI({
-    HTML(
-      "<div>Plots in this tab are created using the <strong>Gviz</strong> package. Aside from the reference track of the selected gene and its chromosome, the control track as well as the selected condition are shown. <br>
-      The default condition is the condition with the maximum SI for this gene, it can however be changed using the drop-down menu.<br>
-      Adjusting the <strong> Number of similarily affected</strong> slider will print genes that are affected in a similar way as the selected gene (with the amount of them determined by the slider). </div>"
-    )
+    includeMarkdown("app_descriptions/desc_geneplot.md")
   })
   
   # sessioninfo
