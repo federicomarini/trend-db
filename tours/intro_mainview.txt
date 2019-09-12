@@ -9,6 +9,8 @@ element;intro
 #geneTableOutput;
 #continueGP;
 #kdInput + .selectize-control;change w kd condition
+#trendnetwork;
+#kdInput + .selectize-control;
 #kdTableOutput;
 #showScatterplot;
 #goToGoana;
