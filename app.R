@@ -482,7 +482,7 @@ ui <- shinydashboard::dashboardPage(
               condition = "output.genePlotInfo",
               sliderInput(
                 "simAffectedSlider",
-                "Number of similarily affected genes",
+                "Number of similarly affected genes",
                 min = 0,
                 max = 30,
                 value = 0,
@@ -731,7 +731,7 @@ server <- function(input, output, session) {
     a("Open in new window!", href=browserURL(), target="_blank") 
   })
   
-  # renders similarily affected genes table
+  # renders similarly affected genes table
   output$simAffected_table <- DT::renderDataTable({
     req(input$geneInput)
     req(input$simAffectedSlider != 0)
@@ -924,14 +924,14 @@ server <- function(input, output, session) {
     includeMarkdown("app_descriptions/desc_goana.md")
   })
   
-  # description of similarily affected genes selection
+  # description of similarly affected genes selection
   output$simAffected_desc <- renderUI({
     req(input$geneInput)
     req(input$simAffectedSlider != 0)
     HTML(
-      "<div><h4>Similarily affected genes</h4>",
+      "<div><h4>Similarly affected genes</h4>",
       paste0(
-        "Similarily affected genes are obtained by computing the distance matrix (using the shortening indices of all genes across conditions) and looking for genes with the smallest distances.<br>", 
+        "Similarly affected genes are obtained by computing the distance matrix (using the shortening indices of all genes across conditions) and looking for genes with the smallest distances.<br>", 
         "The following genes are affected in a similar way as <strong>",
         input$geneInput,
         "</strong>:</div>"
@@ -949,7 +949,7 @@ server <- function(input, output, session) {
     sessionInfo()
   })
   
-  # proxy object for similarily affected table (used to clear selection)
+  # proxy object for similarly affected table (used to clear selection)
   proxy = dataTableProxy("simAffectedTable")
   
   # overview table for selected gene in inspect matrix, only created when a row is selected
@@ -1362,7 +1362,7 @@ server <- function(input, output, session) {
     return(affectedGenes)
   }
   
-  # function to determine specified number (n) of similarily affected genes for this gene
+  # function to determine specified number (n) of similarly affected genes for this gene
   simAffected <- function(gene, n) {
     if (!(gene %in% genenames))
       return()
