@@ -151,10 +151,22 @@ ui <- shinydashboard::dashboardPage(
       tabPanel(
         "Welcome",
         icon = icon("home"),
-        actionButton(
-          "tour_firststeps", "Click me for a quick tour",
-          icon("hand-o-right")
+        fluidRow(
+          column(
+            width = 1,
+            offset = 11,
+            actionButton(
+              "tour_firststeps",label = "",icon = icon("question-circle"),
+              style="color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
+            ),
+            shinyBS::bsTooltip(
+              "tour_firststeps", 
+              "Click me to start a tour of this section!",
+              "bottom", options = list(container = "body")
+            )
+          )
         ),
+        
         includeMarkdown("trenddb_welcomepage_top.md"),
         fluidRow(
           fluidRow(
@@ -193,9 +205,20 @@ ui <- shinydashboard::dashboardPage(
       tabPanel(
         "Data Preview",
         icon = icon("eye"),
-        actionButton(
-          "tour_datapreview", "Click me for a quick tour",
-          icon("hand-o-right")
+        fluidRow(
+          column(
+            width = 1,
+            offset = 11,
+            actionButton(
+              "tour_datapreview",label = "",icon = icon("question-circle"),
+              style="color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
+            ),
+            shinyBS::bsTooltip(
+              "tour_datapreview", 
+              "Click me to start a tour of this section!",
+              "bottom", options = list(container = "body")
+            )
+          )
         ),
         h2("Inspect Matrix"),
         fluidRow(
@@ -239,10 +262,20 @@ ui <- shinydashboard::dashboardPage(
       tabPanel(
         "Main View",
         icon = icon("table"),
+        
         fluidRow(
-          actionButton(
-            "tour_mainview", "Click me for a quick tour",
-            icon("hand-o-right")
+          column(
+            width = 1,
+            offset = 11,
+            actionButton(
+              "tour_mainview",label = "",icon = icon("question-circle"),
+              style="color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
+            ),
+            shinyBS::bsTooltip(
+              "tour_mainview", 
+              "Click me to start a tour of this section!",
+              "bottom", options = list(container = "body")
+            )
           )
         ),
         fluidRow(
@@ -373,12 +406,24 @@ ui <- shinydashboard::dashboardPage(
         icon = icon("bar-chart"),
         fluidRow(
           column(
+            width = 1,
+            offset = 11,
+            actionButton(
+              "tour_geneplot",label = "",icon = icon("question-circle"),
+              style="color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
+            ),
+            shinyBS::bsTooltip(
+              "tour_geneplot", 
+              "Click me to start a tour of this section!",
+              "bottom", options = list(container = "body")
+            )
+          )
+        ),
+        fluidRow(
+          column(
             width = 11,
             h2("Gene Plot"),
-            actionButton(
-              "tour_geneplot", "Click me for a quick tour",
-              icon("hand-o-right")
-            ),
+            
             fluidRow(
               column(
                 width = 7,
@@ -503,14 +548,25 @@ ui <- shinydashboard::dashboardPage(
       tabPanel(
         "Genome Browser",
         icon = icon("search"),
+        fluidRow(
+          column(
+            width = 1,
+            offset = 11,
+            actionButton(
+              "tour_genomebrowser",label = "",icon = icon("question-circle"),
+              style="color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
+            ),
+            shinyBS::bsTooltip(
+              "tour_genomebrowser", 
+              "Click me to start a tour of this section!",
+              "bottom", options = list(container = "body")
+            )
+          )
+        ),
         h2("Genome Browser"),
         fluidRow(
           column(
             width = 8,
-            actionButton(
-              "tour_genomebrowser", "Click me for a quick tour",
-              icon("hand-o-right")
-            ),
             uiOutput(
               "genomeBrowser_desc"
             )
