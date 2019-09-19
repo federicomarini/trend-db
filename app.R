@@ -173,12 +173,13 @@ ui <- shinydashboard::dashboardPage(
             column(
               width = 4, 
               offset = 4,
-              h3("TREND-DB is featuring...")
+              h3("TREND-DB is currently featuring...")
             )
           ),
           column(
             width = 4,
             h3(
+              "More than",
               shiny::tags$strong(countup(170,duration = 13)),
               p("conditions")
             )
@@ -193,8 +194,9 @@ ui <- shinydashboard::dashboardPage(
           column(
             width = 4,
             h3(
+              "Approximately",
               shiny::tags$strong(countup(3600,duration = 14)),
-              p("genes affected by TREND in neuroblastoma cells")
+              p("genes affected by TREND in cells of neuronal origin")
             )
           )
         ),
