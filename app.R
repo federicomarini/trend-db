@@ -19,6 +19,7 @@ library(igraph)
 library(visNetwork)
 library(magrittr)
 library(rintrojs)
+library(countup)
 
 
 # Loading required input data ---------------------------------------------
@@ -145,7 +146,7 @@ ui <- shinydashboard::dashboardPage(
       
       #h4("Session Info"),
       #verbatimTextOutput("sessioninfo")),
-
+      
       # ui panel welcome --------------------------------------------------------
       tabPanel(
         "Welcome",
@@ -154,9 +155,40 @@ ui <- shinydashboard::dashboardPage(
           "tour_firststeps", "Click me for a quick tour",
           icon("hand-o-right")
         ),
-        includeMarkdown("trenddb_welcomepage.md")
+        includeMarkdown("trenddb_welcomepage_top.md"),
+        fluidRow(
+          fluidRow(
+            column(
+              width = 4, 
+              offset = 4,
+              h3("TREND-DB is featuring...")
+            )
+          ),
+          column(
+            width = 4,
+            h3(
+              shiny::tags$strong(countup(170,duration = 13)),
+              p("conditions")
+            )
+          ),
+          column(
+            width = 4,
+            h3(
+              shiny::tags$strong(countup(9168,duration = 16)),
+              p("TREND-events")
+            )
+          ),
+          column(
+            width = 4,
+            h3(
+              shiny::tags$strong(countup(3600,duration = 14)),
+              p("genes affected by TREND in neuroblastoma cells")
+            )
+          )
+        ),
+        includeMarkdown("trenddb_welcomepage_bottom.md")
       ), # end of Welcome panel
-
+      
       # ui panel data preview ---------------------------------------------------
       tabPanel(
         "Data Preview",
@@ -202,7 +234,7 @@ ui <- shinydashboard::dashboardPage(
           )
         )
       ), # end of Data Preview panel
-
+      
       # ui panel main view ------------------------------------------------------
       tabPanel(
         "Main View",
@@ -334,7 +366,7 @@ ui <- shinydashboard::dashboardPage(
           )
         )
       ), # end of panel Main view
-
+      
       # ui panel gene plot ------------------------------------------------------
       tabPanel(
         "Gene Plot",
@@ -466,7 +498,7 @@ ui <- shinydashboard::dashboardPage(
           )
         )
       ), # end of Gene Plot panel
-
+      
       # ui panel genome browser -------------------------------------------------
       tabPanel(
         "Genome Browser",
@@ -515,7 +547,7 @@ ui <- shinydashboard::dashboardPage(
           )
         )
       ), # end of Genome Browser panel
-
+      
       # ui panel about ----------------------------------------------------------
       tabPanel(
         "About", 
@@ -1082,7 +1114,7 @@ server <- function(input, output, session) {
     return(createBrowserURL(input$geneInput))
   })
   
-
+  
   # all observers -----------------------------------------------------------
   
   # update knockdown condition if selected via trendnetwork
@@ -1098,7 +1130,7 @@ server <- function(input, output, session) {
                       selected = paste0(x,"_kd")
     )
   })
-    
+  
   # clear Goana table if condition selection is changed
   observeEvent(input$kdInput, {
     v$clearGoana <- TRUE
@@ -1318,9 +1350,9 @@ server <- function(input, output, session) {
       )
     ))
   })
-
+  
   # function definitions ----------------------------------------------------
-
+  
   # function to get all affected genes in this condition (cond)
   getGenes <- function(cond) {
     allgenes_selectedKD <-
