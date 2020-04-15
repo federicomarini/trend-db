@@ -23,10 +23,11 @@ library(countup)
 
 # Helper functions --------------------------------------------------------
 
-createLinkGO <- function (val) 
-{
-  sprintf("<a href=\"http://amigo.geneontology.org/amigo/term/%s\" target=\"_blank\" class=\"btn btn-primary\">%s</a>", 
-          val, val)
+createLinkGO <- function(val) {
+  sprintf(
+    "<a href=\"http://amigo.geneontology.org/amigo/term/%s\" target=\"_blank\" class=\"btn btn-primary\">%s</a>",
+    val, val
+  )
 }
 
 
@@ -37,7 +38,7 @@ load("trendseq.RData")
 
 # these objects needed to be updated in newer Bioc versions
 # txBygene <- updateObject(txBygene,verbose = FALSE)
-utrs <- updateObject(utrs,verbose = FALSE)
+utrs <- updateObject(utrs, verbose = FALSE)
 # just in case, saving workspace
 # save.image(file = "trendseq_bioc3_10.RData")
 message("Done! \n")
@@ -50,7 +51,7 @@ message("Done! \n")
 
 # Loading the TRENDnetwork ------------------------------------------------
 
-trendnet <-readRDS("TRENDnet.rds")
+trendnet <- readRDS("TRENDnet.rds")
 
 # processing that in brief
 data <- toVisNetworkData(trendnet)
@@ -58,9 +59,9 @@ data <- toVisNetworkData(trendnet)
 vis.nodes <- data$nodes
 vis.links <- data$edges
 
-vis.nodes$shape  <- "dot"  
+vis.nodes$shape <- "dot"
 vis.nodes$shadow <- TRUE # Nodes will drop shadow
-vis.nodes$title  <- vis.nodes$label # Text on click
+vis.nodes$title <- vis.nodes$label # Text on click
 vis.nodes$size <- 4 * vis.nodes$size
 
 
@@ -72,60 +73,64 @@ ui <- shinydashboard::dashboardPage(
     titleWidth = 750,
     # TODO: logo in the title?
     dropdownMenu(
-      type="tasks",
-      icon=icon("question-circle fa-1g"),
-      badgeStatus=NULL,
-      headerText="Help",
+      type = "tasks",
+      icon = icon("question-circle fa-1g"),
+      badgeStatus = NULL,
+      headerText = "Help",
       notificationItem(
-        text=actionButton(
+        text = actionButton(
           "dd_help", "First help",
           icon("hand-o-right")
         ),
-        icon=icon(""), # tricking it to not have additional icon
-        status="primary"
+        icon = icon(""), # tricking it to not have additional icon
+        status = "primary"
       ),
       notificationItem(
-        text=actionButton(
-          'dd_glossary', label="Open the glossary",
-          icon=icon("book")
+        text = actionButton(
+          "dd_glossary",
+          label = "Open the glossary",
+          icon = icon("book")
         ),
-        icon=icon(""), status="primary"
+        icon = icon(""), status = "primary"
       )
     ),
     dropdownMenu(
-      type="tasks",
-      icon=icon("info fa-1g"),
-      badgeStatus=NULL,
-      headerText="Additional information",
+      type = "tasks",
+      icon = icon("info fa-1g"),
+      badgeStatus = NULL,
+      headerText = "Additional information",
       notificationItem(
-        text=actionButton(
-          'session_info', label="About this session",
-          icon=icon("window-maximize")
+        text = actionButton(
+          "session_info",
+          label = "About this session",
+          icon = icon("window-maximize")
         ),
-        icon=icon(""), status="primary"
+        icon = icon(""), status = "primary"
       ),
       notificationItem(
-        text=actionButton(
-          'trenddb_info', label="About TREND-DB",
-          icon=icon("heart")
+        text = actionButton(
+          "trenddb_info",
+          label = "About TREND-DB",
+          icon = icon("heart")
         ),
-        icon=icon(""), status="primary"
+        icon = icon(""), status = "primary"
       )
     )
   ), # end of dashboardHeader
   # sidebar definition ------------------------------------------------------
   dashboardSidebar(
     disable = TRUE,
-    width = 350), # end of dashboardSidebar
+    width = 350
+  ), # end of dashboardSidebar
   # body definition ---------------------------------------------------------
   dashboardBody(
     introjsUI(),
-    
+
     # adding some styling in the html elements
     shiny::tags$head(
       shiny::tags$style(
         HTML(
-          '
+          "
           .skin-blue .wrapper, .content-wrapper {
           background-color: #e9e9e9;
           }
@@ -141,20 +146,20 @@ ui <- shinydashboard::dashboardPage(
           height: auto;
           width: 600px;
           }
-          '
+          "
         )
       )
     ),
-    
+
     ## main structure of the body for the dashboard
     tabBox(
       id = "tabs",
       width = 11,
       selected = "Welcome",
-      
-      #h4("Session Info"),
-      #verbatimTextOutput("sessioninfo")),
-      
+
+      # h4("Session Info"),
+      # verbatimTextOutput("sessioninfo")),
+
       # ui panel welcome --------------------------------------------------------
       tabPanel(
         "Welcome",
@@ -164,22 +169,24 @@ ui <- shinydashboard::dashboardPage(
             width = 1,
             offset = 11,
             actionButton(
-              "tour_firststeps",label = "",icon = icon("question-circle"),
-              style="color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
+              "tour_firststeps",
+              label = "", icon = icon("question-circle"),
+              style = "color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
             ),
             shinyBS::bsTooltip(
-              "tour_firststeps", 
+              "tour_firststeps",
               "Click me to start a tour of this section!",
-              "bottom", options = list(container = "body")
+              "bottom",
+              options = list(container = "body")
             )
           )
         ),
-        
+
         includeMarkdown("trenddb_welcomepage_top.md"),
         fluidRow(
           fluidRow(
             column(
-              width = 4, 
+              width = 4,
               offset = 4,
               h3("TREND-DB is currently featuring...")
             )
@@ -188,14 +195,14 @@ ui <- shinydashboard::dashboardPage(
             width = 4,
             h3(
               "More than",
-              shiny::tags$strong(countup(170,duration = 13)),
+              shiny::tags$strong(countup(170, duration = 13)),
               p("conditions")
             )
           ),
           column(
             width = 4,
             h3(
-              shiny::tags$strong(countup(9168,duration = 16)),
+              shiny::tags$strong(countup(9168, duration = 16)),
               p("TREND-events")
             )
           ),
@@ -203,14 +210,14 @@ ui <- shinydashboard::dashboardPage(
             width = 4,
             h3(
               "Approximately",
-              shiny::tags$strong(countup(3600,duration = 14)),
+              shiny::tags$strong(countup(3600, duration = 14)),
               p("genes affected by TREND in cells of neuronal origin")
             )
           )
         ),
         includeMarkdown("trenddb_welcomepage_bottom.md")
       ), # end of Welcome panel
-      
+
       # ui panel data preview ---------------------------------------------------
       tabPanel(
         "Data Preview",
@@ -220,13 +227,15 @@ ui <- shinydashboard::dashboardPage(
             width = 1,
             offset = 11,
             actionButton(
-              "tour_datapreview",label = "",icon = icon("question-circle"),
-              style="color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
+              "tour_datapreview",
+              label = "", icon = icon("question-circle"),
+              style = "color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
             ),
             shinyBS::bsTooltip(
-              "tour_datapreview", 
+              "tour_datapreview",
               "Click me to start a tour of this section!",
-              "bottom", options = list(container = "body")
+              "bottom",
+              options = list(container = "body")
             )
           )
         ),
@@ -243,7 +252,7 @@ ui <- shinydashboard::dashboardPage(
             actionButton("continueMV", "Continue to Main View", icon = icon("arrow-right"))
           )
         ),
-        shiny::tags$style(type = 'text/css', "#continueMV {position: absolute; right: 15px;}"),
+        shiny::tags$style(type = "text/css", "#continueMV {position: absolute; right: 15px;}"),
         br(),
         fluidRow(
           column(
@@ -267,24 +276,26 @@ ui <- shinydashboard::dashboardPage(
           )
         )
       ), # end of Data Preview panel
-      
+
       # ui panel main view ------------------------------------------------------
       tabPanel(
         "Main View",
         icon = icon("table"),
-        
+
         fluidRow(
           column(
             width = 1,
             offset = 11,
             actionButton(
-              "tour_mainview",label = "",icon = icon("question-circle"),
-              style="color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
+              "tour_mainview",
+              label = "", icon = icon("question-circle"),
+              style = "color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
             ),
             shinyBS::bsTooltip(
-              "tour_mainview", 
+              "tour_mainview",
               "Click me to start a tour of this section!",
-              "bottom", options = list(container = "body")
+              "bottom",
+              options = list(container = "body")
             )
           )
         ),
@@ -292,13 +303,13 @@ ui <- shinydashboard::dashboardPage(
           column(
             width = 10,
             offset = 1,
-            visNetworkOutput("trendnetwork",width = "800px",height = "800px")
+            visNetworkOutput("trendnetwork", width = "800px", height = "800px")
           )
         ),
         fluidRow(
           column(
             width = 6,
-            p(h2('Gene View')),
+            p(h2("Gene View")),
             fluidRow(column(
               width = 7,
               uiOutput("mainViewGene_desc"),
@@ -318,13 +329,15 @@ ui <- shinydashboard::dashboardPage(
                 width = 4,
                 conditionalPanel(
                   condition = "output.geneInfoMain",
-                  actionButton("continueGP", "Continue to Gene Plot", icon =
-                                 icon("arrow-right"))
+                  actionButton("continueGP", "Continue to Gene Plot",
+                    icon =
+                      icon("arrow-right")
+                  )
                 )
               )
             ),
             shiny::tags$style(
-              type = 'text/css',
+              type = "text/css",
               "#continueGP {position: absolute; right: 15px; margin-top: 25px;}"
             ),
             br(),
@@ -348,7 +361,7 @@ ui <- shinydashboard::dashboardPage(
           ),
           column(
             width = 6,
-            p(h2('Condition View')),
+            p(h2("Condition View")),
             fluidRow(
               column(
                 width = 7,
@@ -399,17 +412,17 @@ ui <- shinydashboard::dashboardPage(
             ),
             conditionalPanel(
               condition = "output.kdTableOutput",
-              br(),br(),
+              br(), br(),
               uiOutput("goana_desc"),
               br(),
               actionButton("goanaSubmit", "GOana"),
-              br(),br(),
+              br(), br(),
               DT::dataTableOutput("goanaTable")
             )
           )
         )
       ), # end of panel Main view
-      
+
       # ui panel gene plot ------------------------------------------------------
       tabPanel(
         "Gene Plot",
@@ -419,13 +432,15 @@ ui <- shinydashboard::dashboardPage(
             width = 1,
             offset = 11,
             actionButton(
-              "tour_geneplot",label = "",icon = icon("question-circle"),
-              style="color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
+              "tour_geneplot",
+              label = "", icon = icon("question-circle"),
+              style = "color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
             ),
             shinyBS::bsTooltip(
-              "tour_geneplot", 
+              "tour_geneplot",
               "Click me to start a tour of this section!",
-              "bottom", options = list(container = "body")
+              "bottom",
+              options = list(container = "body")
             )
           )
         ),
@@ -433,7 +448,7 @@ ui <- shinydashboard::dashboardPage(
           column(
             width = 11,
             h2("Gene Plot"),
-            
+
             fluidRow(
               column(
                 width = 7,
@@ -446,25 +461,31 @@ ui <- shinydashboard::dashboardPage(
                     width = 8,
                     conditionalPanel(
                       condition = "!output.genePlotInfo",
-                      actionButton("selectGene", "Select gene", icon =
-                                     icon("search"))
+                      actionButton("selectGene", "Select gene",
+                        icon =
+                          icon("search")
+                      )
                     ),
                     conditionalPanel(
                       condition = "output.genePlotInfo",
-                      actionButton("switchGene", "Change gene", icon =
-                                     icon("refresh"))
+                      actionButton("switchGene", "Change gene",
+                        icon =
+                          icon("refresh")
+                      )
                     )
                   )
                 ),
-                br(),br(),
+                br(), br(),
                 fluidRow(
                   column(
                     width = 8,
                     conditionalPanel(
                       condition = "output.genePlotInfo",
-                      actionButton("viewBrowser",
-                                   "View in Genome Browser",
-                                   icon("search"))
+                      actionButton(
+                        "viewBrowser",
+                        "View in Genome Browser",
+                        icon("search")
+                      )
                     )
                   )
                 )
@@ -493,8 +514,9 @@ ui <- shinydashboard::dashboardPage(
                     column(
                       width = 4,
                       selectInput("genePlotCond",
-                                  "Condition (default = max SI)",
-                                  choices = "max SI")
+                        "Condition (default = max SI)",
+                        choices = "max SI"
+                      )
                     ),
                     column(
                       width = 4,
@@ -543,7 +565,7 @@ ui <- shinydashboard::dashboardPage(
                 value = 0,
                 step = 1
               ),
-              #br(),
+              # br(),
               # actionButton("simInfoUpdate", "Update similar"),
               br(),
               htmlOutput("simAffected_desc"),
@@ -553,7 +575,7 @@ ui <- shinydashboard::dashboardPage(
           )
         )
       ), # end of Gene Plot panel
-      
+
       # ui panel genome browser -------------------------------------------------
       tabPanel(
         "Genome Browser",
@@ -563,13 +585,15 @@ ui <- shinydashboard::dashboardPage(
             width = 1,
             offset = 11,
             actionButton(
-              "tour_genomebrowser",label = "",icon = icon("question-circle"),
-              style="color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
+              "tour_genomebrowser",
+              label = "", icon = icon("question-circle"),
+              style = "color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
             ),
             shinyBS::bsTooltip(
-              "tour_genomebrowser", 
+              "tour_genomebrowser",
               "Click me to start a tour of this section!",
-              "bottom", options = list(container = "body")
+              "bottom",
+              options = list(container = "body")
             )
           )
         ),
@@ -582,7 +606,7 @@ ui <- shinydashboard::dashboardPage(
             )
           )
         ),
-        br(),br(),
+        br(), br(),
         fluidRow(
           column(
             width = 2,
@@ -597,12 +621,13 @@ ui <- shinydashboard::dashboardPage(
               selected = NULL
             ),
             br(),
-            #checkboxGroupInput("selectConditions",
+            # checkboxGroupInput("selectConditions",
             #                  "Conditions",
             #                   choices = c("", paste0(conditions, "_kd"))),
             checkboxGroupInput("selectTracks",
-                               "Additional Tracks",
-                               choices = list("miRNAs" = 1)),
+              "Additional Tracks",
+              choices = list("miRNAs" = 1)
+            ),
             br(), br(),
             htmlOutput("browserNewWindow")
             # actionButton("tracksInput", "Update Tracks", icon = icon("refresh"))
@@ -613,10 +638,10 @@ ui <- shinydashboard::dashboardPage(
           )
         )
       ), # end of Genome Browser panel
-      
+
       # ui panel about ----------------------------------------------------------
       tabPanel(
-        "About", 
+        "About",
         icon = icon("info-circle"),
         h2("About"),
         fluidRow(
@@ -626,17 +651,17 @@ ui <- shinydashboard::dashboardPage(
           )
         )
       ) # end of About panel
-    ) # end of tabBox 
+    ) # end of tabBox
   ) # end of dashboardBody
 )
 
 # Server definition -------------------------------------------------------
 server <- function(input, output, session) {
   v <- reactiveValues(
-    clearGoana = TRUE, 
+    clearGoana = TRUE,
     clearPlot = TRUE
   )
-  
+
   # renders inspect matrix containing all genes + conditions with their respective dir indexes
   output$inspectMatrix <-
     DT::renderDataTable(server = TRUE, {
@@ -648,8 +673,9 @@ server <- function(input, output, session) {
       table <- as.data.frame(table)
       cutoff <- input$dirFilter
       table <-
-        subset(table, apply(table, MARGIN = 1, function(x)
-          any(x > cutoff | x < -cutoff)))
+        subset(table, apply(table, MARGIN = 1, function(x) {
+          any(x > cutoff | x < -cutoff)
+        }))
       cat(file = stderr(), "Done! \n")
       DT::datatable(
         table,
@@ -657,7 +683,7 @@ server <- function(input, output, session) {
         colnames = c("Gene" = 1),
         rownames = TRUE,
         selection = "single",
-        extensions = c('FixedColumns', 'Scroller'),
+        extensions = c("FixedColumns", "Scroller"),
         options = list(
           scrollX = TRUE,
           deferRender = TRUE,
@@ -669,10 +695,11 @@ server <- function(input, output, session) {
       ) %>%
         formatRound(colnames(table), digits = 3) %>%
         formatStyle("Gene",
-                    backgroundColor = "#ffeecc",
-                    fontWeight = "bold")
+          backgroundColor = "#ffeecc",
+          fontWeight = "bold"
+        )
     })
-  
+
   # selection in inspect matrix (single)
   output$selection <- renderUI({
     req(input$inspectMatrix_rows_selected)
@@ -680,8 +707,9 @@ server <- function(input, output, session) {
     table <- as.data.frame(KDmat)
     if (input$dirFilter > 0) {
       table <-
-        subset(table, apply(table, MARGIN = 1, function(x)
-          any(x > cutoff | x < -cutoff)))
+        subset(table, apply(table, MARGIN = 1, function(x) {
+          any(x > cutoff | x < -cutoff)
+        }))
     }
     selectedRowIndex <-
       input$inspectMatrix_rows_selected
@@ -689,20 +717,22 @@ server <- function(input, output, session) {
     gene <- rownames(table)[selectedRowIndex]
     h4("Selected Gene: ", gene)
   })
-  
+
   output$trendnetwork <- renderVisNetwork({
     visnet <- visNetwork(vis.nodes, vis.links, height = "1000px", width = "1000px")
-    visnet %>% 
-      visOptions(highlightNearest = TRUE, selectedBy = "Group",nodesIdSelection = TRUE) %>% 
-      visLegend(main="Legend", position="right", ncol=1) 
+    visnet %>%
+      visOptions(highlightNearest = TRUE, selectedBy = "Group", nodesIdSelection = TRUE) %>%
+      visLegend(main = "Legend", position = "right", ncol = 1)
   })
-  
+
   output$geneSelection <- renderUI({
-    HTML("<div><strong>Gene</strong> <br>",
-         input$geneInput,
-         "<br><br></div>")
+    HTML(
+      "<div><strong>Gene</strong> <br>",
+      input$geneInput,
+      "<br><br></div>"
+    )
   })
-  
+
   # genome browser iFrame
   output$browserFrame <- renderUI({
     iframe <-
@@ -714,7 +744,7 @@ server <- function(input, output, session) {
       )
     iframe
   })
-  
+
   # renders overview table for selected gene in inspect matrix
   output$overviewTable <- DT::renderDataTable({
     table <- overviewTable()
@@ -731,10 +761,11 @@ server <- function(input, output, session) {
       )
     ) %>%
       formatStyle("Condition",
-                  backgroundColor = "#ffe0cc",
-                  fontWeight = "bold")
+        backgroundColor = "#ffe0cc",
+        fontWeight = "bold"
+      )
   })
-  
+
   # renders gene table
   output$geneTableOutput <- DT::renderDataTable({
     req(input$geneInput)
@@ -744,7 +775,7 @@ server <- function(input, output, session) {
       colnames = c("Condition" = 1),
       rownames = paste0(rownames(table), "_kd"),
       selection = "single",
-      extensions = c('FixedColumns'),
+      extensions = c("FixedColumns"),
       options = list(
         scrollX = TRUE,
         scrollY = 300,
@@ -754,16 +785,17 @@ server <- function(input, output, session) {
       )
     ) %>%
       formatStyle("Condition",
-                  backgroundColor = "#ffe0cc",
-                  fontWeight = "bold")
+        backgroundColor = "#ffe0cc",
+        fontWeight = "bold"
+      )
   })
-  
+
   # renders gene info table in Main View
   output$geneInfoMain <- DT::renderDataTable({
     req(input$geneInput)
     DT::datatable(
       geneInfoTableMain(),
-      extensions = c('FixedColumns'),
+      extensions = c("FixedColumns"),
       options = list(
         paging = FALSE,
         searching = FALSE,
@@ -771,12 +803,13 @@ server <- function(input, output, session) {
         scrollX = TRUE,
         fixedColumns = FALSE
       )
-    )  %>%
+    ) %>%
       formatStyle("Gene",
-                  backgroundColor = "#ffeecc",
-                  fontWeight = "bold")
+        backgroundColor = "#ffeecc",
+        fontWeight = "bold"
+      )
   })
-  
+
   # description text for gene in Main View (input$geneInput, using rentrez)
   output$geneSummary <- renderPrint({
     req(input$geneInput)
@@ -786,17 +819,17 @@ server <- function(input, output, session) {
     try(sum <- x$summary)
     cat(sum)
   })
-  
+
   # renders NCBI link for Main View
   output$NCBImain <- renderUI({
     a("View Gene (NCBI)", href = NCBImain(), target = "_blank")
   })
-  
+
   # renders GB link
   output$browserNewWindow <- renderUI({
-    a("Open in new window!", href=browserURL(), target="_blank") 
+    a("Open in new window!", href = browserURL(), target = "_blank")
   })
-  
+
   # renders similarly affected genes table
   output$simAffected_table <- DT::renderDataTable({
     req(input$geneInput)
@@ -813,12 +846,13 @@ server <- function(input, output, session) {
         searching = TRUE,
         paging = FALSE
       )
-    )  %>%
+    ) %>%
       formatStyle("Gene",
-                  backgroundColor = "#ffeecc",
-                  fontWeight = "bold")
+        backgroundColor = "#ffeecc",
+        fontWeight = "bold"
+      )
   })
-  
+
   # renders condition table
   output$kdTableOutput <- DT::renderDataTable({
     req(input$kdInput)
@@ -826,7 +860,7 @@ server <- function(input, output, session) {
       kdTable(),
       colnames = c("Gene" = 1),
       selection = "single",
-      extensions = c('FixedColumns'),
+      extensions = c("FixedColumns"),
       options = list(
         scrollX = TRUE,
         scrollY = 480,
@@ -834,12 +868,13 @@ server <- function(input, output, session) {
         searching = TRUE,
         fixedColumns = FALSE
       )
-    )  %>%
+    ) %>%
       formatStyle("Gene",
-                  backgroundColor = "#ffeecc",
-                  fontWeight = "bold")
+        backgroundColor = "#ffeecc",
+        fontWeight = "bold"
+      )
   })
-  
+
   output$goanaTable <- DT::renderDataTable({
     req(input$kdInput)
     if (v$clearGoana) {
@@ -847,68 +882,74 @@ server <- function(input, output, session) {
     } else {
       DT::datatable(
         withProgress(
-          message = 'Calculating',
-          detail = 'This may take a while...',
+          message = "Calculating",
+          detail = "This may take a while...",
           value = 0.8,
           {
             myt <- createGoana()
             myt$GO <- rownames(myt)
             # message(class(myt))
-            myt <- myt[, c(6,1,2,3,4,5)]
+            myt <- myt[, c(6, 1, 2, 3, 4, 5)]
             myt$GO <- createLinkGO(myt$GO)
             myt
           }
         ),
         rownames = FALSE,
-        extensions = c('FixedColumns'),
+        extensions = c("FixedColumns"),
         options = list(
           bInfo = 0,
           scrollX = TRUE,
           scrollY = 480,
           fixedColumns = FALSE,
-          order = list(5, 'asc')
+          order = list(5, "asc")
         ),
         escape = FALSE
-      )  %>%
+      ) %>%
         formatStyle(c("GO", "Term"),
-                    backgroundColor = "#b3ccff",
-                    fontWeight = "bold")
+          backgroundColor = "#b3ccff",
+          fontWeight = "bold"
+        )
     }
   })
-  
+
   # renders info table for gene plot
   output$genePlotInfo <- DT::renderDataTable({
     req(input$geneInput)
     DT::datatable(genePlotTable(),
-                  options = list(
-                    paging = FALSE,
-                    searching = FALSE,
-                    bInfo = 0
-                  ))  %>%
+      options = list(
+        paging = FALSE,
+        searching = FALSE,
+        bInfo = 0
+      )
+    ) %>%
       formatStyle("Gene",
-                  backgroundColor = "#ffeecc",
-                  fontWeight = "bold") %>%
+        backgroundColor = "#ffeecc",
+        fontWeight = "bold"
+      ) %>%
       formatStyle("Condition",
-                  backgroundColor = "#ffe0cc",
-                  fontWeight = "bold")
+        backgroundColor = "#ffe0cc",
+        fontWeight = "bold"
+      )
   })
-  
+
   # renders gene plot
   output$gviz <- renderPlot({
     if (v$clearPlot) {
       return()
     } else {
-      withProgress(message = 'Calculating',
-                   detail = 'This may take a while...',
-                   value = 0.8,
-                   {
-                     drawPlot()
-                   })
+      withProgress(
+        message = "Calculating",
+        detail = "This may take a while...",
+        value = 0.8,
+        {
+          drawPlot()
+        }
+      )
       # }, height = function() {
       #   session$clientData$output_gviz_width
     }
   })
-  
+
   # creates a download handler for gene plot
   output$download_genePlot <- downloadHandler(
     filename = "genePlot.png",
@@ -921,48 +962,50 @@ server <- function(input, output, session) {
         cond <- strsplit(input$genePlotCond, "_")[[1]][1]
       }
       if (input$selectView == "3' UTR") {
-        view = "utr"
+        view <- "utr"
       } else if (input$selectView == "Gene Body") {
-        view = "gb"
+        view <- "gb"
       }
       try(genePlot(gene, cond, view))
       dev.off()
     }
   )
-  
+
   # renders NCBI link for Gene Plot
   output$NCBIplot <- renderUI({
     a("View Gene (NCBI)", href = NCBImain(), target = "_blank")
   })
-  
+
   # creates download link for gene plot
   output$pdflink <-
-    downloadHandler(filename <- "myplot.pdf",
-                    content <-
-                      function(file) {
-                        file.copy("plot.pdf", file)
-                      })
-  
+    downloadHandler(
+      filename <- "myplot.pdf",
+      content <-
+        function(file) {
+          file.copy("plot.pdf", file)
+        }
+    )
+
   # description of About tab
   output$about <- renderUI({
     includeMarkdown("app_descriptions/desc_about.md")
   })
-  
+
   # description of Inspect Matrix
   output$inspectMatrix_desc <- renderUI({
     includeMarkdown("app_descriptions/desc_inspectmatrix.md")
   })
-  
+
   # description of Gene View in Main View tab
   output$mainViewGene_desc <- renderUI({
     includeMarkdown("app_descriptions/desc_mainview_gene.md")
   })
-  
+
   # description of Genome Browser tab
   output$genomeBrowser_desc <- renderUI({
     includeMarkdown("app_descriptions/desc_genomebrowser.md")
   })
-  
+
   # description of affected genes
   output$affectedGenes_desc <- renderUI({
     HTML(
@@ -974,12 +1017,12 @@ server <- function(input, output, session) {
       "</strong> condition.</div>"
     )
   })
-  
+
   # description of Condition View in Main View tab
   output$mainViewCond_desc <- renderUI({
     includeMarkdown("app_descriptions/desc_mainview_cond.md")
   })
-  
+
   # description of involved conditions
   output$involvedConds_desc <- renderUI({
     HTML(
@@ -990,12 +1033,12 @@ server <- function(input, output, session) {
       )
     )
   })
-  
+
   # description of Goana method
   output$goana_desc <- renderUI({
     includeMarkdown("app_descriptions/desc_goana.md")
   })
-  
+
   # description of similarly affected genes selection
   output$simAffected_desc <- renderUI({
     req(input$geneInput)
@@ -1003,27 +1046,27 @@ server <- function(input, output, session) {
     HTML(
       "<div><h4>Similarly affected genes</h4>",
       paste0(
-        "Similarly affected genes are obtained by computing the distance matrix (using the shortening indices of all genes across conditions) and looking for genes with the smallest distances.<br>", 
+        "Similarly affected genes are obtained by computing the distance matrix (using the shortening indices of all genes across conditions) and looking for genes with the smallest distances.<br>",
         "The following genes are affected in a similar way as <strong>",
         input$geneInput,
         "</strong>:</div>"
       )
     )
   })
-  
+
   # description of Gene Plot tab
   output$genePlot_desc <- renderUI({
     includeMarkdown("app_descriptions/desc_geneplot.md")
   })
-  
+
   # sessioninfo
   output$sessioninfo <- renderPrint({
     sessionInfo()
   })
-  
+
   # proxy object for similarly affected table (used to clear selection)
-  proxy = dataTableProxy("simAffectedTable")
-  
+  proxy <- dataTableProxy("simAffectedTable")
+
   # overview table for selected gene in inspect matrix, only created when a row is selected
   overviewTable <-
     eventReactive(input$inspectMatrix_rows_selected, {
@@ -1031,38 +1074,40 @@ server <- function(input, output, session) {
       table <- as.data.frame(KDmat)
       if (input$dirFilter > 0) {
         table <-
-          subset(table, apply(table, MARGIN = 1, function(x)
-            any(x > cutoff | x < -cutoff)))
+          subset(table, apply(table, MARGIN = 1, function(x) {
+            any(x > cutoff | x < -cutoff)
+          }))
       }
       selectedRowIndex <-
         input$inspectMatrix_rows_selected
       selectedRow <- table[selectedRowIndex, ]
       gene <- rownames(table)[selectedRowIndex]
       overviewTable <- createGeneTable(gene)
-      
+
       updateSelectInput(session,
-                        "geneInput",
-                        choices = c("", genenames),
-                        selected = gene)
+        "geneInput",
+        choices = c("", genenames),
+        selected = gene
+      )
       return(overviewTable)
     })
-  
+
   # reactive function for affected genes, updated on input change (input$kdInput)
   affectedGenes <- reactive({
     kd <- strsplit(input$kdInput, "_")[[1]][1]
     getGenes(kd)
   })
-  
+
   # reactive function for involved conditions, updated on input change (input$geneInput)
   conditionsInvolved <- reactive({
     getConds(input$geneInput)
   })
-  
+
   # creates gene table, updated on input change in Main View (input$geneInput)
   geneTable <- reactive({
     createGeneTable(input$geneInput)
   })
-  
+
   # creates condition table containing all affected genes with dir index, p-value prox + p-value dist, updated on input change in Main View (input$kdInput)
   kdTable <- reactive({
     affectedGenes <- affectedGenes()
@@ -1084,7 +1129,7 @@ server <- function(input, output, session) {
     }
     return(kdTable)
   })
-  
+
   # creates output table for goana GO term enrichment analysis
   createGoana <- eventReactive(input$goanaSubmit, {
     req(input$kdInput)
@@ -1100,33 +1145,37 @@ server <- function(input, output, session) {
       eg <- sym2eg(gene)
       background <- append(background, eg)
     }
-    
+
     table <-
       limma::goana(geneSet,
-                   species = "Hs",
-                   FDR = 0.05,
-                   universe = background)
-    goanaTable <- table[table$P.DE < 0.05,]
+        species = "Hs",
+        FDR = 0.05,
+        universe = background
+      )
+    goanaTable <- table[table$P.DE < 0.05, ]
     cat(file = stderr(), "GO Enrichment analysis done! \n")
     return(goanaTable)
   })
-  
+
   getSimAffected <- reactive({
     req(input$simAffectedSlider != 0 && !is.null(input$geneInput))
     return(simAffected(input$geneInput, input$simAffectedSlider))
   })
-  
+
   # window for scatterplots
   scatterModal <- eventReactive(input$showScatterplot, {
     cond <- strsplit(input$kdInput, "_")[[1]][1]
     file <- paste0("./data/scatterplots/", cond, ".png")
     return(list(src = file, contentType = "image/png", width = 400, height = 400))
   })
-  
-  output$scatterplot <- renderImage({
-    scatterModal()
-  }, deleteFile = FALSE)
-  
+
+  output$scatterplot <- renderImage(
+    {
+      scatterModal()
+    },
+    deleteFile = FALSE
+  )
+
   # calls genePlot for selected gene (input$geneInput), only called after action button is used (input$plotSubmit)
   drawPlot <- eventReactive(input$plotSubmit, {
     req(input$geneInput)
@@ -1137,9 +1186,9 @@ server <- function(input, output, session) {
       cond <- strsplit(input$genePlotCond, "_")[[1]][1]
     }
     if (input$selectView == "3' UTR") {
-      view = "utr"
+      view <- "utr"
     } else if (input$selectView == "Gene Body") {
-      view = "gb"
+      view <- "gb"
     }
     id <- paste0(gene, "_", cond, "_", view)
     file <- paste0("./data/plotCache/", id, ".png")
@@ -1150,14 +1199,14 @@ server <- function(input, output, session) {
       myplot <- ggimage(img)
       print(myplot)
       cat(file = stderr(), "Done!\n")
-    } else{
+    } else {
       cat(file = stderr(), "Plot not yet cached! Calculating...\n")
       try(genePlot(gene, cond, view))
-      #cachePlot(file, gene, cond, view)
+      # cachePlot(file, gene, cond, view)
       cat(file = stderr(), "Done!\n")
     }
   })
-  
+
   # info table for gene plot, updated on input change (input$geneInput)
   genePlotTable <- reactive({
     if (input$genePlotCond == "max SI") {
@@ -1167,12 +1216,12 @@ server <- function(input, output, session) {
     }
     genePlotInfoTable(input$geneInput, cond)
   })
-  
+
   # creates gene info table in Main View, updated on input change (input$geneInput)
   geneInfoTableMain <- reactive({
     return(geneInfoTable(input$geneInput))
   })
-  
+
   # creates NCBI link for gene (input$geneInput)
   NCBImain <- reactive({
     req(input$geneInput)
@@ -1181,96 +1230,114 @@ server <- function(input, output, session) {
       sym2eg(input$geneInput)
     ))
   })
-  
+
   browserURL <- reactive({
     return(createBrowserURL(input$geneInput))
   })
-  
-  
+
+
   # all observers -----------------------------------------------------------
-  
+
   # update knockdown condition if selected via trendnetwork
   observe({
     x <- input$trendnetwork_selected
-    
+
     # Can use character(0) to remove all choices
-    if (is.null(x))
+    if (is.null(x)) {
       x <- character(0)
-    
+    }
+
     # Can also set the label and select items
     updateSelectInput(session, "kdInput",
-                      selected = paste0(x,"_kd")
+      selected = paste0(x, "_kd")
     )
   })
-  
+
   # clear Goana table if condition selection is changed
-  observeEvent(input$kdInput, {
-    v$clearGoana <- TRUE
-  }, priority = 10)
-  
-  observeEvent(input$goanaSubmit, {
-    v$clearGoana <- FALSE
-  }, priority = 10)
-  
+  observeEvent(input$kdInput,
+    {
+      v$clearGoana <- TRUE
+    },
+    priority = 10
+  )
+
+  observeEvent(input$goanaSubmit,
+    {
+      v$clearGoana <- FALSE
+    },
+    priority = 10
+  )
+
   # clear plot if condition selection is changed
-  observeEvent(input$genePlotCond, {
-    v$clearPlot <- TRUE
-  }, priority = 10)
-  
-  observeEvent(input$geneInput, {
-    v$clearPlot <- TRUE
-    updateSelectInput(session, "selectView",
-                      selected = "3' UTR")
-  }, priority = 10)
-  
-  observeEvent(input$plotSubmit, {
-    v$clearPlot <- FALSE
-  }, priority = 10)
-  
+  observeEvent(input$genePlotCond,
+    {
+      v$clearPlot <- TRUE
+    },
+    priority = 10
+  )
+
+  observeEvent(input$geneInput,
+    {
+      v$clearPlot <- TRUE
+      updateSelectInput(session, "selectView",
+        selected = "3' UTR"
+      )
+    },
+    priority = 10
+  )
+
+  observeEvent(input$plotSubmit,
+    {
+      v$clearPlot <- FALSE
+    },
+    priority = 10
+  )
+
   # observer to change selected tab to Main View on button press (when gene has been selected in Inspect Matrix)
   observe({
     if (input$continueMV > 0) {
       updateTabItems(session, "tabs", selected = "Main View")
     }
   })
-  
+
   # observer to change selected tab to Gene Plot on button press (when gene has been selected in Main View)
   observe({
     if (input$continueGP > 0) {
       updateTabItems(session, "tabs", selected = "Gene Plot")
     }
   })
-  
+
   # observers to change selected tab to Main View (in order to select/change a gene to plot)
   observe({
     if (input$selectGene > 0) {
       updateTabItems(session, "tabs", selected = "Main View")
       updateSelectInput(session, "selectView",
-                        selected = "3' UTR")
+        selected = "3' UTR"
+      )
     }
   })
-  
+
   # observer to change selected tab to Main View
   observe({
     if (input$switchGene > 0) {
       updateTabItems(session, "tabs", selected = "Main View")
     }
   })
-  
+
   # observer to change selected tab to Main View
   observe({
     if (input$changeGene > 0) {
       updateTabItems(session, "tabs", selected = "Main View")
     }
   })
-  
+
   # observer to change selected tab to Genome Browser
   observe({
     if (input$viewBrowser > 0) {
       updateTabItems(session, "tabs", selected = "Genome Browser")
     }
   })
-  
+
   # observer to update gene selection in Main View when gene is selected in condition table
   observe({
     if (length(input$kdTableOutput_rows_selected) > 0) {
@@ -1280,11 +1347,12 @@ server <- function(input, output, session) {
       selectedRow <- table[selectedRowIndex, ]
       gene <- rownames(table)[selectedRowIndex]
       updateSelectInput(session,
-                        "geneInput",
-                        selected = gene)
+        "geneInput",
+        selected = gene
+      )
     }
   })
-  
+
   observe({
     if (length(input$geneTableOutput_rows_selected) > 0) {
       table <- geneTable()
@@ -1295,22 +1363,26 @@ server <- function(input, output, session) {
       selectedRow <- table[selectedRowIndex, ]
       cond <- rownames(table)[selectedRowIndex]
       updateSelectInput(session,
-                        "genePlotCond",
-                        selected = cond)
+        "genePlotCond",
+        selected = cond
+      )
       updateSelectInput(session,
-                        "kdInput",
-                        selected = cond)
+        "kdInput",
+        selected = cond
+      )
       updateSelectInput(session,
-                        "condsGB",
-                        selected = cond)
+        "condsGB",
+        selected = cond
+      )
     }
     else {
       updateSelectInput(session,
-                        "genePlotCond",
-                        selected = "max SI")
+        "genePlotCond",
+        selected = "max SI"
+      )
     }
   })
-  
+
   observe({
     if (length(input$overviewTable_rows_selected) > 0) {
       table <- overviewTable()
@@ -1321,14 +1393,16 @@ server <- function(input, output, session) {
       selectedRow <- table[selectedRowIndex, ]
       cond <- rownames(table)[selectedRowIndex]
       updateSelectInput(session,
-                        "kdInput",
-                        selected = cond)
+        "kdInput",
+        selected = cond
+      )
       updateSelectInput(session,
-                        "condsGB",
-                        selected = cond)
+        "condsGB",
+        selected = cond
+      )
     }
   })
-  
+
   # updates condition selection choices in Gene Plot for selected gene (input$genePlotInput)
   updatePlotConds <- observe({
     req(input$geneInput)
@@ -1340,45 +1414,51 @@ server <- function(input, output, session) {
       selected = "max SI"
     )
     updateSelectInput(session,
-                      "condsGB",
-                      choices = c("max SI", paste0(conds, "_kd")),
-                      selected = "max SI")
+      "condsGB",
+      choices = c("max SI", paste0(conds, "_kd")),
+      selected = "max SI"
+    )
   })
-  
+
   observeEvent(input$tour_firststeps, {
     tour <- read.delim("tours/intro_firststeps.txt",
-                       sep=";", stringsAsFactors=FALSE, row.names=NULL, quote="")
-    introjs(session, options=list(steps=tour))
+      sep = ";", stringsAsFactors = FALSE, row.names = NULL, quote = ""
+    )
+    introjs(session, options = list(steps = tour))
   })
-  
+
   observeEvent(input$tour_datapreview, {
     tour <- read.delim("tours/intro_datapreview.txt",
-                       sep=";", stringsAsFactors=FALSE, row.names=NULL, quote="")
-    introjs(session, options=list(steps=tour))
+      sep = ";", stringsAsFactors = FALSE, row.names = NULL, quote = ""
+    )
+    introjs(session, options = list(steps = tour))
   })
-  
+
   observeEvent(input$tour_mainview, {
     tour <- read.delim("tours/intro_mainview.txt",
-                       sep=";", stringsAsFactors=FALSE, row.names=NULL, quote="")
-    introjs(session, options=list(steps=tour))
+      sep = ";", stringsAsFactors = FALSE, row.names = NULL, quote = ""
+    )
+    introjs(session, options = list(steps = tour))
   })
-  
+
   observeEvent(input$tour_geneplot, {
     tour <- read.delim("tours/intro_geneplot.txt",
-                       sep=";", stringsAsFactors=FALSE, row.names=NULL, quote="")
-    introjs(session, options=list(steps=tour))
+      sep = ";", stringsAsFactors = FALSE, row.names = NULL, quote = ""
+    )
+    introjs(session, options = list(steps = tour))
   })
-  
+
   observeEvent(input$tour_genomebrowser, {
     tour <- read.delim("tours/intro_genomebrowser.txt",
-                       sep=";", stringsAsFactors=FALSE, row.names=NULL, quote="")
-    introjs(session, options=list(steps=tour))
+      sep = ";", stringsAsFactors = FALSE, row.names = NULL, quote = ""
+    )
+    introjs(session, options = list(steps = tour))
   })
-  
+
   observeEvent(input$dd_help, {
     showModal(modalDialog(
-      title="First help", size="l",fade=TRUE,
-      footer=NULL, easyClose=TRUE,
+      title = "First help", size = "l", fade = TRUE,
+      footer = NULL, easyClose = TRUE,
       tagList(
         HTML("Some first help"),
         renderPrint({
@@ -1387,32 +1467,32 @@ server <- function(input, output, session) {
       )
     ))
   })
-  
+
   observeEvent(input$dd_glossary, {
     showModal(modalDialog(
-      title="The TREND-DB glossary", size="l",fade=TRUE,
-      footer=NULL, easyClose=TRUE,
+      title = "The TREND-DB glossary", size = "l", fade = TRUE,
+      footer = NULL, easyClose = TRUE,
       tagList(
         includeMarkdown("trenddb_glossary.md")
       )
     ))
   })
-  
-  
+
+
   observeEvent(input$session_info, {
     showModal(modalDialog(
-      title="Session information", size="l",fade=TRUE,
-      footer=NULL, easyClose=TRUE,
+      title = "Session information", size = "l", fade = TRUE,
+      footer = NULL, easyClose = TRUE,
       tagList(renderPrint({
         sessionInfo()
       }))
     ))
   })
-  
+
   observeEvent(input$trenddb_info, {
     showModal(modalDialog(
-      title="About TREND-DB", size="m", fade=TRUE,
-      footer=NULL, easyClose=TRUE,
+      title = "About TREND-DB", size = "m", fade = TRUE,
+      footer = NULL, easyClose = TRUE,
       tagList(
         br(), br(),
         HTML("If you use this application for your projects, please use the following citation information:"),
@@ -1422,9 +1502,9 @@ server <- function(input, output, session) {
       )
     ))
   })
-  
+
   # function definitions ----------------------------------------------------
-  
+
   # function to get all affected genes in this condition (cond)
   getGenes <- function(cond) {
     allgenes_selectedKD <-
@@ -1433,22 +1513,23 @@ server <- function(input, output, session) {
       rownames(allgenes_selectedKD)[!is.na(allgenes_selectedKD)]
     return(affectedGenes)
   }
-  
+
   # function to determine specified number (n) of similarly affected genes for this gene
   simAffected <- function(gene, n) {
-    if (!(gene %in% genenames))
+    if (!(gene %in% genenames)) {
       return()
+    }
     List <- list()
     for (i in 1:n) {
       x <-
         which(dist == sort(dist[, gene], partial = i)[i], arr.ind = TRUE)
       List[[i]] <- row.names(x)
     }
-    top <- KDmat0[unlist(List),]
+    top <- KDmat0[unlist(List), ]
     top <- unique(top[, ])
     return(top[!rownames(top) %in% gene, , drop = FALSE])
   }
-  
+
   # function to get all involved conditions for this gene
   getConds <- function(gene) {
     allconds_selectedGene <-
@@ -1457,7 +1538,7 @@ server <- function(input, output, session) {
       colnames(allconds_selectedGene)[!is.na(allconds_selectedGene)]
     return(involvedConds)
   }
-  
+
   # function to convert gene symbol (gene) into entrez ID
   sym2eg <- function(gene) {
     if (length(sym2eg_list) > 0) {
@@ -1466,7 +1547,7 @@ server <- function(input, output, session) {
     }
     return(gene_id)
   }
-  
+
   # get chromosome of this gene (using txdb)
   chromosome <- function(gene) {
     gene_id <- sym2eg(gene)
@@ -1474,28 +1555,30 @@ server <- function(input, output, session) {
     # chrom <- paste0("chr", x$chromosome)
     chrom <-
       select(txdb,
-             gene_id,
-             columns = c("TXCHROM"),
-             keytype = "GENEID")
+        gene_id,
+        columns = c("TXCHROM"),
+        keytype = "GENEID"
+      )
     chrom <- chrom$TXCHROM[1]
     return(chrom)
   }
-  
+
   # get strand of this gene (using txdb)
   strand <- function(gene) {
     gene_id <- sym2eg(gene)
     strand <-
       select(txdb,
-             gene_id,
-             columns = c("TXSTRAND"),
-             keytype = "GENEID")
+        gene_id,
+        columns = c("TXSTRAND"),
+        keytype = "GENEID"
+      )
     strand <- strand$TXSTRAND[1]
     return(strand)
   }
-  
+
   # get start coordinates of this gene (using txdb if possible, else using rentrez)
   getStart <- function(gene, view, strand) {
-    cat(file=stderr(), "Fetching start coordinates...\n")
+    cat(file = stderr(), "Fetching start coordinates...\n")
     gene_id <- sym2eg(gene)
     if (view == "utr") {
       txIDs <- IDs[IDs$geneID == gene_id, ]
@@ -1512,7 +1595,7 @@ server <- function(input, output, session) {
             selectedUtr <- gr[i]
           }
         }
-        
+
         gr <- selectedUtr
       }
       start <- start(gr)
@@ -1527,13 +1610,13 @@ server <- function(input, output, session) {
         }
       }
     }
-    cat(file=stderr(), "Start: ", start, "\n Done! \n")
+    cat(file = stderr(), "Start: ", start, "\n Done! \n")
     return(start)
   }
-  
+
   # get end coordinates of this gene (using txdb if possible, else using rentrez)
   getEnd <- function(gene, view, strand) {
-    cat(file=stderr(), "Fetching end coordinates...\n")
+    cat(file = stderr(), "Fetching end coordinates...\n")
     gene_id <- sym2eg(gene)
     if (view == "utr") {
       txIDs <- IDs[IDs$geneID == gene_id, ]
@@ -1564,10 +1647,10 @@ server <- function(input, output, session) {
         }
       }
     }
-    cat(file=stderr(), "End: ", end, "\n Done! \n")
+    cat(file = stderr(), "End: ", end, "\n Done! \n")
     return(end)
   }
-  
+
   # creates table for this gene containing all affected conditions with dir index, p-value prox + p-value dist
   createGeneTable <- function(gene) {
     involvedConds <- getConds(gene)
@@ -1588,17 +1671,17 @@ server <- function(input, output, session) {
     }
     return(geneTable)
   }
-  
+
   # function to create ideogram track of this gene for Gviz
   ideoTrack <- function(gene, chrom) {
     itrack <-
       IdeogramTrack(genome = "hg38", chromosome = chrom)
     return(itrack)
   }
-  
+
   # function to create transcript track of this gene for Gviz
   txTrack <- function(gene, chrom) {
-    cat(file=stderr(), "Generating GeneRegionTrack...")
+    cat(file = stderr(), "Generating GeneRegionTrack...")
     txTr <-
       GeneRegionTrack(
         txdb,
@@ -1621,16 +1704,16 @@ server <- function(input, output, session) {
     # symbols <-
     #   unlist(mapIds(org.Hs.eg.db, gene(txTr), "SYMBOL", "ENTREZID", multiVals = "first"))
     # symbol(txTr) <- symbols[gene(txTr)]
-    cat(file=stderr(), "Done! \n")
+    cat(file = stderr(), "Done! \n")
     return(txTr)
   }
-  
+
   # function to create data track of this gene (range = BigWig file, background = background color)
   createDataTrack <-
     function(gene, range, name, background, max, chrom) {
-      cat(file=stderr(), "Generating data track...")
+      cat(file = stderr(), "Generating data track...")
       if (name != "ctrl") {
-        name = paste0(name, "_kd")
+        name <- paste0(name, "_kd")
       }
       dtrack <-
         DataTrack(
@@ -1649,10 +1732,10 @@ server <- function(input, output, session) {
           size = 3,
           fontsize = 12
         )
-      cat(file=stderr(), "Done! \n")
+      cat(file = stderr(), "Done! \n")
       return(dtrack)
     }
-  
+
   # function to determine condition with max dir index (absolute) for this gene
   maxDI <- function(gene) {
     index <-
@@ -1660,24 +1743,24 @@ server <- function(input, output, session) {
     maxDI <- colnames(KDmat0)[index]
     return(maxDI)
   }
-  
+
   # function to define data track for this gene, selects condition based on selection + BigWig file
   dataTrack <- function(gene, cond, range, max, chrom) {
     dtrack <-
       createDataTrack(gene, range, cond, "#ffe0cc", max, chrom)
     return(dtrack)
   }
-  
+
   # function to define control data track for this gene
   ctrlTrack <- function(gene, range, max, chrom) {
     name <- "ctrl"
     ctrlTrack <- createDataTrack(gene, range, name, "#ccffcc", max, chrom)
     return(ctrlTrack)
   }
-  
+
   # create poly a sites track
   polyAtrack <- function(gene, chrom, strand) {
-    cat(file=stderr(), "Generating polyA track...")
+    cat(file = stderr(), "Generating polyA track...")
     if (strand == "-") {
       range <- paste0("./data/", polyAneg)
     } else if (strand == "+") {
@@ -1699,10 +1782,10 @@ server <- function(input, output, session) {
         size = 1.5,
         fontsize = 12
       )
-    cat(file=stderr(), "Done! \n")
+    cat(file = stderr(), "Done! \n")
     return(atrack)
   }
-  
+
   # function to create info table for gene plot (gene info + selected condition info)
   genePlotInfoTable <- function(gene, cond) {
     gi <- matrix(, nrow = 1, ncol = 10)
@@ -1734,32 +1817,34 @@ server <- function(input, output, session) {
       format(pValDmat[gene, cond], scientific = TRUE)
     return(gi)
   }
-  
+
   # calculate the max values
   maxCovBw <- function(bw, gr) {
     ovlp <- subsetByOverlaps(bw, gr)
     if (length(ovlp) > 0) {
       max_cov <- max(ovlp$score)
     } else {
-      print('WARNING: The selected genomic region has no coverage value in the BigWig')
-      print('WARNING: Coverage value is arbitrary set to Zero.')
+      print("WARNING: The selected genomic region has no coverage value in the BigWig")
+      print("WARNING: Coverage value is arbitrary set to Zero.")
       max_cov <- 0
     }
     return(max_cov)
   }
-  
+
   maxCovFiles <- function(bws, gr) {
-    #bws <- lapply(bws, rtracklayer:::import)
+    # bws <- lapply(bws, rtracklayer:::import)
     max_cov <- c()
     for (i in 1:length(gr)) {
-      my_feat = gr[i,]
-      max_cov[i] <- round(max(sapply(bws, maxCovBw, gr = my_feat))
-                          , 2)
+      my_feat <- gr[i, ]
+      max_cov[i] <- round(
+        max(sapply(bws, maxCovBw, gr = my_feat)),
+        2
+      )
     }
     values(gr) <- max_cov
     return(gr)
   }
-  
+
   # function to create list with condition and control BigWigs
   createBwList <- function(gene, cond, strand) {
     if (strand == "-") {
@@ -1782,18 +1867,18 @@ server <- function(input, output, session) {
     bws <- list(ctrl = ctrldata, cond = conddata)
     return(bws)
   }
-  
+
   # function to plot tracks of this gene using Gviz
   genePlot <- function(gene, cond, view) {
     chrom <- chromosome(gene)
     strand <- strand(gene)
     bws <- createBwList(gene, cond, strand)
-    cat(file=stderr(), "Importing control and condition BigWigs...: \n")
+    cat(file = stderr(), "Importing control and condition BigWigs...: \n")
     ctrldata <- import(bws$ctrl)
-    cat(file=stderr(), "Control: ", bws$ctrl, "\n")
+    cat(file = stderr(), "Control: ", bws$ctrl, "\n")
     conddata <- import(bws$cond)
-    cat(file=stderr(), "Condition: ", bws$cond, "\n")
-    cat(file=stderr(), "Done! \n")
+    cat(file = stderr(), "Condition: ", bws$cond, "\n")
+    cat(file = stderr(), "Done! \n")
     gene_id <- sym2eg(gene)
     if (view == "gb") {
       gr <- allgenes[allgenes$gene_id == gene_id]
@@ -1815,11 +1900,11 @@ server <- function(input, output, session) {
         gr <- selectedUtr
       }
     }
-    cat(file=stderr(), "Calculating max coverage... \n")
-    maxCoverage <- as.data.frame(maxCovFiles(list(ctrldata, conddata), gr))[1,6]
-    cat(file=stderr(), "Max coverage: ", maxCoverage, "\n")
-    cat(file=stderr(), "Done! \n")
-    cat(file=stderr(), "Plotting Gviz tracks... \n")
+    cat(file = stderr(), "Calculating max coverage... \n")
+    maxCoverage <- as.data.frame(maxCovFiles(list(ctrldata, conddata), gr))[1, 6]
+    cat(file = stderr(), "Max coverage: ", maxCoverage, "\n")
+    cat(file = stderr(), "Done! \n")
+    cat(file = stderr(), "Plotting Gviz tracks... \n")
     plotTracks(
       list(
         #     ideoTrack(gene, chrom)
@@ -1841,20 +1926,22 @@ server <- function(input, output, session) {
     # }, height = function() {
     # session$clientData$output_gviz_width
   }
-  
+
   # creates info table for this gene (name, ID, description, strand, chromosome, coords)
   geneInfoTable <- function(gene) {
     gene_id <- sym2eg(gene)
     gi <- matrix(, nrow = 1, ncol = 7)
     strand <- strand(gene)
     colnames(gi) <-
-      c("Gene",
+      c(
+        "Gene",
         "ID",
         "Description",
         "Chr",
         "Strand",
         "Start",
-        "End")
+        "End"
+      )
     desc <- ""
     try(x <- entrez_summary(db = "gene", id = gene_id))
     try(desc <- x$description)
@@ -1867,18 +1954,18 @@ server <- function(input, output, session) {
     gi[1, "End"] <- getEnd(gene, "gb", strand)
     return(gi)
   }
-  
+
   # function to create URL for genome browser
   createBrowserURL <- function(gene) {
     polyA <- ""
     miRNA <- ""
     ctrl <- ""
-    if ('1' %in% input$selectTracks) {
+    if ("1" %in% input$selectTracks) {
       miRNA <- "&hub_114483_miRNA=full"
     } else {
       miRNA <- "&hub_114483_miRNA=hide"
     }
-    
+
     if (nchar(gene) > 1) {
       strand <- strand(gene)
       if (input$condsGB == "max SI") {
@@ -1894,7 +1981,6 @@ server <- function(input, output, session) {
           "&hub_114483_adj_contigs_neg=dense"
         ctrl <-
           "&hub_114483_UTR2_sum_ctrl_neg=full"
-        
       } else if (strand == "+") {
         if (!is.na(bw_filemat[cond, "pos"])) {
           file <- removeExt(bw_filemat[cond, "pos"], sep = ".")
@@ -1905,12 +1991,14 @@ server <- function(input, output, session) {
           "&hub_114483_UTR2_sum_ctrl_pos=full"
       }
       pos <-
-        paste0(chromosome(gene),
-               ":",
-               getStart(gene, "utr", strand),
-               "-",
-               getEnd(gene, "utr", strand))
-      
+        paste0(
+          chromosome(gene),
+          ":",
+          getStart(gene, "utr", strand),
+          "-",
+          getEnd(gene, "utr", strand)
+        )
+
       browserurl <<-
         paste0(
           "http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubUrl=ftp://ftp.imbei.uni-mainz.de/trendseqHub/hub.txt&position=",
@@ -1932,7 +2020,7 @@ server <- function(input, output, session) {
     }
     return(browserurl)
   }
-  
+
   # function to check if plot is already cached
   isCached <- function(id) {
     file <- paste0("./data/plotCache/", id, ".png")
@@ -1942,7 +2030,7 @@ server <- function(input, output, session) {
       return(FALSE)
     }
   }
-  
+
   # function to create and cache plot
   cachePlot <- function(file, gene, cond, view) {
     try(genePlot(gene, cond, view))
@@ -1955,6 +2043,3 @@ server <- function(input, output, session) {
 # Launching the app -------------------------------------------------------
 
 shinyApp(ui = ui, server = server)
-
-
-
