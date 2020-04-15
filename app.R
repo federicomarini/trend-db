@@ -21,6 +21,14 @@ library(magrittr)
 library(rintrojs)
 library(countup)
 
+# Helper functions --------------------------------------------------------
+
+createLinkGO <- function (val) 
+{
+  sprintf("<a href=\"http://amigo.geneontology.org/amigo/term/%s\" target=\"_blank\" class=\"btn btn-primary\">%s</a>", 
+          val, val)
+}
+
 
 # Loading required input data ---------------------------------------------
 

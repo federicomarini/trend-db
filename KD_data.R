@@ -312,3 +312,9 @@ miRNA <- "sno_miRNA_hg38.bed"
 polyApos <- "adj_contigs_pos_hg38.bed"
 polyAneg <- "adj_contigs_neg_hg38.bed"
 
+
+createLinkGO <- function (val) 
+{
+  sprintf("<a href=\"http://amigo.geneontology.org/amigo/term/%s\" target=\"_blank\" class=\"btn btn-primary\">%s</a>", 
+          val, val)
+}
