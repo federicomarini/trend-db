@@ -13,7 +13,7 @@ The **Main View** tab is divided into **Condition View** and **Gene View**.
 TODO: describe the trendnetwork
 
 In the **Condition View**, users can select a condition to view a table containing all genes that are affected in this condition.
-By clicking the **Goana** button, an over-representation analysis for Gene Ontology terms in a list of Entrez Gene IDs is performed and the results are shown in a table. 
+By clicking the **GOana** button, an over-representation analysis for Gene Ontology terms in a list of Entrez Gene IDs is performed and the results are shown in a table. 
 The list of genes affected in the selected condition is used as a gene set with all genes as a background.
 
 In the **Gene View**, users can select a gene to print a short summary and a table containing all conditions where the selected gene is affected.

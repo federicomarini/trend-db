@@ -402,7 +402,7 @@ ui <- shinydashboard::dashboardPage(
               br(),br(),
               uiOutput("goana_desc"),
               br(),
-              actionButton("goanaSubmit", "Goana"),
+              actionButton("goanaSubmit", "GOana"),
               br(),br(),
               DT::dataTableOutput("goanaTable")
             )
