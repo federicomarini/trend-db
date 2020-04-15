@@ -851,10 +851,15 @@ server <- function(input, output, session) {
           detail = 'This may take a while...',
           value = 0.8,
           {
-            createGoana()
+            myt <- createGoana()
+            myt$GO <- rownames(myt)
+            # message(class(myt))
+            myt <- myt[, c(6,1,2,3,4,5)]
+            myt$GO <- createLinkGO(myt$GO)
+            myt
           }
         ),
-        colnames = c("GO" = 1),
+        rownames = FALSE,
         extensions = c('FixedColumns'),
         options = list(
           bInfo = 0,
@@ -862,9 +867,10 @@ server <- function(input, output, session) {
           scrollY = 480,
           fixedColumns = FALSE,
           order = list(5, 'asc')
-        )
+        ),
+        escape = FALSE
       )  %>%
-        formatStyle("GO",
+        formatStyle(c("GO", "Term"),
                     backgroundColor = "#b3ccff",
                     fontWeight = "bold")
     }
@@ -1101,7 +1107,7 @@ server <- function(input, output, session) {
                    FDR = 0.05,
                    universe = background)
     goanaTable <- table[table$P.DE < 0.05,]
-    cat(file = stderr(), "Done! \n")
+    cat(file = stderr(), "GO Enrichment analysis done! \n")
     return(goanaTable)
   })
   
