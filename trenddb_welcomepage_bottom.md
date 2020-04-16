@@ -21,7 +21,6 @@ The database facilitates:
 
 - **December 2018** - The PCF11 paper is out on <a href="https://www.nature.com/articles/s41467-018-07580-5"  target="_blank">Nature Communications</a> and has been chosen as <a href="https://www.nature.com/collections/bhkhbxstgj" target="_blank">Editor Highlight</a>!
 - **October 2018** - The paper about PCF11 as critical regulator of transcriptome-3'end-diversification is out on [biorXiv](https://www.biorxiv.org)! You can read it <a href="https://www.biorxiv.org/content/early/2018/10/18/426536" target="_blank">here</a>
-- **April 2017** - **TREND-DB** is released as a companion tool to the original publication!
 
 ### Citations
 
