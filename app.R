@@ -930,7 +930,16 @@ server <- function(input, output, session) {
   # renders info table for gene plot
   output$genePlotInfo <- DT::renderDataTable({
     req(input$geneInput)
-    DT::datatable(genePlotTable(),
+    gpt <- genePlotTable()
+    
+    message(colnames(gpt))
+    message(head(gpt,1))
+    gpt[,8] <- round(as.numeric(gpt[,8]), digits = 3)
+    gpt[,9] <- signif(as.numeric(gpt[,9]), digits = 3)
+    gpt[,10] <- signif(as.numeric(gpt[,10]), digits = 3)
+    
+    
+    DT::datatable(gpt,
       options = list(
         paging = FALSE,
         searching = FALSE,
@@ -944,7 +953,7 @@ server <- function(input, output, session) {
       formatStyle("Condition",
         backgroundColor = "#ffe0cc",
         fontWeight = "bold"
-      )
+      ) 
   })
 
   # renders gene plot
