@@ -855,14 +855,21 @@ server <- function(input, output, session) {
       formatStyle("Gene",
         backgroundColor = "#ffeecc",
         fontWeight = "bold"
-      )
+      ) %>%
+      formatRound(colnames(table), digits = 3) 
   })
 
   # renders condition table
   output$kdTableOutput <- DT::renderDataTable({
     req(input$kdInput)
+    kdtable <- kdTable()
+    
+    kdtable[,1] <- round(as.numeric(kdtable[,1]), digits = 3)
+    kdtable[,2] <- signif(as.numeric(kdtable[,2]), digits = 3)
+    kdtable[,3] <- signif(as.numeric(kdtable[,3]), digits = 3)
+    
     DT::datatable(
-      kdTable(),
+      kdtable,
       colnames = c("Gene" = 1),
       selection = "single",
       extensions = c("FixedColumns"),
