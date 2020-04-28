@@ -902,6 +902,9 @@ server <- function(input, output, session) {
             myt$GO <- rownames(myt)
             # message(class(myt))
             myt <- myt[, c(6, 1, 2, 3, 4, 5)]
+            
+            myt[,6] <- signif(as.numeric(myt[,6]), digits = 3)
+            
             myt$GO <- createLinkGO(myt$GO)
             myt
           }
