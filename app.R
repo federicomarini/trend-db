@@ -932,8 +932,8 @@ server <- function(input, output, session) {
     req(input$geneInput)
     gpt <- genePlotTable()
     
-    message(colnames(gpt))
-    message(head(gpt,1))
+    # message(colnames(gpt))
+    # message(head(gpt,1))
     gpt[,8] <- round(as.numeric(gpt[,8]), digits = 3)
     gpt[,9] <- signif(as.numeric(gpt[,9]), digits = 3)
     gpt[,10] <- signif(as.numeric(gpt[,10]), digits = 3)
