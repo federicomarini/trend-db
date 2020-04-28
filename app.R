@@ -770,6 +770,11 @@ server <- function(input, output, session) {
   output$geneTableOutput <- DT::renderDataTable({
     req(input$geneInput)
     table <- geneTable()
+    
+    table[,1] <- round(as.numeric(table[,1]), digits = 3)
+    table[,2] <- signif(as.numeric(table[,2]), digits = 3)
+    table[,3] <- signif(as.numeric(table[,3]), digits = 3)
+    
     DT::datatable(
       table,
       colnames = c("Condition" = 1),
