@@ -2,20 +2,17 @@
 
 ### TREND-DB
 
-**TREND-DB** is a database that visualizes the **dynamics of transcriptome 3'end diversification (TREND)** influenced by various co- and post-transcriptional events.
+**TREND-DB** is a database that visualizes the **dynamics of alternative polyadenylation (APA)** influenced by various co- and post-transcriptional events.
 
-**TREND-DB** allows to interactively explore the dynamic landscape of TREND signatures caused by siRNA mediated downregulation of 174 TREND-regulators (targeting various facets of transcriptional, co- and posttranscriptional gene regulation, epigenetic modifications and other categories) in Neuroblastoma BE(2)-C cells. Further entities are in progress.
+**TREND-DB** allows to interactively explore the dynamic landscape of APA events caused by siRNA mediated downregulation of 174 APA-regulators (targeting various facets of transcriptional, co- and posttranscriptional gene regulation, epigenetic modifications and other categories) in Neuroblastoma BE(2)-C cells. Further entities are in progress.
 
 The database facilitates:
 
-- querying genes affected by specific TREND-regulators
-- querying TREND-regulators affecting specific genes (with a graphical illustration of global genome-wide TREND-effects)
-- GO (Gene Ontology) enrichment of TREND-affected genes
-- visualization of TREND-effects on internal gene visualization tools and on UCSC Genome Browser
-- visualization of additional layers of gene regulation accounting for individual TREND-affected target RNAs (*i.e.* miRNA binding sites) 
-
-<!-- Link to technical How-To page (under construction) [][][]? --> 
-
+- querying genes affected by specific APA-regulators
+- querying APA-regulators affecting specific genes (with a graphical illustration of global genome-wide APA-effects)
+- GO (Gene Ontology) enrichment of APA-affected genes
+- visualization of APA-effects on internal gene visualization tools and on UCSC Genome Browser
+- visualization of additional layers of gene regulation accounting for individual APA-affected target RNAs (*i.e.* miRNA binding sites) 
 
 ### News
 
@@ -42,11 +39,10 @@ The database facilitates:
 
 ### How to use **TREND-DB**
 
-*Section currently under construction*.
+The latest release of TREND-DB features a dynamic tour, implemented via the `rintrojs` package.
+These allow the user to take a guided tour of the interface, highlighting elements that can be interacted with - by doing so, it is possible to showcase a typical use case, and at the same time the user can familiarize with the functionality of TREND-DB.
 
-Soon to be deployed via `rintrojs` tours!
-
-For the time being, please refer to the content of the **About** tab.
+For general information, please refer to the content of the **About** tab.
 
 ### Further reading
 
