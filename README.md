@@ -18,6 +18,8 @@ To facilitate the access for a broader scientific community, we created the TREN
 
 </br></br>
 
+</br></br>
+
 ### TREND-DB
 
 **TREND-DB** is a database that visualizes the **dynamics of alternative polyadenylation (APA)** influenced by various co- and post-transcriptional events.
@@ -31,9 +33,6 @@ The database facilitates:
 - GO (Gene Ontology) enrichment of APA-affected genes
 - visualization of APA-effects on internal gene visualization tools and on UCSC Genome Browser
 - visualization of additional layers of gene regulation accounting for individual APA-affected target RNAs (*i.e.* miRNA binding sites) 
-
-<!-- Link to technical How-To page (under construction) [][][]? --> 
-
 
 ### News
 
@@ -60,11 +59,10 @@ The database facilitates:
 
 ### How to use **TREND-DB**
 
-*Section currently under construction*.
+The latest release of TREND-DB features a dynamic tour, implemented via the `rintrojs` package.
+These allow the user to take a guided tour of the interface, highlighting elements that can be interacted with - by doing so, it is possible to showcase a typical use case, and at the same time the user can familiarize with the functionality of TREND-DB.
 
-Soon to be deployed via `rintrojs` tours!
-
-For the time being, please refer to the content of the **About** tab.
+For general information, please refer to the content of the **About** tab.
 
 ### Further reading
 
@@ -72,5 +70,4 @@ For the time being, please refer to the content of the **About** tab.
 - <a href="http://doi.org/10.1007/s00424-016-1828-3" target="_blank">Ogorodnikov et al. Pflugers Arch. 2016</a>
 - <a href="http://doi.org/10.1038/nrm.2016.116" target="_blank">Tian & Manley Nat Rev Mol Cell Biol 2016</a> 
 - <a href="http://doi.org/10.1038/nrg3482" target="_blank">Elkon et al. Nat Rev Genet 2013</a>
-
 
