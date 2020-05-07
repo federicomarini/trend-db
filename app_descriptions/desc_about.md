@@ -34,4 +34,4 @@ The **Genome Browser** tab includes an instance of the UCSC Genome Browser, wher
 #### Contact
 
 - Federico Marini <a href='mailto:marinif@uni-mainz.de' target='_top'>(marinif@uni-mainz.de)</a>
-- Denise Scherzinger <a href='mailto:denscher@uni-mainz.de' target='_top'>(denscher@uni-mainz.de)</a>
+- Sven Danckwardt <a href='mailto:sven.danckwardt@unimedizin-mainz.de' target='_top'>(sven.danckwardt@unimedizin-mainz.de)</a>

@@ -647,7 +647,9 @@ ui <- shinydashboard::dashboardPage(
         fluidRow(
           column(
             width = 11,
-            uiOutput("about")
+            uiOutput("about"),
+            hr(),
+            uiOutput("glossary")
           )
         )
       ) # end of About panel
@@ -1014,7 +1016,11 @@ server <- function(input, output, session) {
   output$about <- renderUI({
     includeMarkdown("app_descriptions/desc_about.md")
   })
-
+  
+  output$glossary <- renderUI({
+    includeMarkdown("trenddb_glossary.md")
+  })
+  
   # description of Inspect Matrix
   output$inspectMatrix_desc <- renderUI({
     includeMarkdown("app_descriptions/desc_inspectmatrix.md")
