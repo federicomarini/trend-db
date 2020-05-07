@@ -203,7 +203,7 @@ ui <- shinydashboard::dashboardPage(
             width = 4,
             h3(
               shiny::tags$strong(countup(9168, duration = 16)),
-              p("TREND-events")
+              p("APA-events")
             )
           ),
           column(
@@ -211,7 +211,7 @@ ui <- shinydashboard::dashboardPage(
             h3(
               "Approximately",
               shiny::tags$strong(countup(3600, duration = 14)),
-              p("genes affected by TREND in cells of neuronal origin")
+              p("genes affected by APA in cells of neuronal origin")
             )
           )
         ),
