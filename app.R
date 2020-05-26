@@ -1526,9 +1526,7 @@ server <- function(input, output, session) {
       tagList(
         br(), br(),
         HTML("If you use this application for your projects, please use the following citation information:"),
-        renderPrint({
-          citation("iSEE")
-        })
+        includeMarkdown("trenddb_citation.md")
       )
     ))
   })
