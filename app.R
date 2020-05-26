@@ -400,6 +400,7 @@ ui <- shinydashboard::dashboardPage(
             conditionalPanel(
               condition = "output.kdTableOutput",
               br(),
+              uiOutput("geneinfo_condition"),
               uiOutput("affectedGenes_desc")
             ),
             DT::dataTableOutput("kdTableOutput"),
@@ -1036,6 +1037,14 @@ server <- function(input, output, session) {
     includeMarkdown("app_descriptions/desc_genomebrowser.md")
   })
 
+  
+  output$geneinfo_condition <- renderUI({
+    condition_id <- input$kdInput
+    gene_for_condition <- strsplit(condition_id, "_")[[1]][1]
+    
+    geneinfo_2_html(gene_for_condition)
+  })
+  
   # description of affected genes
   output$affectedGenes_desc <- renderUI({
     HTML(
