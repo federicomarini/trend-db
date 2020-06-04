@@ -63,6 +63,7 @@ vis.nodes$shape <- "dot"
 vis.nodes$shadow <- TRUE # Nodes will drop shadow
 vis.nodes$title <- vis.nodes$label # Text on click
 vis.nodes$size <- 4 * vis.nodes$size
+vis.nodes$group <- vis.nodes$Group
 
 
 # UI definition -----------------------------------------------------------
@@ -725,7 +726,17 @@ server <- function(input, output, session) {
     visnet <- visNetwork(vis.nodes, vis.links, height = "1000px", width = "1000px")
     visnet %>%
       visOptions(highlightNearest = TRUE, selectedBy = "Group", nodesIdSelection = TRUE) %>%
-      visLegend(main = "Legend", position = "right", ncol = 1)
+      visGroups(groupname = "Cleavage and Polyadenylation", color = "#9E0142") %>% 
+      visGroups(groupname = "Transcription", color = "#D53E4F") %>% 
+      visGroups(groupname = "RNA splicing", color = "#F46D43") %>% 
+      visGroups(groupname = "RNA turnover", color = "#FDAE61") %>% 
+      visGroups(groupname = "Translation", color = "#FEE08B") %>% 
+      visGroups(groupname = "Cell-cyle & Replication", color = "#FFFFBF" ) %>% 
+      visGroups(groupname = "Epigenetics", color = "#E6F598") %>% 
+      visGroups(groupname = "Cancer associated", color = "#66C2A5") %>% 
+      visGroups(groupname = "Apoptosis", color = "#3288BD") %>% 
+      visGroups(groupname = "Others", color = "#5E4FA2") %>% 
+      visLegend(width = 0.2, ncol = 1, position = "right")
   })
 
   output$geneSelection <- renderUI({
