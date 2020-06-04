@@ -304,6 +304,37 @@ ui <- shinydashboard::dashboardPage(
           column(
             width = 10,
             offset = 1,
+            p(
+              HTML(
+                paste0("Welcome to the <b>Main View</b>! Here you can ",
+                       "<a href='#trendnetwork'>navigate the TREND-network</a> or alternatively ",
+                       "<a href='#mainViewGene_desc'>jump directly to the Gene/Condition View</a>.")
+              )
+            # ),
+            # p("Welcome to the Main View! Here you can", 
+            #   HTML('<a href="#trendnetwork">navigate the TREND-network</a>'),
+            #   "or",
+            #   HTML('<a href="#mainViewGene_desc" class="btn btn-default">jump directly to the Gene/Condition View</a>')),
+            # shiny::tags$a(href="#trendnetwork", class="btn btn-default", "Jump1"),
+            # shiny::tags$a(href="#mainViewGene_desc", class="btn btn-default", "Jump2"),
+            # actionButton(
+            #   "navnetwork",
+            #   "navnetwork",
+            #   icon = icon("arrow-right"),
+            #   onclick = "location.href='#trendnetwork';"
+            # ),
+            # actionButton(
+            #   "navgeneview",
+            #   "navgeneview",
+            #   icon = icon("arrow-right"),
+            #   onclick = "location.href='#mainViewGene_desc';"
+            )
+          )
+        ),
+        fluidRow(
+          column(
+            width = 10,
+            offset = 1,
             visNetworkOutput("trendnetwork", width = "800px", height = "800px")
           )
         ),
