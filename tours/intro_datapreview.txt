@@ -1,4 +1,11 @@
 element;intro
-#welcome;w1
-#inspectMatrix;w2
-#continueMV;continue
+#welcome;Welcome to the <b>Data Preview</b> tour for <code>TREND-DB</code>!
+#inspectMatrix_desc;You can also find a textual compact version of the relevant information here.
+#inspectMatrix;This is an overview of all shortening index values of each gene across all conditions.
+#dirFilter_ui;Adjust the 'Filter by shortening index' slider to only show genes with a shortening index value (absolute) above the threshold in at least one condition.
+#inspectMatrix;Select now a row in the table 
+#selection;This will highlight the selected gene...
+#overviewTable;... and print a summary table for this feature, showing the conditions in which it is affected with the respective shortening indices and p-values.
+#continueMV;You can continue to the Main View by either clicking on this button...
+#tabs;... or navigating from the header of the tab panel.
+#Thanks;Thank you for taking the tour for the <b>Data Preview</b> tab of <code>TREND-DB</code>!
