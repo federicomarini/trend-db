@@ -142,7 +142,7 @@ ui <- shinydashboard::dashboardPage(
     ## main structure of the body for the dashboard
     tabBox(
       id = "tabs",
-      width = 11,
+      width = 12,
       selected = "Welcome",
 
       # h4("Session Info"),
