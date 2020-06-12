@@ -1,1 +1,11 @@
 element;intro
+#welcome;Welcome to the <b>Genome Browser</b> tour for <code>TREND-DB</code>!
+#prereqs;Make sure that you selected at least one gene, e.g. in the Data Preview or in the Main View tabs. If this is not the case, please do so to display the tour correctly - exit this by clicking outside the highlighted area.
+#geneSelection;The gene you selected in the previous steps will be displayed here.
+#changeGene;If you want to select another gene, you can click on this button and go back to the Main View panel (this could terminate the tour, though).
+#condsGB + .selectize-control;As for the Gene Plot tab, the default condition will be the one in which we detected  the maximum SI for this gene, but you can change this setting using the dropdown menu.
+#selectTracks;To show additional tracks, e.g. for microRNA target sites, you can click on this checkbox to enable that.
+#browserFrame;The browser will display in this frame element, please wait for data to be fetched from UCSC (this could take ~10s). The Genome Browser will show the currently selected gene, and will contain data tracks for all conditions which are grouped under 'Trendseq UCSC Hub'.
+#browserNewWindow;If you prefer to inspect the content of this TrackHub instance in a separate window, you can do so by opening that in a separate window of your client (should work with all the main browsers).
+#browserFrame;Otherwise, you are free to navigate the content of the TrackHub instance directly from this frame. Once you are done with the tour, just click somewhere outside the highlighted portion of the UI to close it, or on the Skip button.
+#Thanks;Thank you for taking the tour for the <b>Genome Browser</b> tab of <code>TREND-DB</code>!
