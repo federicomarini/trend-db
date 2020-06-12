@@ -31,7 +31,15 @@ Similarly affected genes are obtained by computing the distance matrix (using th
 
 The **Genome Browser** tab includes an instance of the UCSC Genome Browser, where users can take a more in-depth look at the data. 
 
+<hr/>
+
 #### Contact
 
 - Federico Marini <a href='mailto:marinif@uni-mainz.de' target='_top'>(marinif@uni-mainz.de)</a>
 - Sven Danckwardt <a href='mailto:sven.danckwardt@unimedizin-mainz.de' target='_top'>(sven.danckwardt@unimedizin-mainz.de)</a>
+
+<hr/>
+
+#### Glossary
+
+You can open a modal pop up with the definitions of some terms specific to TREND-DB by clicking on the info dropdown menu and then selecting the dictionary button with "Open the glossary"
