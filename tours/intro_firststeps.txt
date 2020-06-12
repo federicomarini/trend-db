@@ -1,4 +1,7 @@
 element;intro
-#welcome;w1
-#somethingmore;w2
-#closingup;w3
+#welcome;Welcome to the introductory tour for <code>TREND-DB</code>, a Transcriptome-wide Atlas of the Dynamic Landscape of Alternative Polyadenylation! With the help of these interactive tours, you can learn how to become familiar with the user interface and experience at best the eploration of this resource. You can click on the "Next" button below to proceed.
+#Step1;The tour will take you through the relevant elements of the UI. You can start the tour in each section by clicking on the dedicated button.
+#tour_firststeps; For the welcome page, you can (re)start it with this button, and each tab will have a similar one, consistently placed in the upper right section of the page.
+#Exiting;You can at any time exit this guided introduction by clicking outside of the highlighted portion.
+#tabs;You can navigate to the content of the different tabs by clicking on the correspondent tab label. Each tab will have its dedicated tour to showcase the relevant functionality. You can for example try to switch to the tab where the Data Preview will be shown, or to the Main View.
+#Thanks;Thank you for taking the first tour of <code>TREND-DB</code>!
