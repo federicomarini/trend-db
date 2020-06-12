@@ -7,7 +7,7 @@ element;intro
 #genePlotCond + .selectize-control;As a default condition, we will display the condition in which we detected  the maximum SI for this gene, but you can change this setting using the dropdown menu.
 #selectView;You can also choose the region of the gene you'll be focusing on, either the whole gene body, or just its 3' UTR, which is where the poly(A) sites will be (this is the default setting).
 #plotSubmit;Once you chose the preferred settings for your gene of interest, you can generate the plot by clicking on this button (might take some time to generate).
-#gviz;You'll see the plot showing up in this panel (created with the GViz package), where aside from the reference track of the selected gene and its chromosome, the control track as well as the selected condition are shown.
+#gviz;You'll see the plot showing up in this panel (created with the GViz package), where aside from the reference track of the selected gene and its chromosome, the control track as well as the selected condition are shown. The plot can be downloaded by pressing the "Download plot" button below.
 #simAffectedSlider_ui;You can adjust the number of similarly affected genes with this slider widget.
 #switchGene;Again, you can always switch to another gene, or alternatively...
 #viewBrowser;... dig deeper into it by directly browsing the tracks in the dedicated panel...
