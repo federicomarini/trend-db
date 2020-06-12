@@ -8,9 +8,8 @@ Upon selecting a row (= gene) in the table, a summary table of the selected gene
 
 #### Main View
 
-The **Main View** tab is divided into **Condition View** and **Gene View**.
-
-TODO: describe the trendnetwork
+The **Main View** tab displays the interactive APA network, and is subsequently divided into **Condition View** and **Gene View**.
+Users can use either element to navigate the database.
 
 In the **Condition View**, users can select a condition to view a table containing all genes that are affected in this condition.
 By clicking the **GOana** button, an over-representation analysis for Gene Ontology terms in a list of Entrez Gene IDs is performed and the results are shown in a table. 

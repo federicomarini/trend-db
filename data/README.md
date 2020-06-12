@@ -1,6 +1,6 @@
 # `data` folder
 
-This folder contains TODO
+This folder contains:
 
 - the folder `14_APA_genes_whole_plus_dropouts`
 - the folder `IGV_vis_drops_BUP`
@@ -16,3 +16,6 @@ This folder contains TODO
 - `pProx.csv`
 - `plotCache.zip`
 - `sno_miRNA_hg38.bed`
+
+The archive containing all the above listed essential information is available on Zenodo.
+Please refer to the TREND-DB manuscript for this.
