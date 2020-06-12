@@ -1,8 +1,15 @@
 element;intro
-#genePlotInfo;DT
-#switchGene;switch
-#viewBrowser;goto gb
-#genePlotCond + .selectize-control;
-#selectView;
-#plotSubmit;
-#simAffectedSlider;
+#welcome;Welcome to the <b>Gene Plot</b> tour for <code>TREND-DB</code>! Here you will learn how to obtain a plot focused on a particular gene of interest.
+#prereqs;Make sure that you selected at least one gene, e.g. in the Data Preview or in the Main View tabs. If this is not the case, please do so to display the tour correctly - exit this by clicking outside the highlighted area.
+#genePlotInfo;The gene you selected in the previous steps will be displayed here. You'll have access to information on the chromosomal location, the conditions where this gene is affected, and some values describing the effect on the shortening index and its significance in each condition.
+#switchGene;If you want to select another gene, you can click on this button and go back to the Main View panel (this could terminate the tour, though).
+#viewBrowser;In a similar fashion, you can jump to the Genome Browser tab focused around the gene you selected, and you can do it by clicking on this button - again, the tour might not be displayed correctly if you directly change tabs. 
+#genePlotCond + .selectize-control;As a default condition, we will display the condition in which we detected  the maximum SI for this gene, but you can change this setting using the dropdown menu.
+#selectView;You can also choose the region of the gene you'll be focusing on, either the whole gene body, or just its 3' UTR, which is where the poly(A) sites will be (this is the default setting).
+#plotSubmit;Once you chose the preferred settings for your gene of interest, you can generate the plot by clicking on this button (might take some time to generate).
+#gviz;You'll see the plot showing up in this panel (created with the GViz package), where aside from the reference track of the selected gene and its chromosome, the control track as well as the selected condition are shown.
+#simAffectedSlider_ui;You can adjust the number of similarly affected genes with this slider widget.
+#switchGene;Again, you can always switch to another gene, or alternatively...
+#viewBrowser;... dig deeper into it by directly browsing the tracks in the dedicated panel...
+#tabs;... which you can also reach by navigating on the main header of the tab panels.
+#Thanks;Thank you for taking the tour for the <b>Gene Plot</b> tab of <code>TREND-DB</code>!
