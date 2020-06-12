@@ -656,8 +656,7 @@ ui <- shinydashboard::dashboardPage(
           column(
             width = 11,
             uiOutput("about"),
-            hr(),
-            uiOutput("glossary")
+            hr()
           )
         )
       ) # end of About panel
