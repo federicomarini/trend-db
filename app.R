@@ -250,14 +250,8 @@ ui <- shinydashboard::dashboardPage(
             div(
               align = "right",
               style = "margin-right:15px; margin-bottom:10px",
-              sliderInput(
-                "dirFilter",
-                "Filter by shortening index:",
-                min = 0,
-                max = 15,
-                value = 0,
-                step = 0.5
-              )
+              uiOutput("dirFilter_ui")
+              
             ),
             htmlOutput("selection"),
             DT::dataTableOutput("overviewTable")
@@ -577,14 +571,8 @@ ui <- shinydashboard::dashboardPage(
             ),
             conditionalPanel(
               condition = "output.genePlotInfo",
-              sliderInput(
-                "simAffectedSlider",
-                "Number of similarly affected genes",
-                min = 0,
-                max = 30,
-                value = 0,
-                step = 1
-              ),
+              uiOutput("simAffectedSlider_ui"),
+              
               # br(),
               # actionButton("simInfoUpdate", "Update similar"),
               br(),
@@ -755,6 +743,28 @@ server <- function(input, output, session) {
       visGroups(groupname = "Apoptosis", color = "#3288BD") %>% 
       visGroups(groupname = "Others", color = "#5E4FA2") %>% 
       visLegend(width = 0.2, ncol = 1, position = "right")
+  })
+  
+  output$dirFilter_ui <- renderUI({
+    sliderInput(
+      "dirFilter",
+      "Filter by shortening index:",
+      min = 0,
+      max = 15,
+      value = 0,
+      step = 0.5
+    )
+  })
+  
+  output$simAffectedSlider_ui <- renderUI({
+    sliderInput(
+      "simAffectedSlider",
+      "Number of similarly affected genes",
+      min = 0,
+      max = 30,
+      value = 0,
+      step = 1
+    )
   })
 
   output$geneSelection <- renderUI({
