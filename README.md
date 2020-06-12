@@ -1,4 +1,4 @@
-# **TREND-DB** database <img src="trenddb_welcomepage_img.png" alt="" width="500" align="right"/>
+# **TREND-DB** database <img src="trend_scehma_new.png" alt="" width="500" align="right"/>
 
 </br></br></br></br></br></br>
 
