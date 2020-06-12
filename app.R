@@ -73,28 +73,7 @@ ui <- shinydashboard::dashboardPage(
     title = paste0("TREND-DB"),
     titleWidth = 750,
     # TODO: logo in the title?
-    dropdownMenu(
-      type = "tasks",
-      icon = icon("question-circle fa-1g"),
-      badgeStatus = NULL,
-      headerText = "Help",
-      notificationItem(
-        text = actionButton(
-          "dd_help", "First help",
-          icon("hand-o-right")
-        ),
-        icon = icon(""), # tricking it to not have additional icon
-        status = "primary"
-      ),
-      notificationItem(
-        text = actionButton(
-          "dd_glossary",
-          label = "Open the glossary",
-          icon = icon("book")
-        ),
-        icon = icon(""), status = "primary"
-      )
-    ),
+    
     dropdownMenu(
       type = "tasks",
       icon = icon("info fa-1g"),
@@ -113,6 +92,14 @@ ui <- shinydashboard::dashboardPage(
           "trenddb_info",
           label = "About TREND-DB",
           icon = icon("heart")
+        ),
+        icon = icon(""), status = "primary"
+      ),
+      notificationItem(
+        text = actionButton(
+          "dd_glossary",
+          label = "Open the glossary",
+          icon = icon("book")
         ),
         icon = icon(""), status = "primary"
       )
