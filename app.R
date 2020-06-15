@@ -728,19 +728,38 @@ server <- function(input, output, session) {
 
   output$trendnetwork <- renderVisNetwork({
     visnet <- visNetwork(vis.nodes, vis.links, height = "1000px", width = "1000px")
+    
+    legendNodes <- data.frame(
+      label = c("Cleavage and Polyadenylation", 
+                "Transcription",
+                "RNA splicing",
+                "RNA turnover",
+                "Translation",
+                "Cell-cyle & Replication",
+                "Epigenetics",
+                "Cancer associated",
+                "Apoptosis",
+                "Others"),
+      color.background = c("#9E0142",
+                           "#D53E4F",
+                           "#F46D43",
+                           "#FDAE61",
+                           "#FEE08B",
+                           "#FFFFBF",
+                           "#E6F598",
+                           "#66C2A5",
+                           "#3288BD",
+                           "#5E4FA2"),
+      color.border = rep("darkgrey", 10),
+      font.color = c("white", "white", "white", 
+                     "black", "black", "black", "black", "black",
+                     "white", "white")
+    )
     visnet %>%
       visOptions(highlightNearest = TRUE, selectedBy = "Group", nodesIdSelection = TRUE) %>%
-      visGroups(groupname = "Cleavage and Polyadenylation", color = "#9E0142") %>% 
-      visGroups(groupname = "Transcription", color = "#D53E4F") %>% 
-      visGroups(groupname = "RNA splicing", color = "#F46D43") %>% 
-      visGroups(groupname = "RNA turnover", color = "#FDAE61") %>% 
-      visGroups(groupname = "Translation", color = "#FEE08B") %>% 
-      visGroups(groupname = "Cell-cyle & Replication", color = "#FFFFBF" ) %>% 
-      visGroups(groupname = "Epigenetics", color = "#E6F598") %>% 
-      visGroups(groupname = "Cancer associated", color = "#66C2A5") %>% 
-      visGroups(groupname = "Apoptosis", color = "#3288BD") %>% 
-      visGroups(groupname = "Others", color = "#5E4FA2") %>% 
-      visLegend(width = 0.2, ncol = 1, position = "right")
+      visLegend(useGroups = FALSE,
+                addNodes = legendNodes,
+                width = 0.2, ncol = 1, position = "right")
   })
   
   output$dirFilter_ui <- renderUI({
