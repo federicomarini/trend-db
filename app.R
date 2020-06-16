@@ -751,6 +751,7 @@ server <- function(input, output, session) {
                            "#3288BD",
                            "#5E4FA2"),
       color.border = rep("darkgrey", 10),
+      shape = rep("box", 10),
       font.color = c("white", "white", "white", 
                      "black", "black", "black", "black", "black",
                      "white", "white")
@@ -759,7 +760,7 @@ server <- function(input, output, session) {
       visOptions(highlightNearest = TRUE, selectedBy = "Group", nodesIdSelection = TRUE) %>%
       visLegend(useGroups = FALSE,
                 addNodes = legendNodes,
-                width = 0.2, ncol = 1, position = "right")
+                width = 0.2, ncol = 1, position = "right", stepY = 60, zoom = FALSE)
   })
   
   output$dirFilter_ui <- renderUI({
