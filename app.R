@@ -808,6 +808,11 @@ server <- function(input, output, session) {
   # renders overview table for selected gene in inspect matrix
   output$overviewTable <- DT::renderDataTable({
     table <- overviewTable()
+    
+    table[,1] <- round(as.numeric(table[,1]), digits = 3)
+    table[,2] <- signif(as.numeric(table[,2]), digits = 3)
+    table[,3] <- signif(as.numeric(table[,3]), digits = 3)
+    
     DT::datatable(
       table,
       colnames = c("Condition" = 1),
