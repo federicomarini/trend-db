@@ -673,6 +673,7 @@ server <- function(input, output, session) {
   # renders inspect matrix containing all genes + conditions with their respective dir indexes
   output$inspectMatrix <-
     DT::renderDataTable(server = TRUE, {
+      req(input$dirFilter)
       cat(file = stderr(), "Loading inspect matrix...")
       table <- KDmat
       colnames(table) <-
