@@ -663,6 +663,11 @@ ui <- shinydashboard::dashboardPage(
         fluidRow(
           column(
             width = 11,
+            actionButton("btn_fig1", 
+                         label = "Sneak peek into the content of TREND-DB",
+                         icon = icon("eye"),
+                         style = .actionbutton_biocstyle),
+            br(), br(),
             uiOutput("about"),
             hr()
           )
@@ -1391,6 +1396,16 @@ server <- function(input, output, session) {
 
 
   # all observers -----------------------------------------------------------
+  
+  observeEvent(input$btn_fig1, {
+    showModal(modalDialog(
+      title = "Data preview for TREND-DB", size = "l", fade = TRUE,
+      footer = NULL, easyClose = TRUE,
+      tagList(
+        includeMarkdown("trenddb_sneakpeek.md")
+      )
+    ))
+  })
 
   # update knockdown condition if selected via trendnetwork
   observe({
