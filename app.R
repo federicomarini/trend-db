@@ -405,10 +405,10 @@ ui <- shinydashboard::dashboardPage(
                 column(
                   width = 2,
                   actionButton(
-                    "goToGoana",
+                    "goToGoEnrich",
                     "GO Enrichment",
                     icon = icon("arrow-right"),
-                    onclick = "location.href='#goana';"
+                    onclick = "location.href='#goenrich';"
                   )
                 )
               )
@@ -430,14 +430,14 @@ ui <- shinydashboard::dashboardPage(
             conditionalPanel(
               condition = "output.kdTableOutput",
               br(), br(),
-              uiOutput("goana_desc"),
+              uiOutput("goenrich_desc"),
               br(),
-              actionButton("goanaSubmit", 
+              actionButton("goenrichSubmit", 
                            icon = icon("spinner"),
                            label = "Run GO enrichment", 
                            style = .actionbutton_biocstyle),
               br(), br(),
-              DT::dataTableOutput("goanaTable"),
+              DT::dataTableOutput("goenrichTable"),
               uiOutput("emap_ui")
               
             )
@@ -675,7 +675,7 @@ ui <- shinydashboard::dashboardPage(
 # Server definition -------------------------------------------------------
 server <- function(input, output, session) {
   v <- reactiveValues(
-    clearGoana = TRUE,
+    clearGoenrich = TRUE,
     clearPlot = TRUE
   )
 
@@ -962,9 +962,9 @@ server <- function(input, output, session) {
       )
   })
 
-  output$goanaTable <- DT::renderDataTable({
+  output$goenrichTable <- DT::renderDataTable({
     req(input$kdInput)
-    if (v$clearGoana) {
+    if (v$clearGoenrich) {
       return()
     } else {
       DT::datatable(
@@ -973,7 +973,7 @@ server <- function(input, output, session) {
           detail = "This may take a while...",
           value = 0.8,
           {
-            myt <- createGoana()@result
+            myt <- createGoenrich()@result
             # myt$GO <- rownames(myt)
             # # message(class(myt))
             # myt <- myt[, c(6, 1, 2, 3, 4, 5)]
@@ -1005,18 +1005,18 @@ server <- function(input, output, session) {
   })
   
   output$emap_go <- renderPlot({
-    my_enrich <- createGoana()
+    my_enrich <- createGoenrich()
     emapplot(my_enrich, showCategory = input$emap_ngs)
   })
   
   output$emap_ui <- renderUI({
-    if(!(nrow(createGoana()) > 0))
+    if(!(nrow(createGoenrich()) > 0))
       return(NULL)
     tagList(
       numericInput("emap_ngs", 
                    width = "25%",
-                   label = "Nr genesets for emap",
-                   min = min(10, nrow(createGoana())), 
+                   label = "Number of genesets to plot",
+                   min = min(10, nrow(createGoenrich())), 
                    max = 100,
                    value = 40, 
                    step = 5
@@ -1172,9 +1172,9 @@ server <- function(input, output, session) {
     )
   })
 
-  # description of Goana method
-  output$goana_desc <- renderUI({
-    includeMarkdown("app_descriptions/desc_goana.md")
+  # description of GO enrichment method
+  output$goenrich_desc <- renderUI({
+    includeMarkdown("app_descriptions/desc_goenrich.md")
   })
 
   # description of similarly affected genes selection
@@ -1268,8 +1268,8 @@ server <- function(input, output, session) {
     return(kdTable)
   })
 
-  # creates output table for goana GO term enrichment analysis
-  createGoana <- eventReactive(input$goanaSubmit, {
+  # creates output table for GO term enrichment analysis
+  createGoenrich <- eventReactive(input$goenrichSubmit, {
     req(input$kdInput)
     cat(file = stderr(), "Calculating GO Enrichment table...")
     affectedGenes <- affectedGenes()
@@ -1288,14 +1288,6 @@ server <- function(input, output, session) {
     background <- unlist(unname(sym2eg_list))
     # saveRDS(background, file = "background.rds")
 
-    # table <-
-    #   limma::goana(geneSet,
-    #     species = "Hs",
-    #     FDR = 0.05,
-    #     universe = background
-    #   )
-    # 
-    # 
     
     withProgress(
       message = "Calculating enrichment",
@@ -1315,12 +1307,8 @@ server <- function(input, output, session) {
           readable      = TRUE)
     )
     
-    goanaTable <- my_enrich
-
-
-    # goanaTable <- table[table$P.DE < 0.05, ]
     cat(file = stderr(), "GO Enrichment analysis done! \n")
-    return(goanaTable)
+    return(my_enrich)
   })
 
   getSimAffected <- reactive({
@@ -1419,17 +1407,17 @@ server <- function(input, output, session) {
     )
   })
 
-  # clear Goana table if condition selection is changed
+  # clear enrichment table if condition selection is changed
   observeEvent(input$kdInput,
     {
-      v$clearGoana <- TRUE
+      v$clearGoenrich <- TRUE
     },
     priority = 10
   )
 
-  observeEvent(input$goanaSubmit,
+  observeEvent(input$goenrichSubmit,
     {
-      v$clearGoana <- FALSE
+      v$clearGoenrich <- FALSE
     },
     priority = 10
   )
