@@ -1,7 +1,7 @@
-#### <a name='goana'></a>GO Enrichment:
+#### <a name='goenrich'></a>GO Enrichment:
 
-The **GOana** method (from the `limma` package) performs an over-representation analysis for Gene Ontology terms in a list of Entrez Gene IDs.
-The list of genes affected in the selected condition is used as a gene set with all genes as a background. <br>
+The **enrichGO** method (from the `clusterProfiler` package) performs an over-representation analysis for Gene Ontology terms in a list of Entrez Gene IDs.
+The list of genes affected in the selected condition is used as a gene set, with all genes as a background. <br>
 Columns in the resulting table show the following information: <br>
 
 - *GO*: the ID for the GO term (with a button to open the corresponding entry to the AmiGO database)
@@ -11,4 +11,14 @@ Columns in the resulting table show the following information: <br>
 - *DE*: the number of genes in the provided gene set (the ones affected in the TREND-DB condition)
 - *P.DE*: the p-value for over-representation of the GO term in the set
 
-Click the **GOana** button to create the table.
+Click the **Run GO enrichment** button to create the table.
+
+ID
+Description
+GeneRatio
+BgRatio
+pvalue
+p.adjust
+qvalue
+geneID
+Count
