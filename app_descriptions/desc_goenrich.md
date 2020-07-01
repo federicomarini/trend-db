@@ -4,21 +4,12 @@ The **enrichGO** method (from the `clusterProfiler` package) performs an over-re
 The list of genes affected in the selected condition is used as a gene set, with all genes as a background. <br>
 Columns in the resulting table show the following information: <br>
 
-- *GO*: the ID for the GO term (with a button to open the corresponding entry to the AmiGO database)
-- *Term*: The description of the GO term
-- *Ont*: The ontology that the GO term belongs to ('BP', 'CC' or 'MF')
-- *N*: the number of genes in the GO term 
-- *DE*: the number of genes in the provided gene set (the ones affected in the TREND-DB condition)
-- *P.DE*: the p-value for over-representation of the GO term in the set
-
-Click the **Run GO enrichment** button to create the table.
-
-ID
-Description
-GeneRatio
-BgRatio
-pvalue
-p.adjust
-qvalue
-geneID
-Count
+- *ID*: The ID for the GO term (with a button to open the corresponding entry to the AmiGO database)
+- *Description*: The description of the GO term
+- *GeneRatio*: The ratio between the number of genes associated with the term VS the ones not associated, in the subset of the affected genes for the condition
+- *BgRatio*: The ratio between the number of genes associated with the term VS the ones not associated, in the set of background genes
+- *pvalue*: The p-value for over-representation of the GO term in the set of affected genes versus the background
+- *p.adjust*: The adjusted p-value, after correction via the Benjamini-Hochberg method (to control the FDR, False Discovery Rate)
+- *qvalue*: The q-value for the gene set, as a means to control the positive False Discovery Rate (pFDR)
+- *geneID*: The list of affected genes associated with the term, separated by the "/" character symbol
+- *Count*: The number of affected genes associated with the GO term
