@@ -1718,7 +1718,7 @@ server <- function(input, output, session) {
     # x <- entrez_summary(db = "gene", id = gene_id)
     # chrom <- paste0("chr", x$chromosome)
     chrom <-
-      select(txdb,
+      AnnotationDbi::select(txdb,
         gene_id,
         columns = c("TXCHROM"),
         keytype = "GENEID"
@@ -1731,7 +1731,7 @@ server <- function(input, output, session) {
   strand <- function(gene) {
     gene_id <- sym2eg(gene)
     strand <-
-      select(txdb,
+      AnnotationDbi::select(txdb,
         gene_id,
         columns = c("TXSTRAND"),
         keytype = "GENEID"
