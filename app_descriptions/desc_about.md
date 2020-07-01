@@ -12,8 +12,8 @@ The **Main View** tab displays the interactive APA network, and is subsequently 
 Users can use either element to navigate the database.
 
 In the **Condition View**, users can select a condition to view a table containing all genes that are affected in this condition.
-By clicking the **GOana** button, an over-representation analysis for Gene Ontology terms in a list of Entrez Gene IDs is performed and the results are shown in a table. 
-The list of genes affected in the selected condition is used as a gene set with all genes as a background.
+By clicking the **Run GO enrichment** button, an over-representation analysis for Gene Ontology terms in a list of Entrez Gene IDs is performed and the results are shown in a table. 
+The list of genes affected in the selected condition is used as a gene set, with all genes used as a background.
 
 In the **Gene View**, users can select a gene to print a short summary and a table containing all conditions where the selected gene is affected.
 

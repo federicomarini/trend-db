@@ -20,6 +20,7 @@ library("visNetwork")
 library("magrittr")
 library("rintrojs")
 library("countup")
+library("clusterProfiler")
 
 # Helper functions --------------------------------------------------------
 
@@ -29,6 +30,9 @@ createLinkGO <- function(val) {
     val, val
   )
 }
+
+.actionbutton_biocstyle <- "color: #ffffff; background-color: #0092AC"
+.helpbutton_biocstyle <- "color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
 
 
 # Loading required input data ---------------------------------------------
@@ -401,10 +405,10 @@ ui <- shinydashboard::dashboardPage(
                 column(
                   width = 2,
                   actionButton(
-                    "goToGoana",
+                    "goToGoEnrich",
                     "GO Enrichment",
                     icon = icon("arrow-right"),
-                    onclick = "location.href='#goana';"
+                    onclick = "location.href='#goenrich';"
                   )
                 )
               )
@@ -426,11 +430,16 @@ ui <- shinydashboard::dashboardPage(
             conditionalPanel(
               condition = "output.kdTableOutput",
               br(), br(),
-              uiOutput("goana_desc"),
+              uiOutput("goenrich_desc"),
               br(),
-              actionButton("goanaSubmit", "GOana"),
+              actionButton("goenrichSubmit", 
+                           icon = icon("spinner"),
+                           label = "Run GO enrichment", 
+                           style = .actionbutton_biocstyle),
               br(), br(),
-              DT::dataTableOutput("goanaTable")
+              DT::dataTableOutput("goenrichTable"),
+              uiOutput("emap_ui")
+              
             )
           )
         )
@@ -654,6 +663,11 @@ ui <- shinydashboard::dashboardPage(
         fluidRow(
           column(
             width = 11,
+            actionButton("btn_fig1", 
+                         label = "Sneak peek into the content of TREND-DB",
+                         icon = icon("eye"),
+                         style = .actionbutton_biocstyle),
+            br(), br(),
             uiOutput("about"),
             hr()
           )
@@ -666,7 +680,7 @@ ui <- shinydashboard::dashboardPage(
 # Server definition -------------------------------------------------------
 server <- function(input, output, session) {
   v <- reactiveValues(
-    clearGoana = TRUE,
+    clearGoenrich = TRUE,
     clearPlot = TRUE
   )
 
@@ -953,25 +967,27 @@ server <- function(input, output, session) {
       )
   })
 
-  output$goanaTable <- DT::renderDataTable({
+  output$goenrichTable <- DT::renderDataTable({
     req(input$kdInput)
-    if (v$clearGoana) {
+    if (v$clearGoenrich) {
       return()
     } else {
       DT::datatable(
         withProgress(
-          message = "Calculating",
+          message = "Calculating enrichment",
           detail = "This may take a while...",
           value = 0.8,
           {
-            myt <- createGoana()
-            myt$GO <- rownames(myt)
-            # message(class(myt))
-            myt <- myt[, c(6, 1, 2, 3, 4, 5)]
-            
+            myt <- createGoenrich()@result
+            # myt$GO <- rownames(myt)
+            # # message(class(myt))
+            # myt <- myt[, c(6, 1, 2, 3, 4, 5)]
+            # 
+            myt[,5] <- signif(as.numeric(myt[,5]), digits = 3)
             myt[,6] <- signif(as.numeric(myt[,6]), digits = 3)
-            
-            myt$GO <- createLinkGO(myt$GO)
+            myt[,7] <- signif(as.numeric(myt[,7]), digits = 3)
+            # 
+            myt$ID <- createLinkGO(myt$ID)
             myt
           }
         ),
@@ -986,11 +1002,36 @@ server <- function(input, output, session) {
         ),
         escape = FALSE
       ) %>%
-        formatStyle(c("GO", "Term"),
+        formatStyle(c("ID", "Description"),
           backgroundColor = "#b3ccff",
           fontWeight = "bold"
         )
     }
+  })
+  
+  output$emap_go <- renderPlot({
+    my_enrich <- createGoenrich()
+    emapplot(my_enrich, showCategory = input$emap_ngs)
+  })
+  
+  output$emap_ui <- renderUI({
+    if(!(nrow(createGoenrich()) > 0))
+      return(NULL)
+    tagList(
+      numericInput("emap_ngs", 
+                   width = "25%",
+                   label = "Number of genesets to plot",
+                   min = min(10, nrow(createGoenrich())), 
+                   max = 100,
+                   value = 40, 
+                   step = 5
+                   ),
+      actionButton(
+        inputId = "btn_show_emap",
+        icon = icon("hubspot"),
+        label = "Show emap"
+      )
+    )
   })
 
   # renders info table for gene plot
@@ -1136,9 +1177,9 @@ server <- function(input, output, session) {
     )
   })
 
-  # description of Goana method
-  output$goana_desc <- renderUI({
-    includeMarkdown("app_descriptions/desc_goana.md")
+  # description of GO enrichment method
+  output$goenrich_desc <- renderUI({
+    includeMarkdown("app_descriptions/desc_goenrich.md")
   })
 
   # description of similarly affected genes selection
@@ -1232,8 +1273,8 @@ server <- function(input, output, session) {
     return(kdTable)
   })
 
-  # creates output table for goana GO term enrichment analysis
-  createGoana <- eventReactive(input$goanaSubmit, {
+  # creates output table for GO term enrichment analysis
+  createGoenrich <- eventReactive(input$goenrichSubmit, {
     req(input$kdInput)
     cat(file = stderr(), "Calculating GO Enrichment table...")
     affectedGenes <- affectedGenes()
@@ -1242,21 +1283,37 @@ server <- function(input, output, session) {
       eg <- sym2eg(gene)
       geneSet <- append(geneSet, eg)
     }
-    background <- c()
-    for (gene in genenames) {
-      eg <- sym2eg(gene)
-      background <- append(background, eg)
-    }
+    # background <- c()
+    # for (gene in genenames) {
+    #   eg <- sym2eg(gene)
+    #   background <- append(background, eg)
+    # }
+    
+    # saveRDS(geneSet, file = "pcf11_affected.rds")
+    background <- unlist(unname(sym2eg_list))
+    # saveRDS(background, file = "background.rds")
 
-    table <-
-      limma::goana(geneSet,
-        species = "Hs",
-        FDR = 0.05,
-        universe = background
-      )
-    goanaTable <- table[table$P.DE < 0.05, ]
+    
+    withProgress(
+      message = "Calculating enrichment",
+      detail = "This may take a while...",
+      value = 0.8,
+      
+      my_enrich <-
+        enrichGO(
+          gene          = geneSet,
+          universe      = background,
+          keyType       = "ENTREZID",
+          OrgDb         = org.Hs.eg.db,
+          ont           = "BP",
+          pAdjustMethod = "BH",
+          pvalueCutoff  = 0.05,
+          qvalueCutoff  = 1,
+          readable      = TRUE)
+    )
+    
     cat(file = stderr(), "GO Enrichment analysis done! \n")
-    return(goanaTable)
+    return(my_enrich)
   })
 
   getSimAffected <- reactive({
@@ -1339,6 +1396,16 @@ server <- function(input, output, session) {
 
 
   # all observers -----------------------------------------------------------
+  
+  observeEvent(input$btn_fig1, {
+    showModal(modalDialog(
+      title = "Data preview for TREND-DB", size = "l", fade = TRUE,
+      footer = NULL, easyClose = TRUE,
+      tagList(
+        includeMarkdown("trenddb_sneakpeek.md")
+      )
+    ))
+  })
 
   # update knockdown condition if selected via trendnetwork
   observe({
@@ -1355,20 +1422,32 @@ server <- function(input, output, session) {
     )
   })
 
-  # clear Goana table if condition selection is changed
+  # clear enrichment table if condition selection is changed
   observeEvent(input$kdInput,
     {
-      v$clearGoana <- TRUE
+      v$clearGoenrich <- TRUE
     },
     priority = 10
   )
 
-  observeEvent(input$goanaSubmit,
+  observeEvent(input$goenrichSubmit,
     {
-      v$clearGoana <- FALSE
+      v$clearGoenrich <- FALSE
     },
     priority = 10
   )
+  
+  observeEvent(input$btn_show_emap, {
+    showModal(
+      modalDialog(
+        title = "Enrichment map - enrichGO", size = "l", fade = TRUE,
+        footer = NULL, easyClose = TRUE,
+        
+        plotOutput("emap_go")
+      )
+    )
+  })
+  
 
   # clear plot if condition selection is changed
   observeEvent(input$genePlotCond,
@@ -1654,7 +1733,7 @@ server <- function(input, output, session) {
     # x <- entrez_summary(db = "gene", id = gene_id)
     # chrom <- paste0("chr", x$chromosome)
     chrom <-
-      select(txdb,
+      AnnotationDbi::select(txdb,
         gene_id,
         columns = c("TXCHROM"),
         keytype = "GENEID"
@@ -1667,7 +1746,7 @@ server <- function(input, output, session) {
   strand <- function(gene) {
     gene_id <- sym2eg(gene)
     strand <-
-      select(txdb,
+      AnnotationDbi::select(txdb,
         gene_id,
         columns = c("TXSTRAND"),
         keytype = "GENEID"
@@ -2137,9 +2216,6 @@ server <- function(input, output, session) {
     dev.print(png, file, width = 800)
     # dev.off()
   }
-  
-  .actionbutton_biocstyle <- "color: #ffffff; background-color: #0092AC"
-  .helpbutton_biocstyle <- "color: #0092AC; background-color: #FFFFFF; border-color: #FFFFFF"
   
   #' Link to NCBI database
   .link2ncbi <- function(val) {
