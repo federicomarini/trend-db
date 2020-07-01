@@ -992,6 +992,7 @@ server <- function(input, output, session) {
           }
         ),
         rownames = FALSE,
+        selection = "single",
         extensions = c("FixedColumns"),
         options = list(
           bInfo = 0,
