@@ -775,7 +775,8 @@ server <- function(input, output, session) {
       visOptions(highlightNearest = TRUE, selectedBy = "Group", nodesIdSelection = TRUE) %>%
       visLegend(useGroups = FALSE,
                 addNodes = legendNodes,
-                width = 0.2, ncol = 1, position = "right", stepY = 60, zoom = FALSE)
+                width = 0.2, ncol = 1, position = "right", stepY = 60, zoom = FALSE) %>% 
+      visIgraphLayout()
   })
   
   output$dirFilter_ui <- renderUI({
