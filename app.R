@@ -997,7 +997,6 @@ server <- function(input, output, session) {
         options = list(
           bInfo = 0,
           scrollX = TRUE,
-          scrollY = 480,
           fixedColumns = FALSE,
           order = list(5, "asc")
         ),
