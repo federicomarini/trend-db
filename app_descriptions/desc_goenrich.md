@@ -1,8 +1,16 @@
 #### <a name='goenrich'></a>GO Enrichment:
 
-The **enrichGO** method (from the `clusterProfiler` package) performs an over-representation analysis for Gene Ontology terms in a list of Entrez Gene IDs.
-The list of genes affected in the selected condition is used as a gene set, with all genes as a background. <br>
-Columns in the resulting table show the following information: <br>
+This feature can perform an over-representation analysis for Gene Ontology terms in a list of Entrez Gene IDs.
+The list of genes affected in the selected condition is used as a gene set, with all genes as a background.
+
+<details>
+  <summary>
+  Click here to obtain some more detailed information (and an explanation on the table returned)
+  </summary>
+
+The **enrichGO** method (from the `clusterProfiler` package) is used for this purpose.
+
+The columns in the resulting table show the following information: <br>
 
 - *ID*: The ID for the GO term (with a button to open the corresponding entry to the AmiGO database)
 - *Description*: The description of the GO term
@@ -11,5 +19,7 @@ Columns in the resulting table show the following information: <br>
 - *pvalue*: The p-value for over-representation of the GO term in the set of affected genes versus the background
 - *p.adjust*: The adjusted p-value, after correction via the Benjamini-Hochberg method (to control the FDR, False Discovery Rate)
 - *qvalue*: The q-value for the gene set, as a means to control the positive False Discovery Rate (pFDR)
-- *geneID*: The list of affected genes associated with the term, separated by the "/" character symbol
+- *geneID*: The list of affected genes associated with the term, separated by the "/" character symbol; this column returns HGNC gene symbols for increased readability
 - *Count*: The number of affected genes associated with the GO term
+
+</details>
