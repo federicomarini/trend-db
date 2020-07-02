@@ -66,7 +66,8 @@ For general information, please refer to the content of the **About** tab.
 
 ### Further reading
 
-- <a href="https://www.nature.com/articles/s41467-018-07580-5" target="_blank">Ogorodnikov et al. 2018</a>
+- <a href="https://www.mdpi.com/2218-273X/10/6/915" target="_blank">Nourse et al. Biomolecules 2020</a>
+- <a href="https://www.nature.com/articles/s41467-018-07580-5" target="_blank">Ogorodnikov et al. Nature Communications 2018</a>
 - <a href="http://doi.org/10.1007/s00424-016-1828-3" target="_blank">Ogorodnikov et al. Pflugers Arch. 2016</a>
 - <a href="http://doi.org/10.1038/nrm.2016.116" target="_blank">Tian & Manley Nat Rev Mol Cell Biol 2016</a> 
 - <a href="http://doi.org/10.1038/nrg3482" target="_blank">Elkon et al. Nat Rev Genet 2013</a>
