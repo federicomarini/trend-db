@@ -928,12 +928,21 @@ server <- function(input, output, session) {
       paste0(colnames(table), "_kd")
     DT::datatable(
       table,
+      extensions = "Buttons",
       colnames = c("Gene" = 1),
       options = list(
         scrollX = TRUE,
         # scrollY = 300,
         searching = TRUE,
-        paging = FALSE
+        paging = FALSE,
+        dom = 'Bfrtip',
+        buttons = 
+          list('copy', 'print', list(
+            extend = 'collection',
+            buttons = c('csv', 'excel', 'pdf'),
+            text = 'Download'
+          )
+        )
       )
     ) %>%
       formatStyle("Gene",
@@ -956,13 +965,21 @@ server <- function(input, output, session) {
       kdtable,
       colnames = c("Gene" = 1),
       selection = "single",
-      extensions = c("FixedColumns"),
+      extensions = c("FixedColumns", "Buttons"),
       options = list(
         scrollX = TRUE,
         scrollY = 480,
         paging = FALSE,
         searching = TRUE,
-        fixedColumns = FALSE
+        fixedColumns = FALSE,
+        dom = 'Bfrtip',
+        buttons = 
+          list('copy', 'print', list(
+            extend = 'collection',
+            buttons = c('csv', 'excel', 'pdf'),
+            text = 'Download'
+          )
+        )
       )
     ) %>%
       formatStyle("Gene",
