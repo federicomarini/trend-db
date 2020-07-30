@@ -716,7 +716,7 @@ server <- function(input, output, session) {
           scrollY = 407,
           scroller = TRUE,
           pageLength = 50,
-          fixedColumns = FALSE
+          fixedColumns = TRUE
         )
       ) %>%
         formatRound(colnames(table), digits = 3) %>%
