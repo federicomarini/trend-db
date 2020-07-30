@@ -40,6 +40,9 @@ createLinkGO <- function(val) {
 message("Loading R data...")
 load("trendseq.RData")
 
+# sorting columns for KDmat?
+KDmat <- KDmat[, order(colnames(KDmat))]
+
 # these objects needed to be updated in newer Bioc versions
 # txBygene <- updateObject(txBygene,verbose = FALSE)
 utrs <- updateObject(utrs, verbose = FALSE)
