@@ -40,6 +40,9 @@ createLinkGO <- function(val) {
 message("Loading R data...")
 load("trendseq.RData")
 
+# sorting columns for KDmat
+KDmat <- KDmat[, order(colnames(KDmat))]
+
 # these objects needed to be updated in newer Bioc versions
 # txBygene <- updateObject(txBygene,verbose = FALSE)
 utrs <- updateObject(utrs, verbose = FALSE)
@@ -713,7 +716,7 @@ server <- function(input, output, session) {
           scrollY = 407,
           scroller = TRUE,
           pageLength = 50,
-          fixedColumns = FALSE
+          fixedColumns = TRUE
         )
       ) %>%
         formatRound(colnames(table), digits = 3) %>%
@@ -925,12 +928,21 @@ server <- function(input, output, session) {
       paste0(colnames(table), "_kd")
     DT::datatable(
       table,
+      extensions = "Buttons",
       colnames = c("Gene" = 1),
       options = list(
         scrollX = TRUE,
         # scrollY = 300,
         searching = TRUE,
-        paging = FALSE
+        paging = FALSE,
+        dom = 'Bfrtip',
+        buttons = 
+          list('copy', 'print', list(
+            extend = 'collection',
+            buttons = c('csv', 'excel', 'pdf'),
+            text = 'Download'
+          )
+        )
       )
     ) %>%
       formatStyle("Gene",
@@ -953,13 +965,21 @@ server <- function(input, output, session) {
       kdtable,
       colnames = c("Gene" = 1),
       selection = "single",
-      extensions = c("FixedColumns"),
+      extensions = c("FixedColumns", "Buttons"),
       options = list(
         scrollX = TRUE,
         scrollY = 480,
         paging = FALSE,
         searching = TRUE,
-        fixedColumns = FALSE
+        fixedColumns = FALSE,
+        dom = 'Bfrtip',
+        buttons = 
+          list('copy', 'print', list(
+            extend = 'collection',
+            buttons = c('csv', 'excel', 'pdf'),
+            text = 'Download'
+          )
+        )
       )
     ) %>%
       formatStyle("Gene",
@@ -994,12 +1014,22 @@ server <- function(input, output, session) {
         ),
         rownames = FALSE,
         selection = "single",
-        extensions = c("FixedColumns"),
+        extensions = c("FixedColumns", "Buttons"),
         options = list(
           bInfo = 0,
           scrollX = TRUE,
+          scrollY = 480,
           fixedColumns = FALSE,
-          order = list(5, "asc")
+          paging = FALSE,
+          order = list(5, "asc"),
+          dom = 'Bfrtip',
+          buttons = 
+            list('copy', 'print', list(
+              extend = 'collection',
+              buttons = c('csv', 'excel', 'pdf'),
+              text = 'Download'
+            )
+          )
         ),
         escape = FALSE
       ) %>%
@@ -1017,7 +1047,13 @@ server <- function(input, output, session) {
   
   output$emap_ui <- renderUI({
     if(!(nrow(createGoenrich()) > 0))
-      return(NULL)
+      return(
+        tagList(
+          shiny::tags$br(),
+          shiny::tags$br(),
+          p(shiny::tags$em("You can not generate an enrichment map, no functional category has an adjusted p-value below 0.05..."))
+        )
+      )
     tagList(
       numericInput("emap_ngs", 
                    width = "25%",
