@@ -1037,7 +1037,13 @@ server <- function(input, output, session) {
   
   output$emap_ui <- renderUI({
     if(!(nrow(createGoenrich()) > 0))
-      return(NULL)
+      return(
+        tagList(
+          shiny::tags$br(),
+          shiny::tags$br(),
+          p(shiny::tags$em("You can not generate an enrichment map, no functional category has an adjusted p-value below 0.05..."))
+        )
+      )
     tagList(
       numericInput("emap_ngs", 
                    width = "25%",
