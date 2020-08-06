@@ -40,7 +40,7 @@ createLinkGO <- function(val) {
 message("Loading R data...")
 load("trendseq.RData")
 
-# sorting columns for KDmat?
+# sorting columns for KDmat
 KDmat <- KDmat[, order(colnames(KDmat))]
 
 # these objects needed to be updated in newer Bioc versions
@@ -1014,12 +1014,22 @@ server <- function(input, output, session) {
         ),
         rownames = FALSE,
         selection = "single",
-        extensions = c("FixedColumns"),
+        extensions = c("FixedColumns", "Buttons"),
         options = list(
           bInfo = 0,
           scrollX = TRUE,
+          scrollY = 480,
           fixedColumns = FALSE,
-          order = list(5, "asc")
+          paging = FALSE,
+          order = list(5, "asc"),
+          dom = 'Bfrtip',
+          buttons = 
+            list('copy', 'print', list(
+              extend = 'collection',
+              buttons = c('csv', 'excel', 'pdf'),
+              text = 'Download'
+            )
+          )
         ),
         escape = FALSE
       ) %>%
