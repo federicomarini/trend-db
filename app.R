@@ -1016,7 +1016,6 @@ server <- function(input, output, session) {
         selection = "single",
         extensions = c("FixedColumns", "Buttons"),
         options = list(
-          bInfo = 0,
           scrollX = TRUE,
           scrollY = 480,
           fixedColumns = FALSE,
