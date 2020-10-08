@@ -16,8 +16,12 @@ The database facilitates:
 
 ### News
 
+- **September 2020** - The manuscript for TREND-DB ("TREND-DB—a transcriptome-wide atlas of the dynamic landscape of alternative polyadenylation") is out on Nucleic Acids Research, and will be included in the Database Issue. You can read it <a href="https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkaa722/5911742" target="_blank">here</a>, or check out its preprint on <a href="https://www.biorxiv.org/content/10.1101/2020.08.04.235804v2" target="_blank">bioRxiv</a>!
+
+- **August 2020** - TREND-DB is released in its version 1.0.0.
+
 - **December 2018** - The PCF11 paper is out on <a href="https://www.nature.com/articles/s41467-018-07580-5"  target="_blank">Nature Communications</a> and has been chosen as <a href="https://www.nature.com/collections/bhkhbxstgj" target="_blank">Editor Highlight</a>!
-- **October 2018** - The paper about PCF11 as critical regulator of transcriptome-3'end-diversification is out on [biorXiv](https://www.biorxiv.org)! You can read it <a href="https://www.biorxiv.org/content/early/2018/10/18/426536" target="_blank">here</a>
+- **October 2018** - The paper about PCF11 as critical regulator of transcriptome-3'end-diversification is out on [biorXiv](https://www.biorxiv.org)! You can read it <a href="https://www.biorxiv.org/content/early/2018/10/18/426536" target="_blank">here</a>.
 
 ### Citations
 
@@ -46,6 +50,7 @@ For general information, please refer to the content of the **About** tab.
 
 ### Further reading
 
+- <a href="https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkaa722/5911742" target="_blank">Marini et al. Nucleic Acids Research 2020</a>
 - <a href="https://www.mdpi.com/2218-273X/10/6/915" target="_blank">Nourse et al. Biomolecules 2020</a>
 - <a href="https://www.nature.com/articles/s41467-018-07580-5" target="_blank">Ogorodnikov et al. Nature Communications 2018</a>
 - <a href="http://doi.org/10.1007/s00424-016-1828-3" target="_blank">Ogorodnikov et al. Pflugers Arch. 2016</a>
