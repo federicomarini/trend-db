@@ -72,12 +72,13 @@ vis.nodes$title <- vis.nodes$label # Text on click
 vis.nodes$size <- 4 * vis.nodes$size
 vis.nodes$group <- vis.nodes$Group
 
+version_trenddb <- "1.0.0"
 
 # UI definition -----------------------------------------------------------
 ui <- shinydashboard::dashboardPage(
   # header definition -------------------------------------------------------
   dashboardHeader(
-    title = paste0("TREND-DB"),
+    title = paste0("TREND-DB - version ", version_trenddb),
     titleWidth = 750,
     
     dropdownMenu(
@@ -1700,9 +1701,15 @@ server <- function(input, output, session) {
     showModal(modalDialog(
       title = "Session information", size = "l", fade = TRUE,
       footer = NULL, easyClose = TRUE,
-      tagList(renderPrint({
-        sessionInfo()
-      }))
+      tagList(
+        renderText({
+          paste0("TREND-DB - version ", version_trenddb)
+        }),
+        br(),br(),
+        renderPrint({
+          sessionInfo()
+        })
+      )
     ))
   })
 
@@ -1711,7 +1718,7 @@ server <- function(input, output, session) {
       title = "About TREND-DB", size = "m", fade = TRUE,
       footer = NULL, easyClose = TRUE,
       tagList(
-        br(), br(),
+        br(),
         HTML("If you use this application for your projects, please use the following citation information:"),
         includeMarkdown("trenddb_citation.md")
       )
