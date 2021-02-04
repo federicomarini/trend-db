@@ -1042,11 +1042,13 @@ server <- function(input, output, session) {
   
   output$emap_go <- renderPlot({
     my_enrich <- createGoenrich()
-    emapplot(my_enrich, showCategory = input$emap_ngs)
+    emapplot(enrichplot::pairwise_termsim(my_enrich), showCategory = input$emap_ngs)
   })
   
   output$emap_ui <- renderUI({
-    if(!(nrow(createGoenrich()) > 0))
+    if(is.null(createGoenrich()))
+      return()
+    if(!(nrow(as.data.frame(createGoenrich())) > 0))
       return(
         tagList(
           shiny::tags$br(),
