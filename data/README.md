@@ -17,5 +17,6 @@ This folder contains:
 - `plotCache.zip`
 - `sno_miRNA_hg38.bed`
 
-The archive containing all the above listed essential information is available on Zenodo.
+The archive containing all the above listed essential information is available on Zenodo at the link  https://doi.org/10.5281/zenodo.5122865.
+
 Please refer to the TREND-DB manuscript for this.
