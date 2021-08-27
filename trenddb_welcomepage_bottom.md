@@ -75,6 +75,6 @@ This work is kindly supported by the
 
 <img src="logo_dfg.png" alt="logo of DFG" height = 75/></br>  
 <img src="logo_dgkl_v2.png" alt="logo of DGKL" height = 75/></br>  
-<img src="logo_bmbf.png" alt="logo of BMBF" height = 100/>
-<img src="logo_bium.png" alt="logo of BIUM-MZ" height = 100/>
+<img src="logo_bmbf.png" alt="logo of BMBF" height = 100/></br>  
+<img src="logo_bium.png" alt="logo of BIUM-MZ" height = 75/>
 
