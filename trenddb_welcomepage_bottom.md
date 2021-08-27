@@ -27,10 +27,10 @@ The database facilitates:
 
 - **TRENDseq - A highly multiplexed high throughput 3’end RNA sequencing for mapping alternative polyadenylation.** 
   *Ogorodnikov A, Danckwardt S.*
-  Methods in Enzymology, in press.
+  Methods in Enzymology, doi: https://doi.org/10.1016/bs.mie.2021.03.022
 - **Transcriptome 3′end organization by PCF11 links alternative polyadenylation to formation and neuronal differentiation of neuroblastoma**
   *Anton Ogorodnikov, Michal Levin, Surendra Tattikota, Sergey Tokalov, Mainul Hoque, Denise Scherzinger, Federico Marini, Ansgar Poetsch, Harald Binder, Stephan Macher-Göppinger, Hans Christian Probst, Bin Tian, Michael Schaefer, Karl J. Lackner, Frank Westermann & Sven Danckwardt*.
-  Nature Communicationsvolume 9, Article number: 5331 (2018); doi: https://doi.org/10.1038/s41467-018-07580-5
+  Nature Communications volume 9, Article number: 5331 (2018); doi: https://doi.org/10.1038/s41467-018-07580-5
 - **PCF11 connects alternative polyadenylation to formation and spontaneous regression of neuroblastoma**
   *Anton Ogorodnikov, Michal Levin, Surendra Tattikota, Sergey Tokalov, Mainul Hoque, Denise Scherzinger, Federico Marini, Ansgar Poetsch, Harald Binder, Stephan Macher-Goeppinger, Bin Tian, Michael Schaefer, Karl Lackner, Frank Westermann, Sven Danckwardt*. 
   bioRxiv 426536; doi: https://doi.org/10.1101/426536
@@ -53,8 +53,8 @@ For general information, please refer to the content of the **About** tab.
 
 ### Further reading
 
-<!-- - Ogorodnikov A, Danckwardt S. TRENDseq - A highly multiplexed high throughput 3’end RNA sequencing for mapping alternative polyadenylation. Methods in Enzymology, in press. -->
 - <a href="https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkaa722/5911742" target="_blank">Marini et al. Nucleic Acids Research 2020</a>
+- <a href="https://doi.org/10.1016/bs.mie.2021.03.022" target="_blank">Ogorodnikov et al. Methods in Enzymology 2021</a>
 - <a href="https://www.mdpi.com/2218-273X/10/6/915" target="_blank">Nourse et al. Biomolecules 2020</a>
 - <a href="https://www.nature.com/articles/s41467-018-07580-5" target="_blank">Ogorodnikov et al. Nature Communications 2018</a>
 - <a href="http://doi.org/10.1007/s00424-016-1828-3" target="_blank">Ogorodnikov et al. Pflugers Arch. 2016</a>
