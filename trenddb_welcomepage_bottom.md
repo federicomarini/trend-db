@@ -71,8 +71,10 @@ This work is kindly supported by the
 * Federal Ministry of Education and Research ([BMBF01EO1003](https://www.unimedizin-mainz.de/cth/overview.html?L=1))
 * German Society of Clinical and Laboratory Medicine ([DGKL](https://www.dgkl.de/en/))
 * Hella Bühler Award for Cancer Research
+* Core Facility Bioinformatics at the University Medical Center, Mainz ([BIUM-MZ](http://www.bium-mz.de/))
 
 <img src="logo_dfg.png" alt="logo of DFG" height = 75/></br>  
 <img src="logo_dgkl_v2.png" alt="logo of DGKL" height = 75/></br>  
 <img src="logo_bmbf.png" alt="logo of BMBF" height = 100/>
+<img src="logo_bium.png" alt="logo of BIUM-MZ" height = 100/>
 
