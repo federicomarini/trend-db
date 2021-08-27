@@ -61,3 +61,18 @@ For general information, please refer to the content of the **About** tab.
 - <a href="http://doi.org/10.1038/nrm.2016.116" target="_blank">Tian & Manley Nat Rev Mol Cell Biol 2016</a> 
 - <a href="http://doi.org/10.1038/nrg3482" target="_blank">Elkon et al. Nat Rev Genet 2013</a>
 
+### Funding
+
+This work is kindly supported by the
+
+* German Research Foundation Priority Program [DFG SPP 1935](https://spp1935.uni-koeln.de)
+* German Research Foundation Grant DFG DA 1189/2-1 
+* German Research Foundation Graduate School [DFG GRK 1591](https://www.medizin.uni-halle.de/forschung/forschungsverbuende/grk-1591-posttranskriptionelle-regulation-der-genexpression-mechanismen-und-rolle-in-der-pathogenese)
+* Federal Ministry of Education and Research ([BMBF01EO1003](https://www.unimedizin-mainz.de/cth/overview.html?L=1))
+* German Society of Clinical and Laboratory Medicine ([DGKL](https://www.dgkl.de/en/))
+* Hella Bühler Award for Cancer Research
+
+<img src="logo_dfg.png" alt="logo of DFG" height = 75/></br>  
+<img src="logo_dgkl_v2.png" alt="logo of DGKL" height = 75/></br>  
+<img src="logo_bmbf.png" alt="logo of BMBF" height = 100/>
+
