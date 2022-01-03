@@ -754,7 +754,7 @@ server <- function(input, output, session) {
                 "RNA splicing",
                 "RNA turnover",
                 "Translation",
-                "Cell-cyle & Replication",
+                "Cell-cycle & Replication",
                 "Epigenetics",
                 "Cancer associated",
                 "Apoptosis",
